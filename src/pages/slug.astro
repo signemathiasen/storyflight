@@ -1,0 +1,39 @@
+---
+
+export async function getStaticPaths(){
+const pages = await getAllPagesWithSlugs();
+pages.map(page => {
+    return {
+      params: { slug: page.slug },
+    }
+});
+
+async function getAllPagesWithSlugs(){
+// Fetching wp data
+const response = await fetch('https://signemariemathiasen.dk/kea/4_semester/storyflight/wordpress/wp-json/wp/v2/pages');
+const data = await response.json();
+return data;
+}
+
+const {slug} = Astro.request.params;
+
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{slug}</title>
+
+</head>
+<body>
+    <main>
+        <header>
+            <div>
+                <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
+                <h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
+            </div>
+        </header>
+    </main>
+</body>
+</html>
