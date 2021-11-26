@@ -10,6 +10,17 @@ import Tour from '../components/Tour.astro';
 // All variables are available to use in the HTML template below.
 let title = 'My Astro Site';
 
+// Fetching wp data
+const response = await fetch('https://signemariemathiasen.dk/kea/4_semester/storyflight/wordpress/wp-json/wp/v2/pages/111');
+const data = await response.json();
+// Remember: Astro component scripts log to the CLI
+console.log(data);
+
+const titel = data.title.rendered;
+const overskrift = data.acf['contact-info-heading'];
+const tekst = data.acf['contact-info-text'];
+
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
@@ -17,7 +28,7 @@ let title = 'My Astro Site';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>{title}</title>
+    <title>{titel}</title>
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     
@@ -36,22 +47,10 @@ let title = 'My Astro Site';
 <body>
     <main>
         <header>
-            <div>
-                <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
-                <h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
-            </div>
+                <h1>{titel}</h1>
         </header>
-
-        <Tour />
-
-        <!--
-           - You can also use imported framework components directly in your markup!
-           -
-           - Note: by default, these components are NOT interactive on the client.
-           - The `:visible` directive tells Astro to make it interactive.
-           -
-           - See https://docs.astro.build/core-concepts/component-hydration/ 
-           -->
+        <h2>{overskrift}</h2>
+        <p>{tekst}</p>
 
     </main>
 </body>
