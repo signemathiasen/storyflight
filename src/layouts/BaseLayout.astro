@@ -1,0 +1,25 @@
+---
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+---
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.scss')} />
+  </head>
+
+  <body>
+    <Header/>
+
+    <main>
+      <!-- slot: your page content will be injected here. -->
+      <slot />
+    </main>
+
+    <Footer/>
+  </body>
+</html>
