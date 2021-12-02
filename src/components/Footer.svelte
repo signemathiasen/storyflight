@@ -1,5 +1,6 @@
 <script>
   import LogoType from "../assets/LogoWithType.astro";
+  import Logo from "../assets/logo.astro";
   export let footerData;
 
   console.log(footerData.items);
@@ -34,7 +35,10 @@
     }
     .footer-bg-logo {
       position: absolute;
-      z-index: -1;
+      color: var(--clr-white);
+      opacity: 0.075;
+      height: 900px;
+      right: -5px;
     }
   }
 </style>
