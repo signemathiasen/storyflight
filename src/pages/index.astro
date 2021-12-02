@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getData } from '../helpers/dataFetching.js';
 
+getData("menus", "primaryMenu");
 ---
   
 <BaseLayout>
@@ -12,5 +13,4 @@ import { getData } from '../helpers/dataFetching.js';
   <a>Min seje a</a>
   <img src="https://picsum.photos/seed/picsum/1920/1080" alt="Min seje alt tekst" />
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nemo omnis deleniti iusto nesciunt. Pariatur facilis quis repellendus tempore neque rerum ad dignissimos autem aperiam aliquam beatae, officiis doloremque! Repellendus.</p>
-
 </BaseLayout>

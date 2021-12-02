@@ -1,1 +1,17 @@
-<p>Den seje footer</p>
+---
+import Logo from '../assets/Logo.astro';
+import Footer from '../components/Footer.svelte';
+import {getData} from '../helpers/dataFetching.js';
+
+const footerData = await getData("menus", "contactInformation")
+
+---
+
+
+<footer>
+    <!-- <LogoType /> -->
+    <Footer client:load footerData={footerData}/>
+    <Logo />
+</footer>
+
+<style></style>
