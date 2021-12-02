@@ -1,5 +1,8 @@
 <script>
   let menuActive = false;
+  export let menuData;
+
+  console.log(menuData);
 </script>
 
 <button on:click={() => (menuActive = !menuActive)}>
@@ -7,7 +10,9 @@
 </button>
 <nav class:menuActive>
   <ul>
-    <li>test</li>
+    <!-- {#each items as item}
+      <li>{item.name}</li>
+    {/each} -->
   </ul>
 </nav>
 
