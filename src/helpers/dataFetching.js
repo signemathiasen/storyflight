@@ -5,7 +5,7 @@ const settings = {
   endpoints: {
     pages: "pages",
     cases: "case",
-    customerLogo: "customer_logo",
+    customerLogos: "customer_logo",
     services: "services_item",
     chosenCases: "chosen_case",
     menus: "menus",
