@@ -1,6 +1,5 @@
 ---
-// import LogoType from "../assets/logo-with-type.astro"; 
-import Logo from '../assets/logo.astro';
+
 import Footer from '../components/Footer.svelte';
 import {getData} from '../helpers/dataFetching.js';
 
@@ -10,9 +9,14 @@ const footerData = await getData("menus", "contactInformation")
 
 
 <footer>
-    <!-- <LogoType /> -->
     <Footer client:load footerData={footerData}/>
-    <Logo />
 </footer>
 
-<style></style>
+<style lang="scss">
+
+footer{
+    background: var(--clr-secondary);
+    position: relative;
+}
+
+</style>
