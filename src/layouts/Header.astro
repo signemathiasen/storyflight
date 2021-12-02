@@ -11,4 +11,16 @@ const menuData = await getData("menus", "primaryMenu");
   <Menu client:load menuData={menuData}/>
 </header>
 
-<style></style>
+<style lang="scss">
+header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  //  @media (min-width: 1000px){
+  //     padding: 2rem;
+  //   }
+}
+</style>

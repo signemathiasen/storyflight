@@ -28,7 +28,5 @@ export async function getData(endpoint, slug) {
   const response = await fetch(`${baseUrl}${endpoint === "menus" ? menuPath : generalPath}${endpoint}${slug === undefined ? "" : menuSlugs[slug]}`);
   const data = await response.json();
 
-  console.log(`${baseUrl}${endpoint === "menus" ? menuPath : generalPath}${endpoint}${slug === undefined ? "" : menuSlugs[slug]}`);
-
   return data;
 }
