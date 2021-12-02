@@ -23,9 +23,10 @@
   // Font sizes
   --fs-h1: 4.4375rem;
   --fs-h2: 3.75rem;
-  --fs-h3: 3.125rem;
-  --fs-subtitle: 1.875rem;
+  --fs-h3: 2.188rem;
+  --fs-subtitle: 1rem;
   --fs-p: 1rem;
+  --fs-a: 0.875rem;
 
   // Font weights
   --fw-h1: 800;
@@ -33,6 +34,7 @@
   --fw-h3: 300;
   --fw-subtitle: 700;
   --fw-p: 300;
+  --fw-a: 600;
 }
 
 img {
@@ -49,12 +51,15 @@ img {
 h1,
 h2,
 h3,
+a,
 .h1,
 .h2,
-.h3 {
+.h3,
+.a {
   font-family: var(--ff-headings);
   text-transform: uppercase;
   line-height: 1.3;
+  letter-spacing: 0.1em;
 }
 
 h1,
@@ -91,6 +96,15 @@ p {
   font-size: var(--fs-p);
   font-weight: var(--fw-p);
   line-height: 1.5;
+}
+
+a,
+.a {
+  font-size: var(--fs-a);
+  font-weight: var(--fw-a);
+  font-style: normal;
+  letter-spacing: 0.05rem;
+  text-decoration: none;
 }
 
 h2,

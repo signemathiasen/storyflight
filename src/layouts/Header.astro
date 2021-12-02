@@ -1,14 +1,15 @@
 ---
-import Logo from '../assets/logo.astro';
+import Logo from '../assets/Logo.astro';
 import Menu from '../components/Menu.svelte';
 import {getData} from '../helpers/dataFetching.js';
 
 const menuData = await getData("menus", "primaryMenu");
+const soMeData = await getData("menus", "contactInformation");
 ---
 
 <header>
   <Logo />
-  <Menu client:load menuData={menuData}/>
+  <Menu client:load menuData={menuData} soMeData={soMeData}/>
 </header>
 
 <style lang="scss">
@@ -18,9 +19,6 @@ header {
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
-  //  @media (min-width: 1000px){
-  //     padding: 2rem;
-  //   }
+  padding: 1.2rem;
 }
 </style>

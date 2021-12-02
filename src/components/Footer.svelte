@@ -1,6 +1,5 @@
 <script>
-  import LogoType from "../assets/logo-with-type.astro";
-  import Logo from "../assets/logo.astro";
+  import LogoType from "../assets/LogoWithType.astro";
   export let footerData;
 
   console.log(footerData.items);
