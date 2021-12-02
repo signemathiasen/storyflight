@@ -10,17 +10,25 @@ const settings = {
     chosenCases: "chosen_case",
     menus: "menus",
   },
+  menuSlugs: {
+    primaryMenu: "/primary-menu",
+    contactInformation: "/contact-information",
+  },
 };
 
-export async function getData(endpoint) {
+export async function getData(endpoint, slug) {
   const isEndpointValid = settings.endpoints[endpoint];
+  const isSlugValid = settings.menuSlugs[slug];
 
   if (isEndpointValid === undefined) return console.error("Path does not exist");
-  const { baseUrl, menuPath, generalPath } = settings;
+  const { baseUrl, menuPath, generalPath, menuSlugs } = settings;
 
-  const response = await fetch(`${baseUrl}${endpoint === "menus" ? menuPath : generalPath}${endpoint}`);
+  if (endpoint === "menus" && isSlugValid === undefined) return console.error("Slug does not exist");
+
+  const response = await fetch(`${baseUrl}${endpoint === "menus" ? menuPath : generalPath}${endpoint}${slug === undefined ? "" : menuSlugs[slug]}`);
   const data = await response.json();
 
-  console.log(data);
+  console.log(`${baseUrl}${endpoint === "menus" ? menuPath : generalPath}${endpoint}${slug === undefined ? "" : menuSlugs[slug]}`);
+
   return data;
 }
