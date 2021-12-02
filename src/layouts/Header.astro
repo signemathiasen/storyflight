@@ -1,11 +1,14 @@
 ---
 import Logo from '../assets/logo.astro';
 import Menu from '../components/Menu.svelte';
+import {getData} from '../helpers/dataFetching.js';
+
+const menuData = await getData("menus", "primaryMenu");
 ---
 
 <header>
   <Logo />
-  <Menu client:load/>
+  <Menu client:load menuData={menuData}/>
 </header>
 
 <style></style>
