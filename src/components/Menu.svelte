@@ -5,9 +5,7 @@
   console.log(menuData);
 </script>
 
-<button on:click={() => (menuActive = !menuActive)}>
-  x       
-</button>
+<button on:click={() => (menuActive = !menuActive)}> x </button>
 <nav class:menuActive>
   <ul>
     <!-- {#each items as item}
@@ -17,7 +15,7 @@
 </nav>
 
 <style>
-  nav.menuActive{
+  nav.menuActive {
     color: red;
   }
 </style>
