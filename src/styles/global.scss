@@ -1,6 +1,106 @@
+@use 'normalize.css';
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+:root {
+  // Colors
+  --clr-primary: #ff5a44;
+  --clr-secondary: #000217;
+  --clr-grey: #f9f9f9;
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+
+  // Font Families
+  --ff-headings: 'forma-djr-banner', sans-serif;
+  --ff-body: 'nunito-sans', sans-serif;
+
+  // Font sizes
+  --fs-h1: 4.4375rem;
+  --fs-h2: 3.75rem;
+  --fs-h3: 3.125rem;
+  --fs-subtitle: 1.875rem;
+  --fs-p: 1rem;
+
+  // Font weights
+  --fw-h1: 800;
+  --fw-h2: 700;
+  --fw-h3: 300;
+  --fw-subtitle: 700;
+  --fw-p: 300;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+::selection {
+  color: var(--clr-black);
+  background-color: var(--clr-primary);
+}
+
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
+  font-family: var(--ff-headings);
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+
+h1,
+.h1 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+  max-width: 15ch;
+  margin: 0;
+}
+
+h2,
+.h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-h2);
+}
+
+h3,
+.h3 {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+}
+
+.subtitle {
+  font-size: var(--fs-subtitle);
+  font-weight: var(--fw-subtitle);
+  font-family: var(--ff-headings);
+  font-style: italic;
+  line-height: 1.3;
+}
+
+body,
+p {
+  font-family: var(--ff-body);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-p);
+  line-height: 1.5;
+}
+
+h2,
+h3,
+.h2,
+.h3 {
+  max-width: 25ch;
+}
+
+p,
+li {
+  max-width: 65ch;
 }
