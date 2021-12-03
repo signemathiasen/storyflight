@@ -40,7 +40,7 @@
     </ul>
   </nav> 
 
-  <svg class="separation_line" width="245" height="456" viewBox="0 0 245 456" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="separation_line" width="210" height="456" viewBox="0 0 245 456" fill="none" xmlns="http://www.w3.org/2000/svg">
     <line opacity="0.1" x1="240.479" y1="2.31822" x2="4.42951" y2="453.407" stroke="#F9F9F9" stroke-width="10"/>
   </svg>
 
@@ -83,7 +83,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      @media (min-width: 1000px) {
+      @media (min-width: 992px) {
         align-items: center;
         flex-direction: row;
     }
@@ -97,16 +97,17 @@
 
     
     nav {
-      margin-bottom: 5rem;
-      @media (min-width: 1000px) {
+      margin-bottom: 4rem;
+      @media (min-width: 992px) {
         margin-bottom: 0;
+        flex-grow: 1;
       }
       .menu_item{
         font-weight: 600;
         font-style: italic;
-        font-size: 2.5rem; // change - global?
+        font-size: 2.7rem; // change - global style?
         @media (min-width: 768px) {
-          font-size: 3.8rem; // change - global?
+          font-size: 3.8rem; // change - globals style?
         }
       }
       ul {
@@ -119,8 +120,12 @@
 
     .separation_line{
       display: none;
-        @media (min-width: 1000px) {
+        @media (min-width: 992px) {
         display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
   }
@@ -151,11 +156,17 @@
   }
 
   .contact {
+    @media (min-width: 992px) {
+        flex-grow: 1;
+        padding-left: 5rem;
+      }
+    
     ul {
       display: flex;
       flex-direction: column;
       margin-top: 1rem;
       max-width: 144px;
+
       li {
         margin: 0.05rem 0;
         display: flex;
