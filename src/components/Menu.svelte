@@ -134,6 +134,7 @@
       display: flex;
       flex-direction: column;
       margin-top: 1rem;
+      max-width: 144px;
       li {
         margin: 0.05rem 0;
         display: flex;
