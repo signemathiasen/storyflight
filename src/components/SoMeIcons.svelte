@@ -16,31 +16,42 @@
   console.log(footerItems);
 </script>
 
-{#each footerData.items as footerItem}
-  <li>
+<div class="soMe-icons">
+  {#each footerItems as footerItem}
     {#if footerItem.url !== "#"}
       <a target="_blank" href={footerItem.url}>
         <svg>{@html icons[footerItem.title.toLowerCase()]}</svg>
       </a>
-    {:else}
-      {footerItem.title}
     {/if}
-  </li>
+  {/each}
+</div>
+
+{#each footerItems as footerItem}
+  {#if footerItem.url === "#"}
+    <p>{footerItem.title}</p>
+  {/if}
 {/each}
 
 <style lang="scss">
-  li {
+  .soMe-icons {
+    margin: 20px;
+  }
+  p {
     color: var(--clr-white);
-    list-style-type: none;
-
-    svg {
-      width: 30px;
-      height: 30px;
-      color: var(--clr-primary);
+    text-align: center;
+    margin: 40px 80px 80px;
+    @media (min-width: 1024px) {
+      margin: 0;
     }
+  }
 
-    a {
-      color: var(--clr-white);
-    }
+  svg {
+    width: 30px;
+    height: 30px;
+    color: var(--clr-primary);
+  }
+
+  a {
+    color: var(--clr-white);
   }
 </style>

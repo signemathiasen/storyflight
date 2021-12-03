@@ -7,32 +7,34 @@
   //   console.log(footerData.items);
 </script>
 
-<ul>
-  <li><svg>{@html LogoType}</svg></li>
+<div>
+  <svg>{@html LogoType}</svg>
   <SoMeIcons {footerData} />
   <svg class="footer-bg-logo">{@html Logo}</svg>
-</ul>
+</div>
 
 <style lang="scss">
-  ul {
+  div {
     display: flex;
     flex-direction: column;
     align-items: center;
     @media (min-width: 1024px) {
       flex-direction: row;
+      justify-content: space-between;
     }
 
-    li {
+    svg {
       color: var(--clr-white);
-      list-style-type: none;
-    }
-
-    .footer-bg-logo {
-      position: absolute;
-      color: var(--clr-white);
-      opacity: 0.075;
-      height: 900px;
-      right: -5px;
+      &.footer-bg-logo {
+        position: absolute;
+        opacity: 0.075;
+        height: 900px;
+        right: -5px;
+        display: none;
+        @media (min-width: 1024px) {
+          display: block;
+        }
+      }
     }
   }
 </style>
