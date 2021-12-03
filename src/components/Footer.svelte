@@ -1,38 +1,32 @@
 <script>
   import LogoType from "../assets/LogoWithType.astro";
   import Logo from "../assets/logo.astro";
+  import SoMeIcons from "./SoMeIcons.svelte";
   export let footerData;
 
-  console.log(footerData.items);
+  //   console.log(footerData.items);
 </script>
 
 <ul>
   <li><svg>{@html LogoType}</svg></li>
-  {#each footerData.items as footerItem}
-    <li>
-      {#if footerItem.url !== "#"}
-        <a target="_blank" href={footerItem.url}>{footerItem.title}</a>
-      {:else}
-        {footerItem.title}
-      {/if}
-    </li>
-  {/each}
+  <SoMeIcons {footerData} />
   <svg class="footer-bg-logo">{@html Logo}</svg>
 </ul>
 
 <style lang="scss">
   ul {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
+
     li {
       color: var(--clr-white);
       list-style-type: none;
     }
 
-    a {
-      color: var(--clr-white);
-    }
     .footer-bg-logo {
       position: absolute;
       color: var(--clr-white);
