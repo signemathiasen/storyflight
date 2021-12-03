@@ -23,8 +23,10 @@
   {#if !menuActive}
   <Menu />
   {:else}
-  <a class="a close_menu">Tilbage <span></span></a>
-  <Arrow />
+  <div class="close_menu">
+    <a class="a go_back">Tilbage</a>
+    <a class="arrow_icon"><Arrow /></a>
+  </div>
   {/if}
 </button>
 
@@ -46,8 +48,7 @@
       <ul>
         {#each contactInformation as {title, url}, index}
           {#if index <= 2}
-            <li><a href={url}>{title}</a></li>
-            <svelte:component this={icons[title.toLowerCase()]}/>
+            <li><a class="some_title" href={url}>{title}</a><a class="some_icon" href={url}><svelte:component this={icons[title.toLowerCase()]}/></a></li>
           {/if}
         {/each}
       </ul>
@@ -98,6 +99,20 @@
 
   .close_menu{
       color: var(--clr-white);
+      display: flex;
+      align-items: center;
+      padding-top: 2px;
+
+      .arrow_icon {
+        color: var(--clr-primary);
+        height: 28px;
+        width: 28px;
+        margin-left: 1em;
+        padding-top: 0px;
+      }
+      .go_back{
+        padding-top: 3px;
+      }
     }
   
   .burger-wrap{
@@ -115,8 +130,25 @@
   }
 
   .contact {
-    li {
-      margin: 0.3rem 0;
+    ul {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      max-width: 144px;
+      li {
+        margin: 0.05rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .some_icon{
+        color: var(--clr-primary);
+        height: 32px;
+        width: 32px;
+      }
+      .some_title{
+        padding-top: 3px;
+      }
     }
   }
 

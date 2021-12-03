@@ -4,7 +4,6 @@
   import SoMeIcons from "./SoMeIcons.svelte";
   export let footerData;
 
-  //   console.log(footerData.items);
 </script>
 
 <div>
