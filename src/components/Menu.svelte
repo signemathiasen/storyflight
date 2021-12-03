@@ -40,7 +40,7 @@
   <svg width="245" height="456" viewBox="0 0 245 456" fill="none" xmlns="http://www.w3.org/2000/svg">
     <line opacity="0.1" x1="240.479" y1="2.31822" x2="4.42951" y2="453.407" stroke="#F9F9F9" stroke-width="10"/>
   </svg>
-  
+
   <div class="contact">
       <h3>Følg os</h3>
       <ul>
