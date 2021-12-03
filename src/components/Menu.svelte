@@ -30,7 +30,8 @@
   {/if}
 </button>
 
-<div class="menu-wrap" class:menuActive>
+<div class="menu-container" class:menuActive>
+  <div class="menu-wrap container container--small"> 
   <nav>
     <ul>
       {#each primaryMenu as menuItem}
@@ -39,7 +40,7 @@
     </ul>
   </nav> 
 
-  <svg width="245" height="456" viewBox="0 0 245 456" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="separation_line" width="210" height="456" viewBox="0 0 245 456" fill="none" xmlns="http://www.w3.org/2000/svg">
     <line opacity="0.1" x1="240.479" y1="2.31822" x2="4.42951" y2="453.407" stroke="#F9F9F9" stroke-width="10"/>
   </svg>
 
@@ -54,9 +55,11 @@
       </ul>
   </div>
 </div>
+</div>
 
 <style lang="scss">
-  .menu-wrap {
+  .menu-container {
+    z-index:2;
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -69,9 +72,6 @@
     transition: 0.3s;
 
     overflow: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     &.menuActive {
       visibility: visible;
@@ -79,21 +79,54 @@
       transition: 0.3s;
     }
 
-    h3 {
+    .menu-wrap{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @media (min-width: 992px) {
+        align-items: center;
+        flex-direction: row;
+    }
+      height: 100%;
+      width: 100%;
+    }
+
+    h3, a {
        color: var(--clr-white);
     }
 
-    ul {
-      list-style-type: none;
-      a {
-        color: var(--clr-white);
+    
+    nav {
+      margin-bottom: 4rem;
+      @media (min-width: 992px) {
+        margin-bottom: 0;
+        flex-grow: 1;
+      }
+      .menu_item{
+        font-weight: 600;
+        font-style: italic;
+        font-size: 2.7rem; // change - global style?
+        @media (min-width: 768px) {
+          font-size: 3.8rem; // change - globals style?
+        }
+      }
+      ul {
+        list-style-type: none;
+        li{
+          margin-bottom: 0.2rem;
+        }
       }
     }
 
-    .menu_item{
-      font-weight: 600;
-      font-style: italic;
-      font-size: 3.8rem; // change
+    .separation_line{
+      display: none;
+        @media (min-width: 992px) {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 
@@ -119,22 +152,21 @@
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1;
-  }
-
-  .burger {
-    width: 33px;
-    @media (min-width: 1000px){
-      width: 40px;
-    }
+    z-index: 3;
   }
 
   .contact {
+    @media (min-width: 992px) {
+        flex-grow: 1;
+        padding-left: 5rem;
+      }
+    
     ul {
       display: flex;
       flex-direction: column;
       margin-top: 1rem;
       max-width: 144px;
+
       li {
         margin: 0.05rem 0;
         display: flex;
