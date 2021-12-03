@@ -2,7 +2,7 @@
   import LogoType from "../assets/LogoWithType.astro";
   export let footerData;
 
-  console.log(footerData.items);
+  // console.log(footerData.items);
 </script>
 
 <ul>
