@@ -13,7 +13,7 @@
     linkedin: LinkedIn,
   };
 
-  console.log(footerItems);
+  // console.log(footerItems);
 </script>
 
 <div class="soMe-icons">

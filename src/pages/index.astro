@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getData } from '../helpers/dataFetching.js';
+import TextBlock from '../layouts/TextBlock.astro';
 
-getData("menus", "primaryMenu");
+// console.log(pagesData);
 ---
   
 <BaseLayout>
@@ -15,8 +16,8 @@ getData("menus", "primaryMenu");
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nemo omnis deleniti iusto nesciunt. Pariatur facilis quis repellendus tempore neque rerum ad dignissimos autem aperiam aliquam beatae, officiis doloremque! Repellendus.</p>
   </div>
   <div class="container container--small">
-    <a>Min seje a</a>
+    <p class="subtitle">Min seje subtitle</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nemo omnis deleniti iusto nesciunt. Pariatur facilis quis repellendus tempore neque rerum ad dignissimos autem aperiam aliquam beatae, officiis doloremque! Repellendus.</p>
   </div>
-
+<TextBlock />
 </BaseLayout>
