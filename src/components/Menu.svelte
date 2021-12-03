@@ -1,20 +1,30 @@
 <script>
+  import Line from "../assets/icons/Line.astro";
+  import Facebook from "../assets/icons/Facebook.svelte";
+  import Instagram from "../assets/icons/Instagram.svelte";
+  import LinkedIn from "../assets/icons/LinkedIn.svelte";
+  import Arrow from "../assets/icons/CircleWithArrow.svelte";
+  import Menu from "../assets/icons/Menu.svelte";
+
   let menuActive = false;
   export let menuData;
   export let soMeData;
   const primaryMenu = menuData.items;
   const contactInformation = soMeData.items;
+  
+  const icons = {
+    facebook: Facebook,
+    instagram: Instagram,
+    linkedin: LinkedIn,
+  }
 </script>
 
 <button class="burger-wrap" on:click={() => (menuActive = !menuActive)}>
   {#if !menuActive}
-  <svg class="burger" viewBox="0 0 49 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.085 -0.000488281H48.223L46.0269 3.88848H10.8889L13.085 -0.000488281Z" fill="#000217"/>
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0704 12.4439H5.44409L7.92965 8.55493H43.556L41.0704 12.4439Z" fill="#000217"/>
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M35.6766 20.9996H0.777344L3.21217 17.1106H38.1114L35.6766 20.9996Z" fill="#000217"/>
-  </svg> 
+  <Menu />
   {:else}
-  <span class="a close_menu">Tilbage</span>
+  <a class="a close_menu">Tilbage <span></span></a>
+  <Arrow />
   {/if}
 </button>
 
@@ -30,18 +40,18 @@
   <svg width="245" height="456" viewBox="0 0 245 456" fill="none" xmlns="http://www.w3.org/2000/svg">
     <line opacity="0.1" x1="240.479" y1="2.31822" x2="4.42951" y2="453.407" stroke="#F9F9F9" stroke-width="10"/>
   </svg>
-    
+
   <div class="contact">
       <h3>Følg os</h3>
       <ul>
-        {#each contactInformation as item, index}
+        {#each contactInformation as {title, url}, index}
           {#if index <= 2}
-            <li><a href={item.url}>{item.title} <span></span></a></li>
+            <li><a href={url}>{title}</a></li>
+            <svelte:component this={icons[title.toLowerCase()]}/>
           {/if}
         {/each}
       </ul>
   </div>
-  
 </div>
 
 <style lang="scss">
@@ -82,6 +92,7 @@
     .menu_item{
       font-weight: 600;
       font-style: italic;
+      font-size: 3.8rem; // change
     }
   }
 
