@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import KontaktText from '../layouts/KontaktText.astro';
+import KontaktForm from '../components/Kontaktform.svelte';
+import Line from "../assets/icons/Line.astro";
+import { getData } from '../helpers/dataFetching.js';
+---
+
+<BaseLayout>
+    <section class="kontakt-section container--medium">
+
+        <section class="container container--xsmall section-padding text-section">
+            <KontaktText />
+        </section>
+
+        <div class="line"><Line/></div>
+        
+        <section class="container container--xsmall section-padding form-section">
+            <h3>Kontakt os</h3>
+            <KontaktForm />
+        </section>
+
+    </section>
+</BaseLayout>
+
+<style lang="scss">
+@media (max-width: 991px){
+    .container--xsmall{
+        max-width: 100%;
+    }
+}
+.kontakt-section{
+    padding-bottom: 0;
+    margin: 0 auto;
+        @media (min-width: 992px) {
+        display: flex;
+        justify-content: space-between;
+    }
+  .text-section{
+    margin: 0;
+        @media (min-width: 992px){
+            display: flex;
+            align-items: center;
+        }
+    }
+    .line{
+      display: none;
+        @media (min-width: 992px) {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .form-section{
+    background: var(--clr-secondary);
+    margin: 0;
+
+        h3{
+            color: var(--clr-white);
+        }
+        @media (min-width: 992px) {
+        background: none;
+
+        h3{
+            color: var(--clr-black);
+        }
+    }
+}
+
+}
+
+</style>
