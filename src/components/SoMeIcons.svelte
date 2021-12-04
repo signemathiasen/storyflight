@@ -36,6 +36,7 @@
   .soMe-icons {
     margin: 20px;
   }
+
   p {
     color: var(--clr-white);
     text-align: center;
