@@ -15,6 +15,7 @@ const settings = {
     primaryMenu: '/primary-menu',
     contactInformation: '/contact-information',
     forside: '/2',
+    kontakt: '/111',
     // add all slugs
   },
 };
