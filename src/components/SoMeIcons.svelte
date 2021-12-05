@@ -12,8 +12,7 @@
     instagram: Instagram,
     linkedin: LinkedIn,
   };
-
-  // console.log(footerItems);
+  
 </script>
 
 <div class="soMe-icons">
