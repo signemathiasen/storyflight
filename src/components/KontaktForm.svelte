@@ -1,24 +1,17 @@
 <script>
   export let KontaktForm;
+
+  const formElements = ["navn", "email", "nummer", "beskrivelse"];
 </script>
 
-<form name="contact" method="POST" data-netlify="true">
-  <div class="name">
-    <input type="text" id="name" name="name" required />
-    <label class="subtitle" for="name">Navn</label>
-  </div>
-  <div class="email">
-    <input type="text" id="email" name="email" required />
-    <label class="subtitle" for="email">Email</label>
-  </div>
-  <div class="number">
-    <input type="text" id="number" name="number" required />
-    <label class="subtitle" for="number">Telefon</label>
-  </div>
-  <div class="desc">
-    <input type="text" id="desc" name="desc" required />
-    <label class="subtitle" for="desc">Beskrivelse</label>
-  </div>
+<form name="Contact" method="POST" data-netlify="true">
+  {#each formElements as elm}
+    <div class={elm}>
+      <input type="text" id={elm} name={elm} required />
+      <label class="subtitle" for={elm}>{elm.charAt(0).toUpperCase()}{elm.slice(1)}</label>
+    </div>
+  {/each}
+
   <button type="submit" id="submit">Lad mig høre mere</button>
 </form>
 
@@ -60,6 +53,7 @@
     }
     button {
       width: 100%;
+      margin: 3rem 0 0;
       background: var(--clr-white);
       @media (min-width: 992px) {
         background: var(--clr-secondary);
