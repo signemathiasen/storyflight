@@ -2,23 +2,38 @@
 import {getData} from '../helpers/dataFetching.js';
 
 const kontaktData = await getData("pages", "kontakt");
+
+
+const { acf: { 
+  "contact_info_heading": title, 
+  "contact_info_text": body,
+  email,
+  "phone_number": phoneNumber 
+}} = kontaktData;
+
+console.log(kontaktData)
+
 ---
-    
 
     <div>
-        <h2 class="caption">{kontaktData["acf"].contact_info_heading}</h2>
-        <p>{kontaktData["acf"].contact_info_text}</p>
+        <h2 class="caption">{title}</h2>
+        <p>{body}</p>
         <div class="kontakt-details">
-        <h3>{kontaktData["acf"].email}</h3>
-        <h3>{kontaktData["acf"].phone_number}</h3>
+        <a class="h3" href="tel:${phoneNumber}">{phoneNumber}</a>
+        <a class="h3" href="mailto:${email}">{email}</a>
         </div>
     </div>
-
 
 <style lang="scss">
 
 .kontakt-details{
+    display: flex;
+    flex-direction: column;
     margin-top: 3rem;
+    a, a:visited{
+      color: var(--clr-black);  
+    }
+    
 }  
 
 
