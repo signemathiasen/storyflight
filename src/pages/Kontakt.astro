@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getData } from '../helpers/dataFetching.js';
+
+const data = await getData('pages', 'contactPage');
+
+const { acf: { 
+  "contact-info-heading": title, 
+  "contact-info-text": body,
+  email,
+  "phone_number": phoneNumber 
+}} = data;
+---
+
+<BaseLayout>
+
+  <div class="container container--small">
+    <div class="row">
+      <section>
+        <h1>{title}</h1>
+        <p>{body}</p>
+        <a href="#">{phoneNumber}</a>
+        <a href="#">{email}</a>
+      </section>
+
+      <section>
+        <h2>Kontakt os</h2>
+
+        <form name="contact" method="POST">
+          <label for="name">
+            Navn
+            <input type="text" name="name" id="name" />
+          </label>
+
+          <label for="email">
+            Email
+            <input type="text" name="email" id="email">
+          </label>
+
+          <label for="phoneNumber">
+            Telefonnummer
+            <input type="text" name="phoneNumber" id="phoneNumber">
+          </label>
+
+          <label for="message">
+            <textarea id="message" for="message">
+              Besked
+            </textarea>
+          </label>
+
+          <button type="submit">Send besked</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+</BaseLayout>
+
+<style lang="scss">
+  h1 {
+    text-transform:none;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    @media (min-width: 992px) {
+      color: red;
+    }
+  }
+</style>

@@ -16,6 +16,7 @@ const settings = {
     contactInformation: '/contact-information',
     forside: '/2',
     // add all slugs
+    contactPage: '/111',
   },
 };
 
@@ -35,10 +36,6 @@ export async function getData(endpoint, slug) {
     }`
   );
   const data = await response.json();
-  console.log(
-    `${baseUrl}${endpoint === 'menus' ? menuPath : generalPath}${endpoint}${
-      slug === undefined ? '' : menuSlugs[slug]
-    }`
-  );
+
   return data;
 }
