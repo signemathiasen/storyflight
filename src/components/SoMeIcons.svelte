@@ -1,7 +1,7 @@
 <script>
-  import Instagram from "../assets/icons/Instagram.astro";
-  import Facebook from "../assets/icons/Facebook.astro";
-  import LinkedIn from "../assets/icons/LinkedIn.astro";
+  import Instagram from "../assets/icons/Instagram.svelte";
+  import Facebook from "../assets/icons/Facebook.svelte";
+  import LinkedIn from "../assets/icons/LinkedIn.svelte";
 
   export let footerData;
   export let SoMeIcons;
@@ -12,14 +12,13 @@
     instagram: Instagram,
     linkedin: LinkedIn,
   };
-  
 </script>
 
 <div class="soMe-icons">
   {#each footerItems as footerItem}
     {#if footerItem.url !== "#"}
       <a target="_blank" href={footerItem.url}>
-        <svg>{@html icons[footerItem.title.toLowerCase()]}</svg>
+        <svelte:component this={icons[footerItem.title.toLowerCase()]} />
       </a>
     {/if}
   {/each}
@@ -33,25 +32,22 @@
 
 <style lang="scss">
   .soMe-icons {
-    margin: 20px;
+    margin: var(--gutter);
+    display: flex;
   }
 
   p {
     color: var(--clr-white);
     text-align: center;
-    margin: 40px 80px 80px;
+    margin: var(--gutter);
     @media (min-width: 1024px) {
       margin: 0;
     }
   }
 
-  svg {
-    width: 30px;
-    height: 30px;
-    color: var(--clr-primary);
-  }
-
   a {
-    color: var(--clr-white);
+    display: block;
+    color: var(--clr-primary);
+    margin: 0 15px;
   }
 </style>
