@@ -12,8 +12,7 @@
     instagram: Instagram,
     linkedin: LinkedIn,
   };
-
-  // console.log(footerItems);
+  
 </script>
 
 <div class="soMe-icons">
@@ -36,6 +35,7 @@
   .soMe-icons {
     margin: 20px;
   }
+
   p {
     color: var(--clr-white);
     text-align: center;
