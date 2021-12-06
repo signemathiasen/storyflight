@@ -153,6 +153,7 @@
     border: none;
     cursor: pointer;
     z-index: 3;
+    margin: 0;
   }
 
   .contact {
