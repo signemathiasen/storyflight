@@ -4,7 +4,7 @@
   const formElements = ["navn", "email", "nummer", "beskrivelse"];
 </script>
 
-<form name="Contact" method="POST" data-netlify="true">
+<form name="Contact" method="POST" data-netlify="true" subject="Nogen vil i kontakt med Storyflight">
   {#each formElements as elm}
     <div class={elm}>
       <input type="text" id={elm} name={elm} required />
