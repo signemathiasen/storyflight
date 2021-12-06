@@ -1,15 +1,18 @@
 <script>
-  import LogoType from "../assets/LogoWithType.astro";
-  import Logo from "../assets/logo.astro";
+  import LogoType from "../assets/LogoWithType.svelte";
+  import FooterLogo from "../assets/FooterLogo.svelte";
   import SoMeIcons from "./SoMeIcons.svelte";
   export let footerData;
-
 </script>
 
-<div>
-  <svg>{@html LogoType}</svg>
+<div class="">
+  <div class="footer-logo ">
+    <svelte:component this={LogoType} />
+  </div>
   <SoMeIcons {footerData} />
-  <svg class="footer-bg-logo">{@html Logo}</svg>
+  <div class="footer-bg-logo">
+    <svelte:component this={FooterLogo} />
+  </div>
 </div>
 
 <style lang="scss">
@@ -17,22 +20,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
     @media (min-width: 1024px) {
       flex-direction: row;
       justify-content: space-between;
     }
 
-    svg {
-      color: var(--clr-white);
-      &.footer-bg-logo {
-        position: absolute;
-        opacity: 0.075;
-        height: 900px;
-        right: -5px;
-        display: none;
-        @media (min-width: 1024px) {
-          display: block;
-        }
+    .footer-logo {
+      width: 300px;
+      margin: var(--gutter);
+    }
+
+    .footer-bg-logo {
+      position: absolute;
+      right: -107px;
+      top: -1px;
+      display: none;
+      @media (min-width: 1024px) {
+        display: block;
       }
     }
   }
