@@ -4,11 +4,10 @@
 
   export let cases;
   export let videoTypes;
-
+  export let canonicalURL;
 
   let filter = 11; // 11 is the ID of "alle videoer" videotype from WP
   $: filteredCases = cases.filter(item => item.videotypes.find(id => id === filter));
-
 </script>
 
 <Filter 
@@ -20,12 +19,15 @@
   {#each filteredCases as { 
     cases_title: title, 
     image: { guid: image }, 
-    videotypes 
+    videotypes,
+    slug
   }}
     <Case 
       title={title}
       imageSrc={image}
       videoTypes={videoTypes}
+      slug={slug}
+      canonicalURL={canonicalURL}
     />
   {/each}
 </section>
