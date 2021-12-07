@@ -19,10 +19,8 @@ const customerLogos = await getData("customerLogo");
 
 <style lang="scss">
 section{
-    padding: 0;
-     @media (min-width: 992px) {
-        padding: 0 var(--gutter);
-      }
+    padding-left: 0;
+    padding-right: 0;
 
     h2{
         text-align: center;
@@ -34,7 +32,6 @@ section{
         display:block;
         overflow:hidden;
         position: relative;
-        margin-bottom: 8rem;
 
     .gradient-container{
         background: linear-gradient(to right,white,rgba(255,0,0,0) 10%,rgba(255,0,0,0) 90%,white);
