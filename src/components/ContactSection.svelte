@@ -2,7 +2,7 @@
   export let Videos;
 
   let BGvideo = Videos.find((element) => element.video.post_title === "Wildrun");
-  console.log(BGvideo);
+  // console.log(BGvideo);
 </script>
 
 <div class="bg-vid">
