@@ -9,6 +9,7 @@ const settings = {
     services: 'services_item',
     chosenCases: 'chosen_case',
     menus: 'menus',
+    videoTypes: 'videotypes',
   },
   // change object name
   menuSlugs: {
@@ -20,29 +21,18 @@ const settings = {
   },
 };
 
-export async function getData(endpoint, slug) {
-  const urlEndpoint = settings.endpoints[endpoint];
-  const urlSlug = settings.menuSlugs[slug];
+export async function getData(endpoint, slug = '') {
+  const isEndpointValid = settings.endpoints[endpoint];
+  const isSlugValid = settings.menuSlugs[slug];
 
-  // check validity of endpoint
-  if (urlEndpoint === undefined) return console.error('Path does not exist');
+  if (isEndpointValid === undefined) return console.error('Endpoint does not exist');
+  if (endpoint === 'menus' && isSlugValid === undefined) return console.error('Slug does not exist');
 
-  const { baseUrl, menuPath, generalPath, menuSlugs } = settings;
+  const { baseUrl, menuPath, generalPath, menuSlugs, endpoints } = settings;
+  const path = endpoint === 'menus' ? menuPath : generalPath;
 
-  // check validity of slug
-  if ((endpoint === 'menus' && urlSlug === undefined) || (endpoint === 'pages' && urlSlug === undefined))
-    return console.error('Slug does not exist');
-
-  const response = await fetch(
-    `${baseUrl}${endpoint === 'menus' ? menuPath : generalPath}${urlEndpoint}${
-      slug === undefined ? '' : menuSlugs[slug]
-    }`
-  );
+  const response = await fetch(`${baseUrl}${path}${endpoints[endpoint]}${slug ? menuSlugs[slug] : ''}`);
   const data = await response.json();
-  console.log(
-    `${baseUrl}${endpoint === 'menus' ? menuPath : generalPath}${urlEndpoint}${
-      slug === undefined ? '' : menuSlugs[slug]
-    }`
-  );
+
   return data;
 }
