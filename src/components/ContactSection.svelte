@@ -27,7 +27,7 @@
       top: 0;
       left: 0;
       right: 0;
-      @media (min-width: 769px) {
+      @media (min-width: 900px) {
         height: auto;
         width: 100%;
       }

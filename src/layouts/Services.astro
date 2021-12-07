@@ -1,9 +1,64 @@
 ---
+import SeeMoreButton from "../components/SeeMoreButton.svelte";
 import {getData} from '../helpers/dataFetching.js';
 
+
+const servicesPageData = await getData("pages", "viTilbyder");
 const servicesData = await getData("services");
 
-//console.log(servicesData)
+console.log(servicesPageData.acf.button_text)
+
+const { acf: { 
+  button_text: button, 
+  button_link: url,
+}} = servicesPageData;
+
 ---
 
-    <p>hello hello jeg er services</p>
+<section class="services-section">
+
+{servicesData.map((item) => (
+    <div class="services-item container">
+        <svg class="line" width="55" height="70" viewBox="0 0 55 129" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line stroke="currentColor" stroke-width="5" x1="52.3262" y1="0.915831" x2="2.32621" y2="127.916"/>
+        </svg>
+        <h2><span class="subtitle">{item.subtitle}</span>{item.services_title}</h2>
+        <p>{item.text}</p>
+    </div>
+  ))}
+
+<SeeMoreButton pageData={servicesPageData}/>
+ 
+  </section>
+
+
+  <style lang="scss">
+  .services-section{
+    background: var(--clr-secondary);
+    color: white;
+    .services-item{
+        padding: 3rem 4rem;
+        position: relative;
+
+        @media(min-width: 1000px){
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+        h2{
+            position: relative;
+            .subtitle{
+                color: var(--clr-primary);
+                position: absolute;
+                top: -20px;
+            }
+        }
+        .line{
+            position: absolute;
+            left: 15px;
+            opacity: 0.1;
+            top: 12px;
+            }
+        
+    }
+  }
+  </style>
