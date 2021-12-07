@@ -1,8 +1,10 @@
 ---
+import {getData} from '../helpers/dataFetching.js';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getData } from '../helpers/dataFetching.js';
 import TextBlock from '../layouts/TextBlock.astro';
 import OurCustomers from '../layouts/OurCustomers.astro';
+import ChosenCases from '../layouts/ChosenCases.astro';
+
 ---
   
 <BaseLayout>
@@ -20,4 +22,5 @@ import OurCustomers from '../layouts/OurCustomers.astro';
   </div>
 <TextBlock />
 <OurCustomers />
+<ChosenCases />
 </BaseLayout>
