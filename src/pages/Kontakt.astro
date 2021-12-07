@@ -7,7 +7,7 @@ import { getData } from '../helpers/dataFetching.js';
 ---
 
 <BaseLayout>
-    <section class="kontakt-section container--medium">
+    <section class="kontakt-section container--small">
 
         <section class="container container--xsmall section-padding text-section">
             <KontaktText />
@@ -19,8 +19,10 @@ import { getData } from '../helpers/dataFetching.js';
         </svg>
         
         <section class="container container--xsmall section-padding form-section">
+        <div class="form-wrap">
             <h3>Kontakt os</h3>
             <KontaktForm />
+        </div>
         </section>
 
     </section>
@@ -43,13 +45,14 @@ import { getData } from '../helpers/dataFetching.js';
         display: flex;
         justify-content: space-between;
         height: 100vh;
-        gap: 400px;
+        gap: 300px;
     }
   .text-section{
     margin: 0;
         @media (min-width: 992px){
             display: flex;
             align-items: center;
+            padding: 0;
         }
     }
     .separation_line{
@@ -71,6 +74,14 @@ import { getData } from '../helpers/dataFetching.js';
         display: flex;
         flex-direction: column;
         justify-content: center;
+        display: flex;
+        align-items: flex-end;
+        padding: 0;
+    }
+        .form-wrap {
+        @media (min-width: 992px){
+            width: 90%;     
+        }
     }
     
 
