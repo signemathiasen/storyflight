@@ -4,14 +4,17 @@ const pagesData = await getData("pages", "forside");
 
 ---
 
-<section class="container container-small section-padding">
-    <div class="text-block-wrap">
+<section class="section-padding">
+    <div class="text-block-wrap container container--small">
         <h2 class="caption">{pagesData["acf"].catch_phrase}</h2>
         <p>{pagesData["acf"].text_block}</p>
     </div>
 </section>
 
 <style lang="scss">
+section{
+    background: var(--clr-grey);
+}
 .text-block-wrap {
     display: flex;
     flex-direction: column;
@@ -23,6 +26,7 @@ const pagesData = await getData("pages", "forside");
     h2, p {
         @media (min-width: 992px) {
             flex: 1;
+            color: var(--clr-secondary);
       }
     }
 }

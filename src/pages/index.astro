@@ -1,7 +1,11 @@
 ---
+import {getData} from '../helpers/dataFetching.js';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { getData } from '../helpers/dataFetching.js';
 import TextBlock from '../layouts/TextBlock.astro';
+import OurCustomers from '../layouts/OurCustomers.astro';
+import ChosenCases from '../layouts/ChosenCases.astro';
+import ContactSection from '../layouts/ContactSection.astro';
+
 ---
   
 <BaseLayout>
@@ -18,4 +22,9 @@ import TextBlock from '../layouts/TextBlock.astro';
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nemo omnis deleniti iusto nesciunt. Pariatur facilis quis repellendus tempore neque rerum ad dignissimos autem aperiam aliquam beatae, officiis doloremque! Repellendus.</p>
   </div>
 <TextBlock />
+
+<ChosenCases />
+<OurCustomers />
+<ContactSection />
+
 </BaseLayout>

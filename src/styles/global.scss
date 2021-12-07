@@ -109,7 +109,7 @@ h3,
 .caption {
   font-size: var(--fs-caption);
   font-weight: var(--fw-caption);
-  line-height: 1.3;
+  line-height: 1.2;
   max-width: 25ch;
   text-transform: unset;
 }
@@ -120,6 +120,11 @@ p {
   font-size: var(--fs-p);
   font-weight: var(--fw-p);
   line-height: 1.5;
+}
+
+main {
+  //fjern hvis denne generer dig -Signe:)
+  overflow-x: hidden;
 }
 
 a,
@@ -184,7 +189,8 @@ img {
   }
 }
 
-section {
+section,
+.section {
   padding-top: 3rem;
   padding-bottom: 3rem;
   @media (min-width: 768px) {
