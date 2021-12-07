@@ -121,6 +121,11 @@ p {
   line-height: 1.5;
 }
 
+main {
+  //fjern hvis denne generer dig -Signe:)
+  overflow-x: hidden;
+}
+
 a,
 .a {
   font-size: var(--fs-a);
@@ -183,7 +188,8 @@ img {
   }
 }
 
-section {
+section,
+.section {
   padding-top: 3rem;
   padding-bottom: 3rem;
   @media (min-width: 768px) {

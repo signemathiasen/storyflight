@@ -7,6 +7,7 @@ const settings = {
     cases: 'case',
     customerLogo: 'customer_logo?per_page=20',
     services: 'services_item',
+    servicesImage: 'services_image',
     chosenCases: 'chosen_case',
     menus: 'menus',
     videoTypes: 'videotypes',
@@ -17,6 +18,7 @@ const settings = {
     contactInformation: '/contact-information',
     forside: '/2',
     kontakt: '/111',
+    viTilbyder: '/107',
     // add all slugs
   },
 };
