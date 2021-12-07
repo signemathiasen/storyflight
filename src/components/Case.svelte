@@ -4,8 +4,6 @@
   export let videoTypes;
   export let slug;
   export let canonicalURL;
-
-  console.log(canonicalURL);
 </script>
 
 <article>
