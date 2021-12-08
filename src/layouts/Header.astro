@@ -9,7 +9,11 @@ const soMeData = await getData("menus", "contactInformation");
 ---
 
 <header>
-  <Logo />
+  <a href="/" class="logo-link">
+    <Logo />
+    <span class="visually-hidden">Gå til forsiden</span>
+  </a>
+
   <Menu client:load menuData={menuData} soMeData={soMeData}/>
 </header>
 
@@ -22,5 +26,9 @@ header {
   justify-content: space-between;
   padding: 1.2rem;
   z-index: 1;
+}
+
+.logo-link {
+  color: var(--clr-black);
 }
 </style>
