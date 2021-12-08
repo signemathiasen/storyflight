@@ -35,7 +35,7 @@
   <nav>
     <ul>
       {#each primaryMenu as menuItem}
-        <li><a class="h1 menu_item" href={menuItem.url}>{menuItem.title}</a></li>  <!-- Change link in wordpress -->
+        <li><a class="h1 menu_item" href={menuItem.slug}>{menuItem.title}</a></li>  <!-- Change link in wordpress -->
       {/each}
     </ul>
   </nav> 
