@@ -5,23 +5,24 @@
   import LinkedIn from "../assets/icons/LinkedIn.svelte";
   import Arrow from "../assets/icons/CircleWithArrow.svelte";
   import Menu from "../assets/icons/Menu.svelte";
+  import { menuHandling } from "../helpers/menuHandling.js";
 
   let menuActive = false;
   export let menuData;
   export let soMeData;
   const primaryMenu = menuData.items;
   const contactInformation = soMeData.items;
-  
+
   const icons = {
     facebook: Facebook,
     instagram: Instagram,
     linkedin: LinkedIn,
-  }
+  };
 </script>
 
-<button class="burger-wrap" on:click={() => (menuActive = !menuActive)}>
+<button class="burger-wrap" on:click={() => (menuActive = !menuActive)} on:click={menuHandling}>
   {#if !menuActive}
-  <Menu />
+    <Menu />
   {:else}
   <span class="close_menu">
     <span class="a go_back">Tilbage</span>
@@ -47,7 +48,7 @@
   <div class="contact">
       <h3>Følg os</h3>
       <ul>
-        {#each contactInformation as {title, url}, index}
+        {#each contactInformation as { title, url }, index}
           {#if index <= 2}
             <li>
               <a class="some_title" href={url} target="_blank">
@@ -58,17 +59,17 @@
           {/if}
         {/each}
       </ul>
+    </div>
   </div>
-</div>
 </div>
 
 <style lang="scss">
   .menu-container {
-    z-index:2;
+    z-index: 2;
     width: 100vw;
     height: 100vh;
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     background: var(--clr-secondary);
 
@@ -84,30 +85,30 @@
       transition: 0.3s;
     }
 
-    .menu-wrap{
+    .menu-wrap {
       display: flex;
       flex-direction: column;
       justify-content: center;
       @media (min-width: 992px) {
         align-items: center;
         flex-direction: row;
-    }
+      }
       height: 100%;
       width: 100%;
     }
 
-    h3, a {
-       color: var(--clr-white);
+    h3,
+    a {
+      color: var(--clr-white);
     }
 
-    
     nav {
       margin-bottom: 4rem;
       @media (min-width: 992px) {
         margin-bottom: 0;
         flex-grow: 1;
       }
-      .menu_item{
+      .menu_item {
         font-weight: 600;
         font-style: italic;
         font-size: 2.7rem; // change - global style?
@@ -117,15 +118,15 @@
       }
       ul {
         list-style-type: none;
-        li{
+        li {
           margin-bottom: 0.2rem;
         }
       }
     }
 
-    .separation_line{
+    .separation_line {
       display: none;
-        @media (min-width: 992px) {
+      @media (min-width: 992px) {
         display: block;
         position: absolute;
         top: 50%;
@@ -135,38 +136,40 @@
     }
   }
 
-  .close_menu{
-      color: var(--clr-white);
-      display: flex;
-      align-items: center;
-      padding-top: 2px;
+  .close_menu {
+    color: var(--clr-white);
+    display: flex;
+    align-items: center;
+    padding-top: 2px;
 
-      .arrow_icon {
-        color: var(--clr-primary);
-        height: 28px;
-        width: 28px;
-        margin-left: 1em;
-        padding-top: 0px;
-      }
-      .go_back{
-        padding-top: 3px;
-      }
+    .arrow_icon {
+      color: var(--clr-primary);
+      height: 28px;
+      width: 28px;
+      margin-left: 1em;
+      padding-top: 0px;
     }
-  
-  .burger-wrap{
+    .go_back {
+      padding-top: 3px;
+    }
+  }
+
+  .burger-wrap {
     background: none;
     border: none;
     cursor: pointer;
     z-index: 3;
     margin: 0;
+    mix-blend-mode: difference;
+    color: white;
   }
 
   .contact {
     @media (min-width: 992px) {
-        flex-grow: 1;
-        padding-left: 5rem;
-      }
-    
+      flex-grow: 1;
+      padding-left: 5rem;
+    }
+
     ul {
       display: flex;
       flex-direction: column;
@@ -179,12 +182,12 @@
         align-items: center;
         justify-content: space-between;
       }
-      .some_icon{
+      .some_icon {
         color: var(--clr-primary);
         height: 32px;
         width: 32px;
       }
-      .some_title{
+      .some_title {
         padding-top: 3px;
         display: flex;
         align-items: center;
@@ -193,5 +196,4 @@
       }
     }
   }
-
 </style>

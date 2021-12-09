@@ -7,13 +7,11 @@ const menuData = await getData("menus", "primaryMenu");
 const soMeData = await getData("menus", "contactInformation");
 
 ---
-
-<header>
+<header class="header color-blend">
   <a href="/" class="logo-link">
     <Logo />
     <span class="visually-hidden">Gå til forsiden</span>
   </a>
-
   <Menu client:load menuData={menuData} soMeData={soMeData}/>
 </header>
 

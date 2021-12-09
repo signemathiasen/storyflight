@@ -112,6 +112,10 @@ h3,
   text-transform: unset;
 }
 
+body {
+  background: var(--clr-grey);
+}
+
 body,
 p {
   font-family: var(--ff-body);
@@ -202,6 +206,14 @@ button {
   border: none;
   padding: 15px;
   font-weight: var(--fw-a);
+}
+
+.color-blend {
+  mix-blend-mode: difference;
+}
+
+.logo {
+  color: white;
 }
 
 .visually-hidden {
