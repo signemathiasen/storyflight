@@ -3,7 +3,7 @@
 
   function cursorMove(e) {
     let cursor = document.querySelector("#cursor");
-    cursor.style.left = e.pageX - 10.7 + "px";
+    cursor.style.left = e.pageX - 10.5 + "px";
     cursor.style.top = e.pageY - 10.5 + "px";
   }
   function mouseDown() {
