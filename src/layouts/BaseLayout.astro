@@ -1,4 +1,5 @@
 ---
+import Favicons from './Favicons.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 ---
@@ -11,8 +12,8 @@ import Footer from './Footer.astro';
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.scss')} />
     <link rel="stylesheet" href="https://use.typekit.net/qms3myj.css">
+    <Favicons />
   </head>
-
   <body>
     <Header/>
 
