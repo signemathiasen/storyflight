@@ -1,10 +1,14 @@
 ---
+import { getData } from '../helpers/dataFetching.js';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import KontaktText from '../layouts/KontaktText.astro';
 import KontaktForm from '../components/KontaktForm.svelte';
+
+const pageData = await getData('pages', 'kontakt');
+
 ---
 
-<BaseLayout>
+<BaseLayout pageContent={pageData}>
     <section class="kontakt-section container--small">
 
         <section class="container container--xsmall section-padding text-section">
