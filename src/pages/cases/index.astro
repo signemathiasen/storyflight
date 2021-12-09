@@ -4,6 +4,8 @@ import { getData } from '../../helpers/dataFetching.js';
 import Cases from '../../components/Cases.svelte';
 
 const cases = await getData('cases');
+const chosenCases = await getData('chosenCases');
+const allCases = [...cases, ...chosenCases];
 const videoTypes = await getData('videoTypes');
 
 const { canonicalURL } = Astro.request;
@@ -13,7 +15,7 @@ const { canonicalURL } = Astro.request;
 <BaseLayout>
   <Cases 
     client:load 
-    cases={cases} 
+    cases={allCases} 
     videoTypes={videoTypes} 
     canonicalURL={canonicalURL} 
   />
@@ -21,8 +23,8 @@ const { canonicalURL } = Astro.request;
 
 <style>
 
-body {
-  padding-top: 120px;
-}
+  body {
+    padding-top: 120px;
+  }
 
 </style>

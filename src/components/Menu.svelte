@@ -23,10 +23,10 @@
   {#if !menuActive}
   <Menu />
   {:else}
-  <div class="close_menu">
-    <a class="a go_back">Tilbage</a>
-    <a class="arrow_icon"><Arrow /></a>
-  </div>
+  <span class="close_menu">
+    <span class="a go_back">Tilbage</span>
+    <span class="arrow_icon"><Arrow /></span>
+  </span>
   {/if}
 </button>
 
@@ -49,7 +49,12 @@
       <ul>
         {#each contactInformation as {title, url}, index}
           {#if index <= 2}
-            <li><a class="some_title" href={url}>{title}</a><a class="some_icon" href={url}><svelte:component this={icons[title.toLowerCase()]}/></a></li>
+            <li>
+              <a class="some_title" href={url} target="_blank">
+                {title}
+                <span class="some_icon" href={url}><svelte:component this={icons[title.toLowerCase()]}/></span>
+              </a>
+            </li>
           {/if}
         {/each}
       </ul>
@@ -181,6 +186,10 @@
       }
       .some_title{
         padding-top: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
       }
     }
   }

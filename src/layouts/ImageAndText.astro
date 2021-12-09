@@ -6,9 +6,6 @@ import {getData} from '../helpers/dataFetching.js';
 const servicesTopData = await getData("pages", "viTilbyder");
 const servicesTopImage = await getData("servicesImage");
 
-
-console.log(servicesTopImage[0].services_image.guid)
-
 const { acf: { 
   heading: title, 
   text: body,

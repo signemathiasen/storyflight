@@ -4,8 +4,10 @@ import VideoPlayer from '../../components/VideoPlayer.svelte';
 
 export async function getStaticPaths() {
   const cases = await getData('cases');
+  const chosenCases = await getData('chosenCases');
+  const allCases = [...cases, ...chosenCases];
 
-  return cases.map((casePost) => {
+  return allCases.map((casePost) => {
     return {
       params: { slug: casePost.slug },
       props: { casePost }
@@ -25,7 +27,6 @@ const videoType = videoTypesData.find(type => type.id === videoTypeIDs[0])
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" type="text/css" href={Astro.resolve('../../styles/global.scss')} />
     <link rel="stylesheet" href="https://use.typekit.net/qms3myj.css">
   </head>
@@ -34,10 +35,10 @@ const videoType = videoTypesData.find(type => type.id === videoTypeIDs[0])
     <main>
       <VideoPlayer 
         client:load
-        title={casePost['cases_title']} 
+        title={casePost['case_title']} 
         description={casePost.description}
         videoType={videoType.name}
-        videoSrc={casePost.video.guid}
+        videoSrc={casePost['case_video'].guid}
       />
     </main>
   </body>

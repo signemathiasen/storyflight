@@ -1,7 +1,6 @@
 <script>
   import Arrow from "../assets/icons/CircleWithArrow.svelte";
   export let pageData;
-  console.log(pageData);
 </script>
 
 <a href="{pageData.acf.button_link} ">{pageData.acf.button_text} <span class="arrow_icon"><Arrow /></span></a>

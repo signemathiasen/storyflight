@@ -17,7 +17,6 @@
   SwiperCore.use([Navigation]);
 
 export let chosenCasesData;
-// console.log(chosenCasesData);
 </script>
 
 <div class="swiper-wrap">

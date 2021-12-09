@@ -17,8 +17,8 @@
 
 <section class="case-grid">
   {#each filteredCases as { 
-    cases_title: title, 
-    image: { guid: image }, 
+    case_title: title, 
+    case_image: { guid: image }, 
     videotypes,
     slug
   }}
