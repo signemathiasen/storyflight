@@ -7,15 +7,22 @@
     let paused = true;
     let muted = true;
 
+    // import { onMount } from 'svelte';
+	// onMount(() => {
+	// 	console.log('the component has mounted');
+    //     // isSlideActive(activeSlideIndex);
+	// });
+
     // play video if video index is same as active index else pause and reload
 	$: isSlideActive(activeSlideIndex);
 
+    // isSlideActive();
     function isSlideActive(value) {
 		if (activeSlideIndex === videoIndex){
             paused = false;
         } else {
             paused = true;
-            // set time to 0 
+            time = 0;
         }
 	}
 
@@ -28,8 +35,7 @@
 src={videoSource}
 bind:currentTime={time}
 bind:paused={paused}
-bind:muted={muted}
-autoplay>
+bind:muted={muted}>
 <track kind="captions">
 </video>
 

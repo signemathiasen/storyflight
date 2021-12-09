@@ -1,5 +1,5 @@
 ---
-import Logo from '../assets/logo.astro';
+import Logo from '../assets/Logo.astro';
 import Menu from '../components/Menu.svelte';
 import {getData} from '../helpers/dataFetching.js';
 
@@ -7,9 +7,11 @@ const menuData = await getData("menus", "primaryMenu");
 const soMeData = await getData("menus", "contactInformation");
 
 ---
-
-<header>
-  <Logo />
+<header class="header color-blend">
+  <a href="/" class="logo-link">
+    <Logo />
+    <span class="visually-hidden">Gå til forsiden</span>
+  </a>
   <Menu client:load menuData={menuData} soMeData={soMeData}/>
 </header>
 
@@ -21,6 +23,10 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 1.2rem;
-  z-index: 1;
+  z-index: 10;
+}
+
+.logo-link {
+  color: var(--clr-black);
 }
 </style>

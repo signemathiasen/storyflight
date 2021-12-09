@@ -1,10 +1,13 @@
 ---
 import { getData } from '../../helpers/dataFetching.js';
+import VideoPlayer from '../../components/VideoPlayer.svelte';
 
 export async function getStaticPaths() {
   const cases = await getData('cases');
+  const chosenCases = await getData('chosenCases');
+  const allCases = [...cases, ...chosenCases];
 
-  return cases.map((casePost) => {
+  return allCases.map((casePost) => {
     return {
       params: { slug: casePost.slug },
       props: { casePost }
@@ -13,9 +16,30 @@ export async function getStaticPaths() {
 }
 
 const { casePost } = Astro.props;
+const videoTypesData = await getData('videoTypes');
+
+const videoTypeIDs = casePost.videotypes.filter(id => id !== 11);
+const videoType = videoTypesData.find(type => type.id === videoTypeIDs[0])
 ---
 
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href={Astro.resolve('../../styles/global.scss')} />
+    <link rel="stylesheet" href="https://use.typekit.net/qms3myj.css">
+  </head>
 
-<div class="container container--large">
-  <h1>{casePost['cases_title']}</h1>
-</div>
+  <body>
+    <main>
+      <VideoPlayer 
+        client:load
+        title={casePost['case_title']} 
+        description={casePost.description}
+        videoType={videoType.name}
+        videoSrc={casePost['case_video'].guid}
+      />
+    </main>
+  </body>
+</html>

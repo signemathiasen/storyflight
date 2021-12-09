@@ -9,11 +9,13 @@ const sectionData = await getData("pages", "forside");
 ---
 
 <section class="chosen-cases">
-  <h2 class="container container--large">{sectionData.acf["videoslider-heading"]}</h2>
-      <VideoSlider client:load {chosenCasesData}/>
-  <div class="link container container--fluid">
-      <a href={sectionData.acf["videoslider_button_link"]} class="a">{sectionData.acf["videoslider_button_text"]}</a>
-      <a href={sectionData.acf["videoslider_button_link"]} class="arrow_icon"><CircleWithArrow /></a>
+<h2 class="container container--large">{sectionData.acf["videoslider-heading"]}</h2>
+<VideoSlider client:load {chosenCasesData}/>
+ <div class="link container container--fluid">
+    <a href="/cases">
+      <span>{sectionData.acf["videoslider_button_text"]}</span>
+      <span class="arrow_icon"><CircleWithArrow /></span>
+    </a>
   </div>
 </section>
 

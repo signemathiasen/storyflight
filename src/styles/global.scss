@@ -13,6 +13,7 @@
   --clr-primary: #ff5a44;
   --clr-secondary: #000217;
   --clr-grey: #f9f9f9;
+  --clr-base-grey: 0, 0%, 98%;
   --clr-white: #ffffff;
   --clr-black: #000000;
 
@@ -61,12 +62,10 @@
 h1,
 h2,
 h3,
-a,
 button,
 .h1,
 .h2,
 .h3,
-.a,
 .button {
   font-family: var(--ff-headings);
   text-transform: uppercase;
@@ -113,12 +112,21 @@ h3,
   text-transform: unset;
 }
 
+body {
+  background: var(--clr-grey);
+}
+
 body,
 p {
   font-family: var(--ff-body);
   font-size: var(--fs-p);
   font-weight: var(--fw-p);
   line-height: 1.5;
+}
+
+main {
+  //fjern hvis denne generer dig -Signe:)
+  overflow-x: hidden;
 }
 
 a,
@@ -128,6 +136,7 @@ a,
   font-style: normal;
   letter-spacing: 0.05rem;
   text-decoration: none;
+  color: currentColor;
 }
 
 p,
@@ -183,7 +192,8 @@ img {
   }
 }
 
-section {
+section,
+.section {
   padding-top: 3rem;
   padding-bottom: 3rem;
   @media (min-width: 768px) {
@@ -196,4 +206,22 @@ button {
   border: none;
   padding: 15px;
   font-weight: var(--fw-a);
+}
+
+.color-blend {
+  mix-blend-mode: difference;
+}
+
+.logo {
+  color: white;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

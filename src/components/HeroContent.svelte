@@ -12,6 +12,7 @@ import { Swiper, SwiperSlide } from 'swiper/svelte';
 import 'swiper/css';
 import 'swiper/css';
 import "swiper/css/effect-fade"
+import 'swiper/scss/navigation';
 
 import SwiperCore, {
   EffectFade, Autoplay
@@ -25,13 +26,6 @@ const getCurrentSlideIndex = (e) => {
       const activeIndex = slide[0].activeIndex;
       activeSlideIndex = activeIndex;
       console.log(activeSlideIndex)
-    //   let currentSlide = document.querySelector(`[data-swiper-slide-index="${activeIndex}"] > video`)
-    //   let previousSlide = document.querySelector(".swiper-slide-prev > video")
-    //   console.log(`this is the current slide ${currentSlide}`);
-    //   console.log(`this is the previous slide ${previousSlide}`);
-
-    //   previousSlide.pause();
-    //   currentSlide.play();
     }
 
 </script>
@@ -41,17 +35,24 @@ const getCurrentSlideIndex = (e) => {
     loop="{false}"
     slidesPerView="{1}"
     effect="{'fade'}"
-    speed="{700}"
+    speed="{300}"
+    noSwiping="{'true'}"
+    allowTouchMove="{'false'}"
+    allowSlidePrev="{'false'}"
+    allowSlideNext="{'false'}"
+    keyboard="{'false'}"
     autoplay='{{
-        "delay": 20000,
-        "disableOnInteraction": false
+        "delay": 8000,
       }}'
+    navigation='{{
+        nextEl: ".timer-button"
+     }}'
       on:snapIndexChange={getCurrentSlideIndex}>
     {#each cases as singleCase, index}
         {#if index <= 5}
-        <SwiperSlide data-swiper-slide-index={index}>
+        <SwiperSlide data-swiper-slide-index={index} let:data="{{ isActive }}" class="swiper-no-swiping">
                 <HeroVideo bind:activeSlideIndex={activeSlideIndex} videoIndex={index} videoSource={singleCase.case_video.guid}/>
-            <div class="video-info-wrap">
+            <div class="video-info-wrap container container--fluid">
                 <HeroVideoInfo {singleCase} {videoTypes}/>
             </div>
         </SwiperSlide>
@@ -64,5 +65,10 @@ const getCurrentSlideIndex = (e) => {
 .video-info-wrap{
     position: absolute;
     top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    height: 100vh;
+    padding-bottom: 1.5rem;
 }
 </style>

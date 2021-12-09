@@ -1,0 +1,23 @@
+---
+import ContactSection from "../components/ContactSection.svelte";
+import {getData} from '../helpers/dataFetching.js';
+
+const Videos = await getData("cases")
+
+---
+
+
+<section> 
+    <ContactSection client:load Videos={Videos}/>
+    
+   
+</section>
+
+<style lang="scss">
+section{
+    width: 100%;
+    height: 500px;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+</style>
