@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getData } from '../../helpers/dataFetching.js';
 import Cases from '../../components/Cases.svelte';
+import Cursor from '../../components/Cursor.svelte';
 
 const cases = await getData('cases');
 const chosenCases = await getData('chosenCases');
@@ -13,6 +14,7 @@ const { canonicalURL } = Astro.request;
 
 
 <BaseLayout>
+<Cursor client:load />
   <Cases 
     client:load 
     cases={allCases} 

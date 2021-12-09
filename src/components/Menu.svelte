@@ -5,7 +5,6 @@
   import LinkedIn from "../assets/icons/LinkedIn.svelte";
   import Arrow from "../assets/icons/CircleWithArrow.svelte";
   import Menu from "../assets/icons/Menu.svelte";
-  import { menuHandling } from "../helpers/menuHandling.js";
 
   let menuActive = false;
   export let menuData;
@@ -18,34 +17,39 @@
     instagram: Instagram,
     linkedin: LinkedIn,
   };
+
+  function colorBlend() {
+    document.querySelector(".header").classList.toggle("color-blend");
+  }
 </script>
 
-<button class="burger-wrap" on:click={() => (menuActive = !menuActive)} on:click={menuHandling}>
+<button class="burger-wrap" on:click={() => (menuActive = !menuActive)} on:click={colorBlend}>
   {#if !menuActive}
     <Menu />
   {:else}
-  <span class="close_menu">
-    <span class="a go_back">Tilbage</span>
-    <span class="arrow_icon"><Arrow /></span>
-  </span>
+    <span class="close_menu">
+      <span class="a go_back">Tilbage</span>
+      <span class="arrow_icon"><Arrow /></span>
+    </span>
   {/if}
 </button>
 
 <div class="menu-container" class:menuActive>
-  <div class="menu-wrap container container--small"> 
-  <nav>
-    <ul>
-      {#each primaryMenu as menuItem}
-        <li><a class="h1 menu_item" href={menuItem.slug}>{menuItem.title}</a></li>  <!-- Change link in wordpress -->
-      {/each}
-    </ul>
-  </nav> 
+  <div class="menu-wrap container container--small">
+    <nav>
+      <ul>
+        {#each primaryMenu as menuItem}
+          <li><a class="h1 menu_item" href={menuItem.slug}>{menuItem.title}</a></li>
+          <!-- Change link in wordpress -->
+        {/each}
+      </ul>
+    </nav>
 
-  <svg class="separation_line" width="210" height="456" viewBox="0 0 245 456" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <line opacity="0.1" x1="240.479" y1="2.31822" x2="4.42951" y2="453.407" stroke="#F9F9F9" stroke-width="10"/>
-  </svg>
+    <svg class="separation_line" width="210" height="456" viewBox="0 0 245 456" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line opacity="0.1" x1="240.479" y1="2.31822" x2="4.42951" y2="453.407" stroke="#F9F9F9" stroke-width="10" />
+    </svg>
 
-  <div class="contact">
+    <div class="contact">
       <h3>Følg os</h3>
       <ul>
         {#each contactInformation as { title, url }, index}
@@ -53,7 +57,7 @@
             <li>
               <a class="some_title" href={url} target="_blank">
                 {title}
-                <span class="some_icon" href={url}><svelte:component this={icons[title.toLowerCase()]}/></span>
+                <span class="some_icon" href={url}><svelte:component this={icons[title.toLowerCase()]} /></span>
               </a>
             </li>
           {/if}
@@ -157,7 +161,7 @@
   .burger-wrap {
     background: none;
     border: none;
-    cursor: pointer;
+    cursor: none;
     z-index: 3;
     margin: 0;
     mix-blend-mode: difference;

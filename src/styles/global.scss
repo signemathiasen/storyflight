@@ -114,6 +114,7 @@ h3,
 
 body {
   background: var(--clr-grey);
+  cursor: url(../assets/icons/cursor.svg), auto;
 }
 
 body,
@@ -137,6 +138,7 @@ a,
   letter-spacing: 0.05rem;
   text-decoration: none;
   color: currentColor;
+  cursor: none;
 }
 
 p,
@@ -206,6 +208,7 @@ button {
   border: none;
   padding: 15px;
   font-weight: var(--fw-a);
+  cursor: none;
 }
 
 .color-blend {
@@ -224,4 +227,8 @@ button {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+a:hover > #cursor {
+  transform: scale(3);
 }
