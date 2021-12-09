@@ -62,12 +62,10 @@
 h1,
 h2,
 h3,
-a,
 button,
 .h1,
 .h2,
 .h3,
-.a,
 .button {
   font-family: var(--ff-headings);
   text-transform: uppercase;
@@ -138,6 +136,7 @@ a,
   font-style: normal;
   letter-spacing: 0.05rem;
   text-decoration: none;
+  color: currentColor;
 }
 
 p,
@@ -215,4 +214,14 @@ button {
 
 .logo {
   color: white;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

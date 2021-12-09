@@ -2,7 +2,6 @@
   export let Videos;
 
   let BGvideo = Videos.find((element) => element.case_video.post_title === "Wildrun");
-  console.log(BGvideo);
 </script>
 
 <div class="bg-vid">
@@ -10,8 +9,10 @@
     <source src={BGvideo.case_video.guid} type="video/mp4" />
   </video>
   <div class="overlay">
-    <h2 class="caption overl">Klar til et samarbejde?</h2>
-    <button>Kontakt os</button>
+    <a href="/cases" class="link">
+      <h2 class="caption">Klar til et samarbejde?</h2>
+      <button>Kontakt os</button>
+    </a>
   </div>
 </div>
 
@@ -60,5 +61,9 @@
         }
       }
     }
+  }
+
+  .link {
+    text-align: center;
   }
 </style>

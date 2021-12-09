@@ -7,10 +7,12 @@ const menuData = await getData("menus", "primaryMenu");
 const soMeData = await getData("menus", "contactInformation");
 
 ---
-
 <header class="header color-blend">
-  <Logo />
-  <Menu client:load menuData={menuData} soMeData={soMeData} menuActive/>
+  <a href="/" class="logo-link">
+    <Logo />
+    <span class="visually-hidden">Gå til forsiden</span>
+  </a>
+  <Menu client:load menuData={menuData} soMeData={soMeData}/>
 </header>
 
 <style lang="scss">
@@ -22,5 +24,9 @@ header {
   justify-content: space-between;
   padding: 1.2rem;
   z-index: 1;
+}
+
+.logo-link {
+  color: var(--clr-black);
 }
 </style>
