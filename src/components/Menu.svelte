@@ -55,9 +55,9 @@
         {#each contactInformation as { title, url }, index}
           {#if index <= 2}
             <li>
-              <a class="some_title" href={url} target="_blank">
+              <a class="some_title" href={`/${url}`} target="_blank">
                 {title}
-                <span class="some_icon" href={url}><svelte:component this={icons[title.toLowerCase()]} /></span>
+                <span class="some_icon"><svelte:component this={icons[title.toLowerCase()]} /></span>
               </a>
             </li>
           {/if}
