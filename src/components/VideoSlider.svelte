@@ -17,7 +17,6 @@
   SwiperCore.use([Navigation]);
 
 export let chosenCasesData;
-// console.log(chosenCasesData);
 </script>
 
 <div class="swiper-wrap">
@@ -51,46 +50,6 @@ initialSlide={1}>
             z-index: 10;
             pointer-events: none;
         }
-    }
-
-    :global(.swiper-slide) {
-    flex-shrink: 0;
-    width: 700px !important;
-    height: 100%;
-    position: relative;
-    transition-property: transform;
-    }
-    
-    :global(.swiper-button-next) {
-    background-image: url(../assets/icons/ArrowRight.svg);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
-    height: 20px !important;
-    width: 20px !important;
-    top: 97.2% !important;
-    z-index: 2;
-    right: 1.5rem !important;
-    }
-
-    :global(.swiper-button-next::after) {
-     display: none;
-    }
-
-    :global(.swiper-button-prev) {
-    background-image: url(../assets/icons/ArrowLeft.svg);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
-    height: 20px !important;
-    width: 20px !important;
-    top: 97.2% !important;
-    z-index: 2;
-    left: 1.5rem !important;
-    }
-
-    :global(.swiper-button-prev::after) {
-        display: none;
     }
 
 
