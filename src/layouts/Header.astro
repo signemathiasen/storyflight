@@ -8,9 +8,9 @@ const soMeData = await getData("menus", "contactInformation");
 
 ---
 
-<header>
+<header class="header color-blend">
   <Logo />
-  <Menu client:load menuData={menuData} soMeData={soMeData}/>
+  <Menu client:load menuData={menuData} soMeData={soMeData} menuActive/>
 </header>
 
 <style lang="scss">

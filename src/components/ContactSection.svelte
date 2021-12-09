@@ -1,13 +1,13 @@
 <script>
   export let Videos;
 
-  let BGvideo = Videos.find((element) => element.video.post_title === "Wildrun");
-  // console.log(BGvideo);
+  let BGvideo = Videos.find((element) => element.case_video.post_title === "Wildrun");
+  console.log(BGvideo);
 </script>
 
 <div class="bg-vid">
   <video class="vid" muted={"true"} autoplay loop>
-    <source src={BGvideo.video.guid} type="video/mp4" />
+    <source src={BGvideo.case_video.guid} type="video/mp4" />
   </video>
   <div class="overlay">
     <h2 class="caption overl">Klar til et samarbejde?</h2>
