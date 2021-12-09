@@ -127,6 +127,7 @@ p {
 main {
   //fjern hvis denne generer dig -Signe:)
   overflow-x: hidden;
+  isolation: isolate;
 }
 
 a,
