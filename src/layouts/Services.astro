@@ -6,8 +6,6 @@ import {getData} from '../helpers/dataFetching.js';
 const servicesPageData = await getData("pages", "viTilbyder");
 const servicesData = await getData("services");
 
-console.log(servicesPageData.acf.button_text)
-
 const { acf: { 
   button_text: button, 
   button_link: url,

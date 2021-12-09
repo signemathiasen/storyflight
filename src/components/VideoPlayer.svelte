@@ -51,14 +51,6 @@
     showOverlay = true;
   }
 
-  function handleToggleFullscreen() {
-
-  }
-
-  function handleMute() {
-
-  }
-
   function handleKeyDown(event) {
     // if spacebar pressed...
     if (event.keyCode === 32) {
@@ -113,7 +105,9 @@
       <div class="video-player__content">
         <p>{videoType}</p>
         <h1 class="h2">{title}</h1>
-        <p>{description}</p>
+        {#if description}
+          <p>{description}</p>
+        {/if}
         <!-- <p>{`${time} : ${duration}`}</p> -->
       </div>
       <button
@@ -220,7 +214,6 @@
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    background-color: hsla(var(--clr-base-grey), 10%);
   }
 }
 

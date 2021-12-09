@@ -1,16 +1,12 @@
 <script>
   export let customerLogos;
 
-  console.log(customerLogos[0].customer_logo.guid);
-
   let middle = Math.floor(customerLogos.length / 2);
   // split in half
   let logosFirstHalf = customerLogos.slice(0, middle);
   let logosSecondHalf = customerLogos.slice(middle, customerLogos.length);
 
   let third = Math.floor(customerLogos.length / 3);
-  console.log(customerLogos.length);
-  console.log(third);
 
   let logosFirstThird = customerLogos.slice(0, third);
 
