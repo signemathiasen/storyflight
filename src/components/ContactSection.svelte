@@ -9,7 +9,7 @@
     <source src={BGvideo.case_video.guid} type="video/mp4" />
   </video>
   <div class="overlay">
-    <a href="/cases" class="link">
+    <a href="/kontakt" class="link">
       <h2 class="caption">Klar til et samarbejde?</h2>
       <button>Kontakt os</button>
     </a>
