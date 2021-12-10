@@ -1,17 +1,17 @@
 <script>
   import SliderSingleVideo from "./SliderSingleVideo.svelte";
+  import animation from "../helpers/animation";
+  import { onMount } from "svelte";
 
   // import Swiper core and required modules
-  import { Swiper, SwiperSlide } from 'swiper/svelte';
+  import { Swiper, SwiperSlide } from "swiper/svelte";
 
   // Import Swiper styles
-  import 'swiper/css';
-  import 'swiper/css/navigation';
+  import "swiper/css";
+  import "swiper/css/navigation";
 
   // import Swiper core and required modules
-    import SwiperCore, {
-    Navigation
-    } from 'swiper';
+  import SwiperCore, { Navigation } from "swiper";
 
   // install Swiper modules
   SwiperCore.use([Navigation]);
@@ -19,21 +19,17 @@
 export let chosenCasesData;
 import {onMount} from 'svelte';
 
+  onMount(() => {
+    animation();
+  });
 </script>
 
 <div class="swiper-wrap">
-<Swiper
-slidesPerView="{'auto'}" 
-centeredSlides="{true}"
-loop="{false}"
-navigation="{true}"
-spaceBetween="{-90}"
-speed="{1000}"
-initialSlide={1}>
+  <Swiper slidesPerView={"auto"} centeredSlides={true} loop={false} navigation={true} spaceBetween={-90} speed={1000} initialSlide={1}>
     {#each chosenCasesData as item}
-    <SwiperSlide>
-        <SliderSingleVideo client:load singleVideoData={item}/>
-    </SwiperSlide>
+      <SwiperSlide>
+        <SliderSingleVideo client:load singleVideoData={item} />
+      </SwiperSlide>
     {/each}
 </Swiper>
 <div class="swiper-overlay">
@@ -42,7 +38,10 @@ initialSlide={1}>
         <span class="next-element-unique"></span>
     </div>
 </div>
+  </Swiper>
+  <div class="swiper-overlay" />
 </div>
+
 <style lang="scss">
     .swiper-wrap{
         position: relative;
@@ -88,6 +87,5 @@ initialSlide={1}>
         }
     }
 
-
-
 </style>
+

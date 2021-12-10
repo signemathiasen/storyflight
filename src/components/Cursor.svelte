@@ -31,7 +31,7 @@
     position: absolute;
     /* transition: 0.1s ease-out; */
     transition: transform 0.25s;
-    z-index: 2;
+    z-index: 999;
     pointer-events: none;
   }
 </style>
