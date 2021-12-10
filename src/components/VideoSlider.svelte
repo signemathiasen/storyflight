@@ -37,7 +37,6 @@
         <span class="next-element-unique"></span>
     </div>
 </div>
-  </Swiper>
   <div class="swiper-overlay" />
 </div>
 
