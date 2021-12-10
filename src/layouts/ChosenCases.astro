@@ -8,7 +8,7 @@ const sectionData = await getData("pages", "forside");
 
 ---
 
-<section>
+<section class="chosen-cases">
 <h2 class="container container--large">{sectionData.acf["videoslider-heading"]}</h2>
 <VideoSlider client:load {chosenCasesData}/>
  <div class="link container container--fluid">
@@ -26,6 +26,49 @@ section {
   @media (min-width: 768px) {
     padding-bottom: 0rem;
   }
+}
+
+.chosen-cases{
+  :global(.swiper-slide) {
+    flex-shrink: 0;
+    width: 700px !important;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    }
+    
+    :global(.swiper-button-next) {
+    background-image: url(../assets/icons/ArrowRight.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    height: 20px !important;
+    width: 20px !important;
+    top: 97.2% !important;
+    z-index: 2;
+    right: 1.5rem !important;
+    }
+
+    :global(.swiper-button-next::after) {
+     display: none;
+    }
+
+    :global(.swiper-button-prev) {
+    background-image: url(../assets/icons/ArrowLeft.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    height: 20px !important;
+    width: 20px !important;
+    top: 97.2% !important;
+    z-index: 2;
+    left: 1.5rem !important;
+    }
+
+    :global(.swiper-button-prev::after) {
+        display: none;
+    }
+
 }
 
 h2 {

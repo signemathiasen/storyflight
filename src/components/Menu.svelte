@@ -79,14 +79,14 @@
 
     visibility: hidden;
     opacity: 0;
-    transition: 0.3s;
+    transition: 0.5s;
 
     overflow: auto;
 
     &.menuActive {
       visibility: visible;
       opacity: 1;
-      transition: 0.3s;
+      transition: 0.5s;
     }
 
     .menu-wrap {
@@ -145,6 +145,7 @@
     display: flex;
     align-items: center;
     padding-top: 2px;
+    transition: 0.3s;
 
     .arrow_icon {
       color: var(--clr-primary);
@@ -152,9 +153,11 @@
       width: 28px;
       margin-left: 1em;
       padding-top: 0px;
+      transition: 0.3s;
     }
     .go_back {
       padding-top: 3px;
+      transition: 0.3s;
     }
   }
 
@@ -166,6 +169,7 @@
     margin: 0;
     mix-blend-mode: difference;
     color: white;
+    transition: 0.3s;
   }
 
   .contact {
