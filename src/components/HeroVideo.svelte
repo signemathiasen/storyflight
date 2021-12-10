@@ -1,5 +1,5 @@
 <script>
-    export let videoSource;
+    export let previewVideoSource;
     export let videoIndex;
     export let activeSlideIndex;
     import { onMount } from 'svelte';
@@ -32,7 +32,7 @@
 </script>
 
 <video
-src={videoSource}
+src={previewVideoSource}
 bind:currentTime={time}
 bind:paused={paused}
 bind:muted={muted}>

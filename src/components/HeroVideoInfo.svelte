@@ -63,13 +63,8 @@ const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
         transform: rotate(-90deg);
         stroke-dasharray: 400;
         stroke-dashoffset: 400;
-        // animation: timer-animation 8s linear infinite;
         }
-        // @keyframes timer-animation {
-        //     to {
-        //         stroke-dashoffset: 0;
-        //     }
-        // }
+   
         .border{
         opacity: 0.2;
         position: absolute;

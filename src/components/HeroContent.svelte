@@ -30,7 +30,6 @@ const getCurrentSlideIndex = (e) => {
       const [slide] = e.detail;
       const activeIndex = slide[0].activeIndex;
       activeSlideIndex = activeIndex;
-      console.log(activeSlideIndex)
     }
 
 </script>
@@ -54,8 +53,9 @@ const getCurrentSlideIndex = (e) => {
       on:snapIndexChange={getCurrentSlideIndex}>
     {#each cases as singleCase, index}
         {#if index <= 8}
+        {console.log(singleCase)}
         <SwiperSlide data-swiper-slide-index={index} let:data="{{ isActive }}" class="swiper-no-swiping">
-                <HeroVideo bind:activeSlideIndex={activeSlideIndex} videoIndex={index} videoSource={singleCase.case_video.guid}/>
+                <HeroVideo bind:activeSlideIndex={activeSlideIndex} videoIndex={index} previewVideoSource={singleCase.preview_video.guid}/>
             <div class="video-info-wrap container container--fluid">
                 <HeroVideoInfo {singleCase} {videoTypes}/>
             </div>

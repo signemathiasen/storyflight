@@ -16,7 +16,8 @@
   // install Swiper modules
   SwiperCore.use([Navigation]);
 
-  export let chosenCasesData;
+export let chosenCasesData;
+import {onMount} from 'svelte';
 
   onMount(() => {
     animation();
@@ -30,24 +31,61 @@
         <SliderSingleVideo client:load singleVideoData={item} />
       </SwiperSlide>
     {/each}
+</Swiper>
+<div class="swiper-overlay">
+    <div class="arrow-wrap container container--fluid">
+        <span class="prev-element-unique"></span>
+        <span class="next-element-unique"></span>
+    </div>
+</div>
   </Swiper>
   <div class="swiper-overlay" />
 </div>
 
 <style lang="scss">
-  .swiper-wrap {
-    position: relative;
+    .swiper-wrap{
+        position: relative;
+        .swiper-overlay{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 50px;
+            background: rgb(0,2,23);
+            background: linear-gradient(90deg, rgba(0,2,23,1) 3%, rgba(0,2,23,0) 13%, rgba(0,2,23,0) 50%, rgba(0,2,23,0) 87%, rgba(0,2,23,1) 97%);
+            z-index: 1;
+            pointer-events: none;
 
-    .swiper-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100vw;
-      height: 50px;
-      background: rgb(0, 2, 23);
-      background: linear-gradient(90deg, rgba(0, 2, 23, 1) 0%, rgba(0, 2, 23, 0) 4%, rgba(0, 2, 23, 0) 50%, rgba(0, 2, 23, 0) 96%, rgba(0, 2, 23, 1) 100%);
-      z-index: 10;
-      pointer-events: none;
+            .arrow-wrap{
+                width: 100vw;
+                height: 50px;
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .next-element-unique{
+                background-image: url(../assets/icons/ArrowRight.svg);
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+                background-position: center;
+                height: 20px !important;
+                width: 20px !important;
+                z-index: 2;
+            }
+            .prev-element-unique{
+                background-image: url(../assets/icons/ArrowLeft.svg);
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+                background-position: center;
+                height: 20px !important;
+                width: 20px !important;
+                z-index: 2;
+            }
+
+        }
     }
-  }
+
 </style>
+
