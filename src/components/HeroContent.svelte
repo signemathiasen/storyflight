@@ -1,9 +1,14 @@
 <script>
 import HeroVideoInfo from './HeroVideoInfo.svelte';
 import HeroVideo from './HeroVideo.svelte';
+
 export let cases;
 export let videoTypes;
 let activeSlideIndex = 0;
+
+//Get random cases
+cases = cases.sort(() => Math.random() - 0.5);
+console.log(cases);
 
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/svelte';
@@ -38,18 +43,17 @@ const getCurrentSlideIndex = (e) => {
     speed="{300}"
     noSwiping="{'true'}"
     allowTouchMove="{'false'}"
-    allowSlidePrev="{'false'}"
-    allowSlideNext="{'false'}"
     keyboard="{'false'}"
     autoplay='{{
         "delay": 8000,
+        disableOnInteraction: false
       }}'
     navigation='{{
         nextEl: ".timer-button"
      }}'
       on:snapIndexChange={getCurrentSlideIndex}>
     {#each cases as singleCase, index}
-        {#if index <= 5}
+        {#if index <= 8}
         <SwiperSlide data-swiper-slide-index={index} let:data="{{ isActive }}" class="swiper-no-swiping">
                 <HeroVideo bind:activeSlideIndex={activeSlideIndex} videoIndex={index} videoSource={singleCase.case_video.guid}/>
             <div class="video-info-wrap container container--fluid">

@@ -2,16 +2,16 @@
     export let videoSource;
     export let videoIndex;
     export let activeSlideIndex;
+    import { onMount } from 'svelte';
 
     let time = 0;
     let paused = true;
     let muted = true;
 
-    // import { onMount } from 'svelte';
-	// onMount(() => {
-	// 	console.log('the component has mounted');
-    //     // isSlideActive(activeSlideIndex);
-	// });
+    // Play first video on mount
+    onMount(() => {
+        document.querySelector('[data-swiper-slide-index="0"] > video').play();
+	});
 
     // play video if video index is same as active index else pause and reload
 	$: isSlideActive(activeSlideIndex);

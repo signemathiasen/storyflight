@@ -8,7 +8,7 @@ const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
 </script>
 
 <div class="video-information">
-    <div>
+    <div class="info">
     <p class="subtitle">{videoType}</p>
     <h3>{singleCase.case_title}</h3>
         <div class="link">
@@ -23,7 +23,7 @@ const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
             <svg class="timer-border" height="128" width="128">
                 <circle cx="64" cy="64" r="63" stroke="white" stroke-width="1" fill="none" />
               </svg>
-            <span class="button-text">Næste <br> video</span>
+            <span class="a button-text">Næste <br> video</span>
         </button>
     </div>
 
@@ -82,6 +82,9 @@ const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
         display: flex;
         flex-direction: row-reverse;
         align-items: center;
+        .info{
+            margin-left: 2.5rem;
+        }
     }
 
     .arrow_icon {

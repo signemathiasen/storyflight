@@ -75,14 +75,14 @@
 
     visibility: hidden;
     opacity: 0;
-    transition: 0.3s;
+    transition: 0.5s;
 
     overflow: auto;
 
     &.menuActive {
       visibility: visible;
       opacity: 1;
-      transition: 0.3s;
+      transition: 0.5s;
     }
 
     .menu-wrap {
