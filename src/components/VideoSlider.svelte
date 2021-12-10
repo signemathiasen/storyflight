@@ -16,8 +16,7 @@
   // install Swiper modules
   SwiperCore.use([Navigation]);
 
-export let chosenCasesData;
-import {onMount} from 'svelte';
+  export let chosenCasesData;
 
   onMount(() => {
     animation();
