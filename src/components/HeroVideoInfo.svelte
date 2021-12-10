@@ -88,6 +88,7 @@ const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
 
     :global(.hero-content-wrap){
         .swiper-slide-active{
+            opacity: 1 !important;
             .video-info-wrap{
                 .video-information{
                     .timer-button{
