@@ -114,6 +114,7 @@ h3,
 
 body {
   background: var(--clr-grey);
+  cursor: url(../assets/cursor.png), auto;
 }
 
 body,
@@ -138,6 +139,7 @@ a,
   text-decoration: none;
   text-transform: uppercase;
   color: currentColor;
+  cursor: none;
 }
 
 p,
@@ -207,6 +209,7 @@ button {
   border: none;
   padding: 15px;
   font-weight: var(--fw-a);
+  cursor: none;
 }
 
 .color-blend {
@@ -225,4 +228,8 @@ button {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+a:hover > #cursor {
+  transform: scale(3);
 }

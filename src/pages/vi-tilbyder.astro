@@ -3,10 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Services from '../layouts/Services.astro'
 import ImageAndText from '../layouts/ImageAndText.astro';
 import ContactSection from '../layouts/ContactSection.astro';
+import Cursor from '../components/Cursor.svelte';
 
 ---
 
 <BaseLayout>
+    <Cursor client:load />
     <ImageAndText />
     <Services />
     <ContactSection />

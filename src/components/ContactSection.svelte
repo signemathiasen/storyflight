@@ -53,7 +53,7 @@
         border: 3px solid white;
         width: 250px;
         margin-top: var(--gutter);
-        cursor: pointer;
+        cursor: none;
       }
       @media (min-width: 992px) {
         .caption {
