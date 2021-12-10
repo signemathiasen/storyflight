@@ -2,6 +2,7 @@
 import { getData } from '../../helpers/dataFetching.js';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import VideoPlayer from '../../components/VideoPlayer.svelte';
+import Cursor from '../../components/Cursor.svelte';
 
 export async function getStaticPaths() {
   const cases = await getData('cases');
@@ -27,6 +28,7 @@ const videoType = videoTypesData.find(type => type.id === videoTypeIDs[0])
   includeHeader={false} 
   includeFooter={false}
 >
+  <Cursor client:load />
   <VideoPlayer 
     client:load
     title={casePost['case_title']} 

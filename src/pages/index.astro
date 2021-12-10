@@ -4,7 +4,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import TextBlock from '../layouts/TextBlock.astro';
 import OurCustomers from '../layouts/OurCustomers.astro';
 import ChosenCases from '../layouts/ChosenCases.astro';
+import HeroBanner from '../layouts/HeroBanner.astro';
 import ContactSection from '../layouts/ContactSection.astro';
+import Cursor from '../components/Cursor.svelte';
 
 // SEO
 const pageData = await getData('pages', 'forside');
@@ -12,6 +14,8 @@ const pageData = await getData('pages', 'forside');
 ---
   
 <BaseLayout pageContent={pageData}>
+  <HeroBanner />
+  <Cursor client:load />
   <TextBlock />
   <ChosenCases />
   <OurCustomers />
