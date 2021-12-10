@@ -1,8 +1,7 @@
 <script>
   import SliderSingleVideo from "./SliderSingleVideo.svelte";
+  import animation from "../helpers/animation";
   import { onMount } from "svelte";
-  import { gsap } from "gsap/dist/gsap";
-  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
   // import Swiper core and required modules
   import { Swiper, SwiperSlide } from "swiper/svelte";
@@ -20,13 +19,7 @@
   export let chosenCasesData;
 
   onMount(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to(".swiper-wrap", {
-      scrollTrigger: ".swiper-wrap", // start the animation when ".box" enters the viewport (once)
-      x: 0,
-      duration: 3,
-      opacity: 1,
-    });
+    animation();
   });
 </script>
 
@@ -45,8 +38,6 @@
   .swiper-wrap {
     position: relative;
 
-    transform: translateX(500px);
-    opacity: 0;
     .swiper-overlay {
       position: absolute;
       bottom: 0;
