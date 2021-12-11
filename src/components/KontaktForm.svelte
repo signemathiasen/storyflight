@@ -12,7 +12,7 @@
     </div>
   {/each}
 
-  <button type="submit" id="submit">Lad mig høre mere</button>
+  <button class="filled-button-hover" type="submit" id="submit">Lad mig høre mere</button>
 </form>
 
 <style lang="scss">

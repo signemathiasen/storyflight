@@ -319,3 +319,47 @@ a:hover > #cursor {
     transition: 0.3s;
   }
 }
+
+.filled-button-hover {
+  opacity: 0.99 !important;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid var(--clr-white);
+  @media (min-width: 992px) {
+    border: 1px solid var(--clr-secondary);
+  }
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  &:after {
+    position: absolute;
+    transition: 0.3s;
+    content: '';
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    height: 3px;
+    background: var(--clr-secondary);
+    @media (min-width: 992px) {
+      background: var(--clr-grey);
+    }
+    height: 120%;
+    left: -10%;
+    transform: skewX(-25deg);
+    z-index: -1;
+  }
+  &:hover {
+    color: var(--clr-white) !important;
+    @media (min-width: 992px) {
+      color: var(--clr-secondary) !important;
+    }
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+    &:after {
+      left: -10%;
+      width: 120%;
+    }
+  }
+}
