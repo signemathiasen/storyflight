@@ -12,15 +12,16 @@ export function logoAnimation() {
     opacity: 0,
     ease: 'power1.in',
     stagger: {
-      each: 0.1,
+      each: 0.05,
       from: 'end',
     },
-  }).to('.line', { scaleY: 0, duration: 0.5, ease: 'power1.out' });
+  }).to('.line', { scaleY: 0, duration: 0.2, ease: 'power1.out' });
 
   ScrollTrigger.create({
     animation: tl,
     trigger: container,
-    start: 'bottom center',
+    start: '1% top',
+    // end: 'bottom center',
     // scrub: true,
   });
 }
