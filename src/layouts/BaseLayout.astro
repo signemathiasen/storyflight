@@ -12,7 +12,7 @@ const {
 } = Astro.props;
 
 const url = Astro.site.hostname;
-
+---
 
 
 <html lang="da-DK">
@@ -34,13 +34,12 @@ const url = Astro.site.hostname;
     <meta name="theme-color" content="#ff5a44">
 
     <!-- SEO-->
-    <!-- {pageContent ? pageContent.yoast_head.replaceAll(SETTINGS.baseUrl, url) : <title>Storyflight</title>} -->
+    {pageContent ? pageContent.yoast_head.replaceAll(SETTINGS.baseUrl, url) : <title>Storyflight</title>}
 
   </head>
   <body>
 
     <Cursor client:load />
-    <Header/>
 
     {includeHeader && <Header/>}
 
