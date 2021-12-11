@@ -3,14 +3,12 @@ import { getData } from '../helpers/dataFetching.js';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import KontaktText from '../layouts/KontaktText.astro';
 import KontaktForm from '../components/KontaktForm.svelte';
-import Cursor from '../components/Cursor.svelte';
 
 const pageData = await getData('pages', 'kontakt');
-
 ---
 
 <BaseLayout pageContent={pageData}>
-    <Cursor client:load />
+
     <section class="kontakt-section container--small">
 
         <section class="container container--xsmall section-padding text-section">

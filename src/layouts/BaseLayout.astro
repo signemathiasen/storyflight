@@ -2,15 +2,17 @@
 import { SETTINGS } from '../helpers/dataFetching.js';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
+import Cursor from '../components/Cursor.svelte';
+
 
 const { 
   pageContent = undefined, 
   includeHeader = true, 
   includeFooter = true 
 } = Astro.props;
+
 const url = Astro.site.hostname;
 
----
 
 
 <html lang="da-DK">
@@ -36,7 +38,12 @@ const url = Astro.site.hostname;
 
   </head>
   <body>
+
+    <Cursor client:load />
+    <Header/>
+
     {includeHeader && <Header/>}
+
 
     <main>
       <!-- slot: your page content will be injected here. -->
