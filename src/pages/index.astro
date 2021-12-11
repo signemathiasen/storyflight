@@ -11,6 +11,8 @@ import ContactSection from '../layouts/ContactSection.astro';
 // SEO
 const pageData = await getData('pages', 'forside');
 
+
+const pageType = "forside";
 ---
   
 <BaseLayout pageContent={pageData}>
@@ -18,5 +20,5 @@ const pageData = await getData('pages', 'forside');
   <TextBlock />
   <ChosenCases />
   <OurCustomers />
-  <ContactSection />
+  <ContactSection pageType={pageType} />
 </BaseLayout>

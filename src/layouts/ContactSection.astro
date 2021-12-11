@@ -2,13 +2,16 @@
 import ContactSection from "../components/ContactSection.svelte";
 import {getData} from '../helpers/dataFetching.js';
 
+export let pageType;
+
 const Videos = await getData("cases")
+const pageData = await getData("pages", pageType)
 
 ---
 
 
 <section> 
-    <ContactSection client:load Videos={Videos}/>
+    <ContactSection client:load pageData={pageData} Videos={Videos}/>
 </section>
 
 <style lang="scss">

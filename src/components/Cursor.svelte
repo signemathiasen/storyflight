@@ -1,26 +1,31 @@
 <script>
-  import { cursorHover } from "../helpers/cursorHover";
+  import { cursorHover } from '../helpers/cursorHover';
 
   function cursorMove(e) {
-    let cursor = document.querySelector("#cursor");
-    cursor.style.left = e.pageX - 10.5 + "px";
-    cursor.style.top = e.pageY - 10.5 + "px";
+    let cursor = document.querySelector('#cursor');
+    cursor.style.left = e.pageX - 10.5 + 'px';
+    cursor.style.top = e.pageY - 10.5 + 'px';
   }
   function mouseDown() {
-    let cursor = document.querySelector("#cursor");
-    cursor.style.transform = "scale(1.5)";
+    let cursor = document.querySelector('#cursor');
+    cursor.style.transform = 'scale(1.5)';
   }
   function mouseUp() {
-    let cursor = document.querySelector("#cursor");
-    cursor.style.transform = "scale(1)";
+    let cursor = document.querySelector('#cursor');
+    cursor.style.transform = 'scale(1)';
   }
 </script>
 
-<svelte:window on:mousemove={cursorMove} on:mousemove={cursorHover} on:mousedown={mouseDown} on:mouseup={mouseUp} />
+<svelte:window
+  on:mousemove={cursorMove}
+  on:mousemove={cursorHover}
+  on:mousedown={mouseDown}
+  on:mouseup={mouseUp}
+/>
 
 <div id="cursor" />
 
-<style>
+<style lang="scss">
   #cursor {
     width: 30px;
     height: 30px;
@@ -31,5 +36,13 @@
     transition: transform 0.25s;
     z-index: 999;
     pointer-events: none;
+    /* smartphones, touchscreens */
+    @media (hover: none) and (pointer: coarse) {
+      display: none;
+    }
+    /* stylus-based screens */
+    @media (hover: none) and (pointer: fine) {
+      display: none;
+    }
   }
 </style>
