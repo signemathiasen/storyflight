@@ -1,18 +1,23 @@
 <script>
     export let singleVideoData;
+    let previewImage;
     
     function playVideo(e) {
+        e.target.load();
         e.target.play();
+        previewImage.style.opacity = 0;
     }
     function pauseVideo(e){
         e.target.pause();
+        previewImage.style.opacity = 1;
     }
 </script>
 
 <div class="case-wrap">
     <a href={`/cases/${singleVideoData.slug}`} class="video-wrap">
-        <video class="preview-video" on:mouseenter={playVideo} on:mouseout={pauseVideo} poster={singleVideoData.case_image.guid} muted={'true'}>
-            <source src={singleVideoData.case_video.guid} type="video/mp4">
+        <img bind:this={previewImage} class="preview-image" src={singleVideoData.case_image.guid}>
+        <video class="preview-video" on:mouseenter={playVideo} on:mouseout={pauseVideo} muted={'true'}>
+            <source src={singleVideoData.preview_video.guid} type="video/mp4">
           </video>
     </a>
     <h3>{singleVideoData.case_title}</h3>
@@ -27,14 +32,20 @@
     }
 
     .case-wrap{
-        width: 700px !important;
+        width: 400px !important;
+        @media (min-width: 700px) {
+            width: 700px !important;
+        }
     }
     .video-wrap {
     display: block;
     position:relative;
     clip-path: polygon(18% 0%, 100% 0%, 82% 100%, 0% 100%);
     height: 50vh;
+    width: 400px !important;
+    @media (min-width: 700px) {
     width: 700px !important;
+  }
         .preview-image{
             position: absolute;
             height: 50vh;
@@ -42,7 +53,8 @@
             width: 110%;
             display: block;
             z-index: 1;
-            // pointer-events: none;
+            pointer-events: none;
+            transition: opacity 0.3s;
         }
         .preview-video{
             position: absolute;
