@@ -9,9 +9,9 @@ const {
   includeHeader = true, 
   includeFooter = true 
 } = Astro.props;
+
 const url = Astro.site.hostname;
 
----
 
 
 <html lang="da-DK">
@@ -37,8 +37,11 @@ const url = Astro.site.hostname;
 
   </head>
   <body>
+
     <Cursor client:load />
+
     {includeHeader && <Header/>}
+
 
     <main>
       <!-- slot: your page content will be injected here. -->
