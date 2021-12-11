@@ -7,12 +7,10 @@
     cursor.style.top = e.pageY - 10.5 + "px";
   }
   function mouseDown() {
-    console.log("clicked");
     let cursor = document.querySelector("#cursor");
     cursor.style.transform = "scale(1.5)";
   }
   function mouseUp() {
-    console.log("up");
     let cursor = document.querySelector("#cursor");
     cursor.style.transform = "scale(1)";
   }

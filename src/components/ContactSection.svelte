@@ -1,7 +1,6 @@
 <script>
   export let Videos;
   export let pageData;
-  console.log(pageData);
 
   let BGvideo = Videos.find((element) => element.case_video.post_title === "Wildrun");
 </script>
