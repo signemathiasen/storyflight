@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getData } from '../../helpers/dataFetching.js';
 import Cases from '../../components/Cases.svelte';
-import Cursor from '../../components/Cursor.svelte';
 
 // SEO
 const pageData = await getData('pages', 'cases');
@@ -18,7 +17,6 @@ const { canonicalURL } = Astro.request;
 
 
 <BaseLayout pageContent={pageData}>
-<Cursor client:load />
   <Cases 
     client:load 
     cases={allCases} 
