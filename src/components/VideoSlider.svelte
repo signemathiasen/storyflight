@@ -24,7 +24,20 @@
 </script>
 
 <div class="swiper-wrap">
-  <Swiper slidesPerView={"auto"} centeredSlides={true} loop={false} navigation={true} spaceBetween={-90} speed={1000} initialSlide={2}>
+  <Swiper 
+  slidesPerView={"auto"}
+  centeredSlides={true}
+  loop={false}
+  navigation={true}
+  spaceBetween={-45}
+  speed={1000}
+  initialSlide={2}
+  breakpoints='{{
+     700: {
+      spaceBetween: -90,
+    },
+  }}'
+  >
     {#each chosenCasesData as item}
       <SwiperSlide>
         <SliderSingleVideo client:load singleVideoData={item} />
@@ -37,7 +50,6 @@
         <span class="next-element-unique"></span>
     </div>
 </div>
-  <div class="swiper-overlay" />
 </div>
 
 <style lang="scss">
@@ -48,7 +60,10 @@
             bottom: 0;
             left: 0;
             width: 100vw;
-            height: 50px;
+            height: 30px;
+              @media (min-width: 700px) {
+                height: 50px;
+              }
             background: rgb(0,2,23);
             background: linear-gradient(90deg, rgba(0,2,23,1) 3%, rgba(0,2,23,0) 13%, rgba(0,2,23,0) 50%, rgba(0,2,23,0) 87%, rgba(0,2,23,1) 97%);
             z-index: 1;
@@ -56,7 +71,10 @@
 
             .arrow-wrap{
                 width: 100vw;
-                height: 50px;
+                height: 30px;
+                  @media (min-width: 700px) {
+                     height: 50px;
+                  }
                 position: relative;
                 display: flex;
                 justify-content: space-between;

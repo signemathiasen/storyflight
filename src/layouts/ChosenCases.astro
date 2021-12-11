@@ -31,7 +31,10 @@ section {
 .chosen-cases{
   :global(.swiper-slide) {
     flex-shrink: 0;
-    width: 700px !important;
+    width: 400px !important;
+    @media (min-width: 700px) {
+          width: 700px !important;
+        }
     height: 100%;
     position: relative;
     transition-property: transform;
@@ -61,10 +64,13 @@ section {
     background-position: center;
     height: 20px !important;
     width: 20px !important;
-    top: 97.2% !important;
+    top: 99% !important;
     z-index: 2;
     opacity: 0;
     left: 1.5rem !important;
+      @media (min-width: 700px) {
+      top: 97.2% !important;
+      }
     }
 
     :global(.swiper-button-prev::after) {
