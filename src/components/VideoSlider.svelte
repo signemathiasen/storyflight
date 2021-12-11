@@ -24,7 +24,7 @@
 </script>
 
 <div class="swiper-wrap">
-  <Swiper slidesPerView={"auto"} centeredSlides={true} loop={false} navigation={true} spaceBetween={-90} speed={1000} initialSlide={1}>
+  <Swiper slidesPerView={"auto"} centeredSlides={true} loop={false} navigation={true} spaceBetween={-90} speed={1000} initialSlide={2}>
     {#each chosenCasesData as item}
       <SwiperSlide>
         <SliderSingleVideo client:load singleVideoData={item} />

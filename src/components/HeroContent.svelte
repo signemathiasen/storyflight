@@ -34,6 +34,12 @@ const getCurrentSlideIndex = (e) => {
 </script>
 
 <div class="hero-content-wrap">
+    <div class="scroll-indicator-wrap">
+        <a href="#text-block" class="scroll-indicator">
+            <span class="a scroll-text">Scroll</span>
+            <span class="scroll-arrow"></span>
+        </a>
+    </div>
     <Swiper
     loop="{false}"
     slidesPerView="{1}"
@@ -53,6 +59,7 @@ const getCurrentSlideIndex = (e) => {
     {#each cases as singleCase, index}
         {#if index <= 4}
         <SwiperSlide data-swiper-slide-index={index} class="swiper-no-swiping">
+            <div class="video-overlay"></div>
                 <HeroVideo bind:activeSlideIndex={activeSlideIndex} videoIndex={index} previewVideoSource={singleCase.preview_video.guid}/>
             <div class="video-info-wrap container container--fluid">
                 <HeroVideoInfo {singleCase} {videoTypes}/>
@@ -72,5 +79,48 @@ const getCurrentSlideIndex = (e) => {
     align-items: flex-end;
     height: 100vh;
     padding-bottom: 1.5rem;
+}
+
+.hero-content-wrap{
+    position: relative;
+    .scroll-indicator-wrap{
+        position: absolute;
+        z-index:2;
+        bottom: 1.5rem;
+        right:1.5rem;
+        display:flex;
+        .scroll-indicator{
+            color: var(--clr-white);
+            writing-mode: vertical-rl;
+            display: flex;
+        
+            .scroll-text{
+            margin-left:4px;
+            margin-bottom: 0.5rem;
+        }
+        .scroll-arrow {
+                background-image: url(../assets/icons/ArrowDown.svg);
+                background-repeat: no-repeat;
+                background-size: 100% auto;
+                background-position: center;
+                height: 20px;
+                width: 20px;
+                // animation: bounce 0.5s linear 5s infinite alternate;
+            }
+            // @keyframes bounce {
+            //     100% {
+            //         transform: translateY(-7px);
+            //     }
+            // }
+        }
+    }
+
+    .video-overlay{
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        background: rgba(0, 0, 0, 0.2);
+        }
 }
 </style>

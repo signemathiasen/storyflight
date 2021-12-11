@@ -21,6 +21,17 @@
   function colorBlend() {
     document.querySelector(".header").classList.toggle("color-blend");
   }
+
+  function setOpacity(e) {
+    const menuItems = document.querySelectorAll('.menu_item')
+    menuItems.forEach(menuItem => menuItem.style.opacity = "0.1");
+      event.target.style.opacity = "1";
+  }
+  
+	function removeOpacity(e) {
+    const menuItems = document.querySelectorAll('.menu_item')
+    menuItems.forEach(menuItem => menuItem.style.opacity = "1");
+	}
 </script>
 
 <button class="burger-wrap" on:click={() => (menuActive = !menuActive)} on:click={colorBlend}>
@@ -39,7 +50,10 @@
     <nav>
       <ul>
         {#each primaryMenu as menuItem}
-          <li><a class="h1 menu_item" href={menuItem.slug}>{menuItem.title}</a></li>
+          <li><a
+              on:mouseover={setOpacity} on:mouseout={removeOpacity}
+              class="h1 menu_item" href={menuItem.slug}>{menuItem.title}
+            </a></li>
           <!-- Change link in wordpress -->
         {/each}
       </ul>
@@ -116,6 +130,7 @@
         font-weight: 600;
         font-style: italic;
         font-size: 2.7rem; // change - global style?
+        transition: 0.3s;
         @media (min-width: 768px) {
           font-size: 3.8rem; // change - globals style?
         }
@@ -124,6 +139,11 @@
         list-style-type: none;
         li {
           margin-bottom: 0.2rem;
+          transition: 0.3s;
+            &:hover{
+            transform: translateX(5px);
+            transition: 0.3s;
+          }
         }
       }
     }
