@@ -23,14 +23,14 @@
   }
 
   function setOpacity(e) {
-    const menuItems = document.querySelectorAll('.menu_item')
-    menuItems.forEach(menuItem => menuItem.style.opacity = "0.1");
-      event.target.style.opacity = "1";
+    // const menuItems = document.querySelectorAll('.menu_item')
+    // menuItems.forEach(menuItem => menuItem.style.opacity = "0.1");
+    //   event.target.style.opacity = "1";
   }
   
 	function removeOpacity(e) {
-    const menuItems = document.querySelectorAll('.menu_item')
-    menuItems.forEach(menuItem => menuItem.style.opacity = "1");
+    // const menuItems = document.querySelectorAll('.menu_item')
+    // menuItems.forEach(menuItem => menuItem.style.opacity = "1");
 	}
 </script>
 
@@ -142,6 +142,7 @@
           transition: 0.3s;
             &:hover{
             transform: translateX(5px);
+            opacity: 0.2;
             transition: 0.3s;
           }
         }
