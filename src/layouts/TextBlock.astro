@@ -4,7 +4,7 @@ const pagesData = await getData("pages", "forside");
 
 ---
 
-<section class="section-padding">
+<section id="text-block" class="section-padding">
     <div class="text-block-wrap container container--small">
         <h2 class="caption">{pagesData["acf"].catch_phrase}</h2>
         <p>{pagesData["acf"].text_block}</p>

@@ -1,12 +1,14 @@
 <script>
   export let Videos;
+  export let pageData;
+  console.log(pageData);
 
   let BGvideo = Videos.find((element) => element.case_video.post_title === "Wildrun");
 </script>
 
 <div class="bg-vid">
   <video class="vid" muted={"true"} autoplay loop>
-    <source src={BGvideo.case_video.guid} type="video/mp4" />
+    <source src={BGvideo.preview_video.guid} type="video/mp4" />
   </video>
   <div class="overlay">
     <a href="/kontakt" class="link">

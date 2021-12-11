@@ -11,10 +11,10 @@ const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
     <div class="info">
     <p class="subtitle">{videoType}</p>
     <h3>{singleCase.case_title}</h3>
-        <div class="link">
-            <a href="#" class="a">Gå til projektet</a>
-            <a href="#" class="arrow_icon"><CircleWithArrow /></a>
-        </div>
+        <a href="#" class="link">
+            <span class="a link-text">Gå til projektet</span>
+            <span class="arrow_icon"><CircleWithArrow /></span>
+        </a>
     </div>
         <button class="timer-button">
             <svg class="border" height="128" width="128">
@@ -39,7 +39,6 @@ const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
         height: 128px;
         padding: 8px;
         width: 128px;
-        cursor: pointer;
 
         .button-text {
             display: flex;
@@ -80,10 +79,17 @@ const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
         .info{
             margin-left: 2.5rem;
         }
+        .link{
+        display:flex;
+        align-items: center;
+        margin-top: 0.5rem
+        }
     }
 
     .arrow_icon {
+        display: flex;
         color: var(--clr-primary);
+        margin-left: 1em;
     }
 
     :global(.hero-content-wrap){
