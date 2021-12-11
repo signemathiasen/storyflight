@@ -11,7 +11,7 @@ const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
     <div class="info">
     <p class="subtitle">{videoType}</p>
     <h3>{singleCase.case_title}</h3>
-        <a href="#" class="link">
+        <a href="#" class="link links-hover">
             <span class="a link-text">Gå til projektet</span>
             <span class="arrow_icon"><CircleWithArrow /></span>
         </a>
@@ -39,6 +39,11 @@ const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
         height: 128px;
         padding: 8px;
         width: 128px;
+        transition: opacity 0.3s;
+            &:hover{
+                opacity: 0.5;
+                transition: opacity 0.3s;
+            }
 
         .button-text {
             display: flex;

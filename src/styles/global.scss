@@ -53,8 +53,8 @@
 
 @media (min-width: 768px) {
   :root {
-    --fs-h1: 5.625rem;
-    --fs-h2: 4.5rem;
+    --fs-h1: 5.5rem;
+    --fs-h2: 4.2rem;
     --fs-h3: 2.1875rem;
     --fs-caption: 3.2rem;
   }
@@ -124,7 +124,7 @@ p {
   font-family: var(--ff-body);
   font-size: var(--fs-p);
   font-weight: var(--fw-p);
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
 main {
@@ -143,7 +143,7 @@ a,
   color: currentColor;
   cursor: none;
   font-family: var(--ff-headings);
-
+  transition: 0.3s;
   span {
     text-transform: uppercase;
     font-weight: var(--fw-a);
@@ -240,4 +240,82 @@ button {
 
 a:hover > #cursor {
   transform: scale(3);
+}
+
+// Button hover styling
+.button-hover-white {
+  opacity: 0.99 !important;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid var(--clr-white);
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  &:after {
+    position: absolute;
+    transition: 0.3s;
+    content: '';
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    height: 3px;
+    background: var(--clr-white);
+    height: 120%;
+    left: -10%;
+    transform: skewX(-25deg);
+    z-index: -1;
+  }
+  &:hover {
+    color: var(--clr-secondary) !important;
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+    &:after {
+      left: -10%;
+      width: 120%;
+    }
+  }
+}
+
+.button-hover-black {
+  opacity: 0.99;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid var(--clr-secondary);
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  &:after {
+    position: absolute;
+    transition: 0.3s;
+    content: '';
+    width: 0;
+    left: 50%;
+    bottom: 0;
+    height: 3px;
+    background: var(--clr-secondary);
+    height: 120%;
+    left: -10%;
+    transform: skewX(-25deg);
+    z-index: -1;
+  }
+  &:hover {
+    color: var(--clr-white) !important;
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+    &:after {
+      left: -10%;
+      width: 120%;
+    }
+  }
+}
+
+.links-hover {
+  &:hover {
+    opacity: 0.5 !important;
+    transition: 0.3s;
+  }
 }

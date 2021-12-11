@@ -3,7 +3,7 @@
   export let pageData;
 </script>
 
-<a href="{pageData.acf.button_link} ">{pageData.acf.button_text} <span class="arrow_icon"><Arrow /></span></a>
+<a class="links-hover" href="{pageData.acf.button_link} ">{pageData.acf.button_text} <span class="arrow_icon"><Arrow /></span></a>
 
 <style lang="scss">
   a {
