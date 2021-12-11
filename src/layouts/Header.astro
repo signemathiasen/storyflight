@@ -1,5 +1,5 @@
 ---
-import Logo from '../assets/Logo.astro';
+import Logo from '../components/AnimatingLogo.svelte';
 import Menu from '../components/Menu.svelte';
 import {getData} from '../helpers/dataFetching.js';
 
@@ -9,7 +9,7 @@ const soMeData = await getData("menus", "contactInformation");
 ---
 <header class="header color-blend">
   <a href="/" class="logo-link">
-    <Logo />
+    <Logo client:load/>
     <span class="visually-hidden">Gå til forsiden</span>
   </a>
   <Menu client:load menuData={menuData} soMeData={soMeData}/>

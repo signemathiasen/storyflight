@@ -2,6 +2,7 @@
 import Favicons from './Favicons.astro';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
+import Cursor from '../components/Cursor.svelte';
 ---
 
 <html>
@@ -15,6 +16,7 @@ import Footer from './Footer.astro';
     <Favicons />
   </head>
   <body>
+  <Cursor client:load />
     <Header/>
 
     <main>
