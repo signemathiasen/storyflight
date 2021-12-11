@@ -9,13 +9,15 @@ import ContactSection from '../layouts/ContactSection.astro';
 // SEO
 const pageData = await getData('pages', 'viTilbyder');
 
+
+const pageType = "vi-tilbyder";
 ---
 
 
 <BaseLayout pageContent={pageData}>
     <ImageAndText />
     <Services />
-    <ContactSection />
+    <ContactSection pageType={pageType} />
 </BaseLayout>
 
 
