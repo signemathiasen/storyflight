@@ -8,7 +8,6 @@ let activeSlideIndex = 0;
 
 //Get random cases
 cases = cases.sort(() => Math.random() - 0.5);
-console.log(cases);
 
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/svelte';
@@ -30,7 +29,6 @@ const getCurrentSlideIndex = (e) => {
       const [slide] = e.detail;
       const activeIndex = slide[0].activeIndex;
       activeSlideIndex = activeIndex;
-      console.log(activeSlideIndex)
     }
 
 </script>
@@ -53,9 +51,9 @@ const getCurrentSlideIndex = (e) => {
      }}'
       on:snapIndexChange={getCurrentSlideIndex}>
     {#each cases as singleCase, index}
-        {#if index <= 8}
-        <SwiperSlide data-swiper-slide-index={index} let:data="{{ isActive }}" class="swiper-no-swiping">
-                <HeroVideo bind:activeSlideIndex={activeSlideIndex} videoIndex={index} videoSource={singleCase.case_video.guid}/>
+        {#if index <= 4}
+        <SwiperSlide data-swiper-slide-index={index} class="swiper-no-swiping">
+                <HeroVideo bind:activeSlideIndex={activeSlideIndex} videoIndex={index} previewVideoSource={singleCase.preview_video.guid}/>
             <div class="video-info-wrap container container--fluid">
                 <HeroVideoInfo {singleCase} {videoTypes}/>
             </div>

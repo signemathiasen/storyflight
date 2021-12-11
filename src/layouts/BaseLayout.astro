@@ -1,29 +1,61 @@
 ---
-import Favicons from './Favicons.astro';
+import { SETTINGS } from '../helpers/dataFetching.js';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import Cursor from '../components/Cursor.svelte';
----
 
-<html>
+
+const { 
+  pageContent = undefined, 
+  includeHeader = true, 
+  includeFooter = true 
+} = Astro.props;
+
+const url = Astro.site.hostname;
+
+
+
+<html lang="da-DK">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
     <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.scss')} />
-    <link rel="stylesheet" href="https://use.typekit.net/qms3myj.css">
-    <Favicons />
+    <link rel="stylesheet" href="https://use.typekit.net/qms3myj.css" />
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff5a44">
+    <meta name="msapplication-TileColor" content="#ff5a44">
+    <meta name="theme-color" content="#ff5a44">
+
+    <!-- SEO-->
+    <!-- {pageContent ? pageContent.yoast_head.replaceAll(SETTINGS.baseUrl, url) : <title>Storyflight</title>} -->
+
   </head>
   <body>
-  <Cursor client:load />
+
+    <Cursor client:load />
     <Header/>
+
+    {includeHeader && <Header/>}
+
 
     <main>
       <!-- slot: your page content will be injected here. -->
       <slot />
     </main>
 
-    <Footer/>
+    {includeFooter && <Footer/>}
   </body>
 </html>
+
+<style lang="scss">
+  main {
+    isolation: isolate;
+  }
+</style>
