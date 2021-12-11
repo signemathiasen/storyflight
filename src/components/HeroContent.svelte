@@ -1,5 +1,6 @@
 <script>
 import HeroVideoInfo from './HeroVideoInfo.svelte';
+import ArrowDown from "../assets/icons/ArrowDown.svelte";
 import HeroVideo from './HeroVideo.svelte';
 
 export let cases;
@@ -37,7 +38,9 @@ const getCurrentSlideIndex = (e) => {
     <div class="scroll-indicator-wrap">
         <a href="#text-block" class="scroll-indicator">
             <span class="a scroll-text">Scroll</span>
-            <span class="scroll-arrow"></span>
+            <span class="scroll-arrow">
+                    <ArrowDown />
+            </span>
         </a>
     </div>
     <Swiper
@@ -99,19 +102,16 @@ const getCurrentSlideIndex = (e) => {
             margin-bottom: 0.5rem;
         }
         .scroll-arrow {
-                background-image: url(../assets/icons/ArrowDown.svg);
-                background-repeat: no-repeat;
-                background-size: 100% auto;
-                background-position: center;
-                height: 20px;
-                width: 20px;
                 // animation: bounce 0.5s linear 5s infinite alternate;
             }
-            // @keyframes bounce {
-            //     100% {
-            //         transform: translateY(-7px);
-            //     }
-            // }
+            @keyframes bounce {
+                from {
+                    transform: translateY(0px);
+                }
+                to {
+                    transform: translateY(-5px);
+                }
+            }
         }
     }
 

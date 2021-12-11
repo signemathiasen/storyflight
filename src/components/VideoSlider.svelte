@@ -1,5 +1,7 @@
 <script>
   import SliderSingleVideo from "./SliderSingleVideo.svelte";
+  import ArrowLeft from "../assets/icons/ArrowLeft.svelte";
+  import ArrowRight from "../assets/icons/ArrowRight.svelte";
   import animation from "../helpers/animation";
   import { onMount } from "svelte";
 
@@ -46,8 +48,12 @@
 </Swiper>
 <div class="swiper-overlay">
     <div class="arrow-wrap container container--fluid">
-        <span class="prev-element-unique"></span>
-        <span class="next-element-unique"></span>
+        <button class="prev-element-unique">
+          <ArrowLeft/>
+        </button>
+        <button class="next-element-unique">
+          <ArrowRight/>
+        </button>
     </div>
 </div>
 </div>
@@ -60,20 +66,22 @@
             bottom: 0;
             left: 0;
             width: 100vw;
-            height: 30px;
-              @media (min-width: 700px) {
-                height: 50px;
-              }
+            height: 26px;
             background: rgb(0,2,23);
             background: linear-gradient(90deg, rgba(0,2,23,1) 3%, rgba(0,2,23,0) 13%, rgba(0,2,23,0) 50%, rgba(0,2,23,0) 87%, rgba(0,2,23,1) 97%);
+            
             z-index: 1;
             pointer-events: none;
-
+            
+            @media (min-width: 768px) {
+              height: 46px;
+              background: linear-gradient(90deg, rgba(0,2,23,1) 3%, rgba(0,2,23,0) 13%, rgba(0,2,23,0) 50%, rgba(0,2,23,0) 87%, rgba(0,2,23,1) 97%);
+            }
             .arrow-wrap{
                 width: 100vw;
-                height: 30px;
-                  @media (min-width: 700px) {
-                     height: 50px;
+                height: 26px;
+                  @media (min-width: 768px) {
+                     height: 46px;
                   }
                 position: relative;
                 display: flex;
@@ -81,23 +89,9 @@
                 align-items: center;
             }
 
-            .next-element-unique{
-                background-image: url(../assets/icons/ArrowRight.svg);
-                background-repeat: no-repeat;
-                background-size: 100% auto;
-                background-position: center;
-                height: 20px !important;
-                width: 20px !important;
-                z-index: 2;
-            }
-            .prev-element-unique{
-                background-image: url(../assets/icons/ArrowLeft.svg);
-                background-repeat: no-repeat;
-                background-size: 100% auto;
-                background-position: center;
-                height: 20px !important;
-                width: 20px !important;
-                z-index: 2;
+            button {
+              padding:0;
+              background: none;
             }
 
         }
