@@ -35,7 +35,9 @@
 src={previewVideoSource}
 bind:currentTime={time}
 bind:paused={paused}
-bind:muted={muted}>
+bind:muted={muted}
+playsinline
+preload="auto">
 <track kind="captions">
 </video>
 

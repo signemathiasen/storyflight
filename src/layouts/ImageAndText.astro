@@ -1,8 +1,6 @@
 ---
 import {getData} from '../helpers/dataFetching.js';
 
-
-
 const servicesTopData = await getData("pages", "viTilbyder");
 const servicesTopImage = await getData("servicesImage");
 
@@ -39,6 +37,9 @@ const { acf: {
             "h1 img"
             "p img";
         grid-template-columns: 50% 50%;
+          @media (min-width: 992px) {
+           padding-top: 4rem;
+        }
 
     }
     h1{
@@ -51,7 +52,7 @@ const { acf: {
     .img-wrapper{
         position:relative;
         clip-path: polygon(18% 0%, 100% 0%, 82% 100%, 0% 100%);
-        height: 40vh;
+        height: 35vh;
         width: 700px !important;
         grid-area: img;
         margin-top: 4rem;
@@ -67,7 +68,8 @@ const { acf: {
             
         }
          @media (min-width: 992px) {
-            transform: translateX(360px) scale(2,2);
+            transform: translateX(360px) scale(1.8,1.8);
+             margin-top: 4rem;
             align-self: center;
         }
     }

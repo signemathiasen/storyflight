@@ -10,7 +10,7 @@
 </script>
 
 <div class="bg-vid">
-  <video class="vid" muted={'true'} autoplay loop>
+  <video class="vid" muted={'true'} autoplay loop playsinline>
     <source src={BGvideo.preview_video.guid} type="video/mp4" />
   </video>
   <div class="overlay">
@@ -63,6 +63,7 @@
       @media (min-width: 992px) {
         .caption {
           margin-bottom: 1.5rem;
+          text-align: center;
         }
       }
     }

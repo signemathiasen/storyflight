@@ -31,10 +31,19 @@
 	function removeOpacity(e) {
     // const menuItems = document.querySelectorAll('.menu_item')
     // menuItems.forEach(menuItem => menuItem.style.opacity = "1");
-	}
+  }
+  
+  function lockBodyScroll(){
+    if(menuActive) {
+        document.querySelector("body").style.overflow = "hidden";
+    } else {
+      document.querySelector("body").style.overflow = "visible";
+    }
+  }
+  
 </script>
 
-<button class="burger-wrap" on:click={() => (menuActive = !menuActive)} on:click={colorBlend}>
+<button class="burger-wrap" on:click={() => (menuActive = !menuActive)} on:click={colorBlend} on:click={lockBodyScroll}>
   {#if !menuActive}
     <Menu />
   {:else}
