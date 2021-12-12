@@ -36,7 +36,6 @@ const getCurrentSlideIndex = (e) => {
       const [swiper] = e.detail;
       setTimeout(() => {
         heroSwiper = swiper;
-        console.log(heroSwiper);
       });
     };
 
