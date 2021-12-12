@@ -2,10 +2,13 @@
 import ContactSection from "../components/ContactSection.svelte";
 import {getData} from '../helpers/dataFetching.js';
 
-export let pageType;
+const { pageType } = Astro.props;
 
 const Videos = await getData("cases")
 const pageData = await getData("pages", pageType)
+
+
+console.log(pageData)
 
 ---
 
