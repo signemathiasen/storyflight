@@ -28,11 +28,13 @@ export function cursorHover() {
     });
   });
 
-  // hover på menuknappen
-  menu.addEventListener('mouseover', function () {
-    cursor.style.transform = 'scale(1.5)';
-  });
-  menu.addEventListener('mouseout', function () {
-    cursor.style.transform = 'scale(1)';
-  });
+  if (menu) {
+    // hover på menuknappen
+    menu.addEventListener('mouseover', function () {
+      cursor.style.transform = 'scale(1.5)';
+    });
+    menu.addEventListener('mouseout', function () {
+      cursor.style.transform = 'scale(1)';
+    });
+  }
 }

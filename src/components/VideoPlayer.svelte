@@ -7,6 +7,8 @@
   export let videoType;
   export let videoSrc;
 
+  console.log(description);
+
   // Binds to video
   let paused = true;
   let time = 0;
@@ -55,12 +57,6 @@
     // if spacebar pressed...
     if (event.keyCode === 32) {
       handlePlayPause(event); 
-      return;
-    }
-
-    // if f is pressed
-    if (event.keyCode === 70) {
-      handleToggleFullscreen();
       return;
     }
   }

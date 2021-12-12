@@ -20,7 +20,8 @@ const { casePost } = Astro.props;
 const videoTypesData = await getData('videoTypes');
 
 const videoTypeIDs = casePost.videotypes.filter(id => id !== 11);
-const videoType = videoTypesData.find(type => type.id === videoTypeIDs[0])
+const videoType = videoTypesData.find(type => type.id === videoTypeIDs[0]);
+
 ---
 <BaseLayout 
   pageContent={casePost} 
@@ -30,7 +31,7 @@ const videoType = videoTypesData.find(type => type.id === videoTypeIDs[0])
   <VideoPlayer 
     client:load
     title={casePost['case_title']} 
-    description={casePost.description}
+    description={casePost['case_description']}
     videoType={videoType.name}
     videoSrc={casePost['case_video'].guid}
   />
