@@ -2,9 +2,19 @@
 import CircleWithArrow from '../assets/icons/CircleWithArrow.svelte';
 export let singleCase;
 export let videoTypes;
+export let heroSwiper;
+export let activeSlideIndex;
 
 const videoTypeId = singleCase.videotypes.filter(id => id !== 11);
 const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
+
+function changeVideo(){
+    if (activeSlideIndex === 4){
+           setTimeout(function () {
+                heroSwiper.slideTo(0);
+        }, 175);
+    }
+}
 </script>
 
 <div class="video-information">
@@ -16,7 +26,7 @@ const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
             <span class="arrow_icon"><CircleWithArrow /></span>
         </a>
     </div>
-        <button class="timer-button">
+        <button class="timer-button" on:click={changeVideo}>
             <svg class="border" height="128" width="128">
                 <circle cx="64" cy="64" r="63" stroke="white" stroke-width="1" fill="none" />
               </svg>

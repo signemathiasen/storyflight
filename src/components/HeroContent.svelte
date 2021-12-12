@@ -6,6 +6,7 @@ import HeroVideo from './HeroVideo.svelte';
 export let cases;
 export let videoTypes;
 let activeSlideIndex = 0;
+let heroSwiper;
 
 //Get random cases
 cases = cases.sort(() => Math.random() - 0.5);
@@ -15,12 +16,11 @@ import { Swiper, SwiperSlide } from 'swiper/svelte';
 
 // Import Swiper styles
 import 'swiper/css';
-import 'swiper/css';
 import "swiper/css/effect-fade"
 import 'swiper/scss/navigation';
 
 import SwiperCore, {
-  EffectFade, Autoplay
+  EffectFade, Autoplay, Controller
 } from 'swiper';
 
 // install Swiper modules
@@ -31,6 +31,14 @@ const getCurrentSlideIndex = (e) => {
       const activeIndex = slide[0].activeIndex;
       activeSlideIndex = activeIndex;
     }
+
+    const setSwiper = (e) => {
+      const [swiper] = e.detail;
+      setTimeout(() => {
+        heroSwiper = swiper;
+        console.log(heroSwiper);
+      });
+    };
 
 </script>
 
@@ -58,6 +66,7 @@ const getCurrentSlideIndex = (e) => {
     navigation='{{
         nextEl: ".timer-button"
      }}'
+      on:swiper={setSwiper}
       on:snapIndexChange={getCurrentSlideIndex}>
     {#each cases as singleCase, index}
         {#if index <= 4}
@@ -65,7 +74,7 @@ const getCurrentSlideIndex = (e) => {
             <div class="video-overlay"></div>
                 <HeroVideo bind:activeSlideIndex={activeSlideIndex} videoIndex={index} previewVideoSource={singleCase.preview_video.guid}/>
             <div class="video-info-wrap container container--fluid">
-                <HeroVideoInfo {singleCase} {videoTypes}/>
+                <HeroVideoInfo bind:activeSlideIndex={activeSlideIndex} {singleCase} {videoTypes} bind:heroSwiper={heroSwiper}/>
             </div>
         </SwiperSlide>
         {/if}
