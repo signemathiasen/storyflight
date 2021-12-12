@@ -3,8 +3,14 @@
 
   function cursorMove(e) {
     let cursor = document.querySelector('#cursor');
-    cursor.style.left = e.pageX - 10.5 + 'px';
-    cursor.style.top = e.pageY - 10.5 + 'px';
+    const circleStyle = cursor.style;
+
+    document.addEventListener('mousemove', (e) => {
+      window.requestAnimationFrame(() => {
+        circleStyle.top = `${e.clientY - cursor.offsetHeight / 3}px`;
+        circleStyle.left = `${e.clientX - cursor.offsetWidth / 3}px`;
+      });
+    });
   }
   function mouseDown() {
     let cursor = document.querySelector('#cursor');
@@ -31,7 +37,7 @@
     height: 30px;
     border: 1px solid var(--clr-primary);
     border-radius: 100%;
-    position: absolute;
+    position: fixed;
     /* transition: 0.1s ease-out; */
     transition: transform 0.25s;
     z-index: 999;
