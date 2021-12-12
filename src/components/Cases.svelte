@@ -5,40 +5,69 @@
   export let cases;
   export let videoTypes;
   export let canonicalURL;
+  export let title;
 
   let filter = 11; // 11 is the ID of "alle videoer" videotype from WP
   $: filteredCases = cases.filter(item => item.videotypes.find(id => id === filter));
 </script>
 
-<Filter 
-  bind:filter={filter}
-  filterTypes={videoTypes} 
-/>
+<section>
+  <div class="header container container--fluid">
+    <h1>{title}</h1>
+    <Filter 
+      bind:filter={filter}
+      filterTypes={videoTypes} 
+    />
+  </div>
 
-<section class="case-grid">
-  {#each filteredCases as { 
-    case_title: title, 
-    case_image: { guid: image }, 
-    videotypes,
-    slug
-  }}
-    <Case 
+  <div class="case-grid container container--fluid">
+    {#each filteredCases as { 
+      case_title: title, 
+      case_image: { guid: image }, 
+      videotypes: type,
+      slug
+    }, index}
+
+      {#if index <= 6}
+
+      <Case 
       title={title}
       imageSrc={image}
+      type={type.find(id => id !== 11)}
       videoTypes={videoTypes}
       slug={slug}
       canonicalURL={canonicalURL}
-    />
-  {/each}
+      />
+
+      {/if}
+    {/each}
+
+  </div>
 </section>
+  
 
 
-
-<style>
+<style lang="scss">
 
   .case-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
+    gap: var(--gutter);
+    grid-auto-rows: 360px;
+    justify-content: stretch;
+
+    @media (min-width: 1112px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 992px) {
+    .header {
+      display: flex;
+      margin-bottom: 3rem;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
   }
 
 </style>

@@ -20,6 +20,7 @@ const { canonicalURL } = Astro.request;
 <BaseLayout pageContent={pageData}>
 <Cursor client:load />
   <Cases 
+    title={pageData.title.rendered}
     client:load 
     cases={allCases} 
     videoTypes={videoTypes} 
