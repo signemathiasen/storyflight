@@ -10,9 +10,9 @@
     <source src={BGvideo.preview_video.guid} type="video/mp4" />
   </video>
   <div class="overlay">
-    <h2 class="caption">Klar til et samarbejde?</h2>
-    <a href="/kontakt" class="link">
-      <button class="button-hover-white">Kontakt os</button>
+    <h2 class="caption">{title}</h2>
+    <a href="{link}/kontakt" class="link">
+      <button class="button-hover-white">{button}</button>
     </a>
   </div>
 </div>

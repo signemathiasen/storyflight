@@ -69,7 +69,7 @@
         {#each contactInformation as { title, url }, index}
           {#if index <= 2}
             <li>
-              <a class="links-hover some_title" href={`/${url}`} target="_blank">
+              <a class="links-hover some_title" href={`${url}`} target="_blank">
                 {title}
                 <span class="some_icon"><svelte:component this={icons[title.toLowerCase()]} /></span>
               </a>
