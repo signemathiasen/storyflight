@@ -61,7 +61,7 @@
         {#each primaryMenu as menuItem}
           <li><a
               on:mouseover={setOpacity} on:mouseout={removeOpacity}
-              class="h1 menu_item" href={menuItem.slug}>{menuItem.title}
+              class="h1 menu_item" href={`/${menuItem.slug}`}>{menuItem.title}
             </a></li>
           <!-- Change link in wordpress -->
         {/each}
@@ -78,7 +78,7 @@
         {#each contactInformation as { title, url }, index}
           {#if index <= 2}
             <li>
-              <a class="links-hover some_title" href={`${url}`} target="_blank">
+              <a class="links-hover some_title" href={url} target="_blank">
                 {title}
                 <span class="some_icon"><svelte:component this={icons[title.toLowerCase()]} /></span>
               </a>
