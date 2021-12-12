@@ -21,7 +21,7 @@ function changeVideo(){
     <div class="info">
     <p class="subtitle">{videoType}</p>
     <h3>{singleCase.case_title}</h3>
-        <a href="#" class="link links-hover">
+        <a href={`/cases/${singleCase.slug}`} class="link links-hover">
             <span class="a link-text">Gå til projektet</span>
             <span class="arrow_icon"><CircleWithArrow /></span>
         </a>
