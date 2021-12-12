@@ -11,7 +11,7 @@
   <div class="filter__wrapper">
     {#each filterTypes as { name, slug, id }}
       <button
-        class="filter__button"
+        class="filter__button a"
         on:click={() => setFilter(id)} 
         class:selected={id === filter}>
         {name}
