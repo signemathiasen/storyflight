@@ -27,7 +27,7 @@
     }
 
     .footer-logo {
-      width: 300px;
+      max-width: 300px;
       margin: var(--gutter);
     }
 
