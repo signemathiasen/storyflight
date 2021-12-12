@@ -57,12 +57,6 @@
       handlePlayPause(event); 
       return;
     }
-
-    // if f is pressed
-    if (event.keyCode === 70) {
-      handleToggleFullscreen();
-      return;
-    }
   }
 
 </script>
