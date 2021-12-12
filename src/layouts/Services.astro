@@ -1,7 +1,7 @@
 ---
 import SeeMoreButton from "../components/SeeMoreButton.svelte";
 import {getData} from '../helpers/dataFetching.js';
-
+import {servicesAnimation} from "../helpers/animation.js";
 
 const servicesPageData = await getData("pages", "viTilbyder");
 const servicesData = await getData("services");
@@ -11,6 +11,7 @@ const { acf: {
   button_link: url,
 }} = servicesPageData;
 
+servicesAnimation();
 ---
 
 <section class="services-section">

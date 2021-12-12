@@ -12,7 +12,7 @@
     </div>
   {/each}
 
-  <button type="submit" id="submit">Lad mig høre mere</button>
+  <button class="filled-button-hover" type="submit" id="submit">Lad mig høre mere</button>
 </form>
 
 <style lang="scss">
@@ -55,6 +55,9 @@
       width: 100%;
       margin: 3rem 0 0;
       background: var(--clr-white);
+      @media (max-width: 768px){
+                max-width: 300px;    
+        }
       @media (min-width: 992px) {
         background: var(--clr-secondary);
         color: var(--clr-white);

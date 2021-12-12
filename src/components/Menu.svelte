@@ -23,14 +23,14 @@
   }
 
   function setOpacity(e) {
-    const menuItems = document.querySelectorAll('.menu_item')
-    menuItems.forEach(menuItem => menuItem.style.opacity = "0.1");
-      event.target.style.opacity = "1";
+    // const menuItems = document.querySelectorAll('.menu_item')
+    // menuItems.forEach(menuItem => menuItem.style.opacity = "0.1");
+    //   event.target.style.opacity = "1";
   }
   
 	function removeOpacity(e) {
-    const menuItems = document.querySelectorAll('.menu_item')
-    menuItems.forEach(menuItem => menuItem.style.opacity = "1");
+    // const menuItems = document.querySelectorAll('.menu_item')
+    // menuItems.forEach(menuItem => menuItem.style.opacity = "1");
 	}
 </script>
 
@@ -38,7 +38,7 @@
   {#if !menuActive}
     <Menu />
   {:else}
-    <span class="close_menu">
+    <span class="a links-hover close_menu">
       <span class="a go_back">Tilbage</span>
       <span class="arrow_icon"><Arrow /></span>
     </span>
@@ -69,7 +69,7 @@
         {#each contactInformation as { title, url }, index}
           {#if index <= 2}
             <li>
-              <a class="some_title" href={`/${url}`} target="_blank">
+              <a class="links-hover some_title" href={`/${url}`} target="_blank">
                 {title}
                 <span class="some_icon"><svelte:component this={icons[title.toLowerCase()]} /></span>
               </a>
@@ -142,6 +142,7 @@
           transition: 0.3s;
             &:hover{
             transform: translateX(5px);
+            opacity: 0.2;
             transition: 0.3s;
           }
         }

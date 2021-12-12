@@ -11,9 +11,9 @@
     <source src={BGvideo.preview_video.guid} type="video/mp4" />
   </video>
   <div class="overlay">
+    <h2 class="caption">Klar til et samarbejde?</h2>
     <a href="/kontakt" class="link">
-      <h2 class="caption">Klar til et samarbejde?</h2>
-      <button>Kontakt os</button>
+      <button class="button-hover-white">Kontakt os</button>
     </a>
   </div>
 </div>
@@ -52,7 +52,7 @@
       button {
         background: transparent;
         color: white;
-        border: 3px solid white;
+        border: 1px solid white;
         width: 250px;
         margin-top: var(--gutter);
         cursor: none;

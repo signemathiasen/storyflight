@@ -36,7 +36,7 @@ const getCurrentSlideIndex = (e) => {
 
 <div class="hero-content-wrap">
     <div class="scroll-indicator-wrap">
-        <a href="#text-block" class="scroll-indicator">
+        <a href="#text-block" class="scroll-indicator links-hover">
             <span class="a scroll-text">Scroll</span>
             <span class="scroll-arrow">
                     <ArrowDown />

@@ -61,6 +61,7 @@
 <style lang="scss">
     .swiper-wrap{
         position: relative;
+
         .swiper-overlay{
             position: absolute;
             bottom: 0;
