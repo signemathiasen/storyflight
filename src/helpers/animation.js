@@ -5,7 +5,7 @@ export default function animation() {
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.to('.chosen-cases .swiper-slide', {
-    transform: 'translateX(0)',
+    x: 0,
     scrollTrigger: {
       trigger: '.chosen-cases',
       markers: false,
@@ -16,44 +16,50 @@ export default function animation() {
   });
 
   gsap.to('.text-block-wrap', {
-    transform: 'translateY(0)',
+    y: 0,
+    opacity: 1,
+    duration: 0.5,
     scrollTrigger: {
       trigger: '#text-block',
-      markers: false,
-      start: 'top bottom',
-      end: 'bottom 20%',
-      scrub: true,
+      start: 'top 70%',
     },
   });
 }
 
-export function servicesAnimation() {
+export function logoAnimation() {
   gsap.registerPlugin(ScrollTrigger);
-  console.log('hej mortren');
-  // const test = document.querySelectorAll('.services-item');
-  // let listones = gsap.utils.toArray('.services-item');
+  let letter = document.querySelectorAll('.letter');
+  let container = document.querySelector('.hero-content-wrap');
 
-  // //listones.forEach((listone) => {
+  const tl = gsap.timeline();
 
-  // let tl = gsap
-  //   .timeline({
-  //     scrollTrigger: {
-  //       trigger: '.wrapper',
-  //       start: 'top 50%',
-  //       end: 'bottom top',
-  //       toggleActions: 'restart restart restart restart',
-  //     },
-  //   })
-  //   .from(listones, { opacity: 0, stagger: 1, duration: 5 }, 0);
+  tl.to(letter, {
+    opacity: 0,
+    ease: 'power1.in',
+    stagger: {
+      each: 0.05,
+      from: 'end',
+    },
+  }).to('.line', { scaleY: 0, duration: 0.2, ease: 'power1.out' });
 
-  // gsap.to('.services-item', {
-  //   transform: 'translateY(0)',
-  //   scrollTrigger: {
-  //     trigger: 'main',
-  //     markers: true,
-  //     start: 'top bottom',
-  //     end: 'bottom 20%',
-  //     scrub: true,
-  //   },
-  // });
+  ScrollTrigger.create({
+    animation: tl,
+    trigger: container,
+    start: '1% top',
+    // end: 'bottom center',
+    // scrub: true,
+  });
+}
+
+export function staggerAnimation(element) {
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.batch(element, {
+    interval: 0.1,
+    batchMax: 0,
+    onEnter: (batch) => gsap.to(batch, { autoAlpha: 1, stagger: 0.15, overwrite: true }),
+    onLeave: (batch) => gsap.set(batch, { autoAlpha: 0, overwrite: true }),
+    onEnterBack: (batch) => gsap.to(batch, { autoAlpha: 1, stagger: 0.15, overwrite: true }),
+    onLeaveBack: (batch) => gsap.set(batch, { autoAlpha: 0, overwrite: true }),
+  });
 }

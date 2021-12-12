@@ -3,7 +3,6 @@
   export let pageData;
 
   let BGvideo = Videos.find((element) => element.case_video.post_title === 'Wildrun');
-  console.log(pageData);
 </script>
 
 <div class="bg-vid">
