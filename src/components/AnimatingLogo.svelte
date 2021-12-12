@@ -1,5 +1,5 @@
 <script>
-  import { logoAnimation } from '../helpers/logoAnimation';
+  import { logoAnimation } from '../helpers/animation.js';
   import { onMount } from 'svelte';
 
   onMount(() => {

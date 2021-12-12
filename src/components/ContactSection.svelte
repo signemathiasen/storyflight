@@ -3,16 +3,6 @@
   export let pageData;
 
   let BGvideo = Videos.find((element) => element.case_video.post_title === 'Wildrun');
-  console.log(pageData);
-
-  const {
-    acf: {
-      contact_us_heading: title,
-      contact_us_button_text: button,
-      contact_us_button_link: link,
-      background_video: video,
-    },
-  } = pageData;
 </script>
 
 <div class="bg-vid">

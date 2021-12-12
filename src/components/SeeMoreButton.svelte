@@ -1,9 +1,11 @@
 <script>
-  import Arrow from "../assets/icons/CircleWithArrow.svelte";
+  import Arrow from '../assets/icons/CircleWithArrow.svelte';
   export let pageData;
 </script>
 
-<a class="links-hover" href="{pageData.acf.button_link} ">{pageData.acf.button_text} <span class="arrow_icon"><Arrow /></span></a>
+<a class="links-hover" href="{pageData.acf.button_link} "
+  >{pageData.acf.button_text} <span class="arrow_icon"><Arrow /></span></a
+>
 
 <style lang="scss">
   a {
