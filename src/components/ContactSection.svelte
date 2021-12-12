@@ -4,6 +4,15 @@
 
   let BGvideo = Videos.find((element) => element.case_video.post_title === 'Wildrun');
   console.log(pageData);
+
+  const {
+    acf: {
+      contact_us_heading: title,
+      contact_us_button_text: button,
+      contact_us_button_link: link,
+      background_video: video,
+    },
+  } = pageData;
 </script>
 
 <div class="bg-vid">
@@ -11,9 +20,9 @@
     <source src={BGvideo.preview_video.guid} type="video/mp4" />
   </video>
   <div class="overlay">
-    <h2 class="caption">Klar til et samarbejde?</h2>
-    <a href="/kontakt" class="link">
-      <button class="button-hover-white">Kontakt os</button>
+    <h2 class="caption">{title}</h2>
+    <a href="{link}/kontakt" class="link">
+      <button class="button-hover-white">{button}</button>
     </a>
   </div>
 </div>
