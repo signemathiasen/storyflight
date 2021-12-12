@@ -7,8 +7,6 @@
   export let videoType;
   export let videoSrc;
 
-  console.log(description);
-
   // Binds to video
   let paused = true;
   let time = 0;
