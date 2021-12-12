@@ -16,7 +16,7 @@
 <div class="case-wrap">
     <a href={`/cases/${singleVideoData.slug}`} class="video-wrap">
         <img bind:this={previewImage} class="preview-image" src={singleVideoData.case_image.guid}>
-        <video class="preview-video" on:mouseenter={playVideo} on:mouseout={pauseVideo} muted={'true'}>
+        <video class="preview-video" on:mouseenter={playVideo} on:mouseout={pauseVideo} muted={'true'} preload="auto">
             <source src={singleVideoData.preview_video.guid} type="video/mp4">
           </video>
     </a>

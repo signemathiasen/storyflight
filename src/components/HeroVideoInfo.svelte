@@ -82,7 +82,10 @@ const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
         flex-direction: row-reverse;
         align-items: center;
         .info{
-            margin-left: 2.5rem;
+            margin-left: 1.5rem;
+            @media (min-width: 500px) {
+                margin-left: 2.5rem;
+            }
         }
         .link{
         display:flex;

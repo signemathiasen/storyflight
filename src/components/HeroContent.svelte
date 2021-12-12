@@ -74,30 +74,35 @@ const getCurrentSlideIndex = (e) => {
 </div>
 
 <style lang="scss">
-.video-info-wrap{
+.video-info-wrap {
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
     align-items: flex-end;
-    height: 100vh;
+    height: 80vh;
     padding-bottom: 1.5rem;
+        @media (min-width: 992px) {
+            height: 100vh;
+        }
 }
 
-.hero-content-wrap{
+.hero-content-wrap {
     position: relative;
-    .scroll-indicator-wrap{
+    .scroll-indicator-wrap {
         position: absolute;
         z-index:2;
         bottom: 1.5rem;
         right:1.5rem;
         display:flex;
-        .scroll-indicator{
+        .scroll-indicator {
             color: var(--clr-white);
             writing-mode: vertical-rl;
             display: flex;
-        
-            .scroll-text{
+            @media (max-width: 668px) {
+                display: none;
+            }
+            .scroll-text {
             margin-left:4px;
             margin-bottom: 0.5rem;
         }
@@ -116,11 +121,14 @@ const getCurrentSlideIndex = (e) => {
     }
 
     .video-overlay{
-        height: 100vh;
+        height: 80vh;
         width: 100vw;
         position: absolute;
         top: 0;
         background: rgba(0, 0, 0, 0.2);
+        @media (min-width: 992px) {
+            height: 100vh;
+        }
         }
 }
 </style>

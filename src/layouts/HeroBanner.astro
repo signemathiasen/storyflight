@@ -13,8 +13,11 @@ const videoTypes = await getData('videoTypes');
 .hero-banner{
     padding: 0;
     :global(.swiper) {
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
+        @media (min-width: 992px) {
+            height: 100vh;
+        }
     }
 }
 </style>
