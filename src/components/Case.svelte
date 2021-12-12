@@ -26,41 +26,59 @@
     height: 100%;
     overflow: hidden;
 
-    &:last-child:nth-child(2n - 1) {
-      grid-column: span 2;
-    }
+    @media (min-width: 800px) and (max-width: 1111px) {
+      &:last-child:nth-child(2n - 1) {
+        grid-column: span 2;
+      }
 
-    &:last-child:nth-child(4n - 4) {
-      grid-column: span 2;
-    }
+      &:last-child:nth-child(4n - 4) {
+        grid-column: span 2;
+      }
 
-    &:last-child:nth-child(5n - 5) {
-      grid-column: span 1;
-    }
+      &:last-child:nth-child(12n - 12) {
+        grid-column: span 1;
+      }
 
-    &:last-child:nth-child(10n + 2) {
-      grid-row: span 1;
-    }
+      &:last-child:nth-child(5n - 5) {
+        grid-column: span 1;
+      }
 
-    &:last-child:nth-child(10n + 3) {
-      grid-column: span 1;
-    }
+      &:last-child:nth-child(10n + 2) {
+        grid-row: span 1;
+      }
 
-    &:nth-child(10n + 2) {
-      grid-row: span 2;
-    }
+      &:last-child:nth-child(10n + 3) {
+        grid-column: span 1;
+      }
 
-    &:nth-child(10n + 6) {
-      grid-row: span 2;
-    }
+      &:nth-child(10n + 2) {
+        grid-row: span 2;
+      }
 
-    &:last-child:nth-child(10n + 6) {
-      grid-row: span 1;
-      grid-column: span 2;
-    }
+      &:nth-child(10n + 6) {
+        grid-row: span 2;
+      }
 
-    &:last-child:nth-child(10n + 8) {
-      grid-column: span 1;
+      &:last-child:nth-child(10n + 6) {
+        grid-row: span 1;
+        grid-column: span 2;
+      }
+
+      &:last-child:nth-child(10n + 8) {
+        grid-column: span 1;
+      }
+
+      &:last-child:nth-child(10n + 7) {
+        grid-column: span 1;
+      }
+
+      &:nth-last-child(2):nth-child(10n + 6) {
+        grid-row: span 1;
+      }
+
+      &:last-child:nth-child(10n + 14) {
+        grid-column: span 2;
+      }
     }
 
     @media (min-width: 1112px) {
@@ -123,7 +141,7 @@
       height: 100%;
       width: 100%;
       transform-origin: 50% 50%;
-      transition: transform 24s ease-in, filter 0.5s ease-in-out;
+      transition: transform 24s ease-in-out, filter 0.5s ease-in-out;
       filter: brightness(50%);
       object-fit: cover;
     }

@@ -26,9 +26,7 @@
       case_image: { guid: image }, 
       videotypes: type,
       slug
-    }, index}
-
-      {#if index <= 6}
+    }}
 
       <Case 
       title={title}
@@ -38,8 +36,6 @@
       slug={slug}
       canonicalURL={canonicalURL}
       />
-
-      {/if}
     {/each}
 
   </div>
@@ -54,7 +50,6 @@
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
     gap: var(--gutter);
     grid-auto-rows: 360px;
-    justify-content: stretch;
 
     @media (min-width: 1112px) {
       grid-template-columns: repeat(3, 1fr);
