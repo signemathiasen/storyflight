@@ -97,7 +97,7 @@
         </a>
       </div>
       <div class="video-player__content">
-        <p>{videoType}</p>
+        <p class="subtitle">{videoType}</p>
         <h1 class="h2">{title}</h1>
         {#if description}
           <p>{description}</p>
