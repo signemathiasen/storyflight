@@ -42,7 +42,7 @@
   >
     {#each chosenCasesData as item}
       <SwiperSlide>
-        <SliderSingleVideo singleVideoData={item} />
+        <SliderSingleVideo client:load singleVideoData={item} />
       </SwiperSlide>
     {/each}
 </Swiper>
