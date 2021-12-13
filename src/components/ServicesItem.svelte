@@ -1,12 +1,12 @@
 <script>
   export let servicesData;
 
-  // import { staggerAnimation } from '../helpers/animation.js';
-  // import { onMount } from 'svelte';
+  import { staggerAnimation } from '../helpers/animation.js';
+  import { onMount } from 'svelte';
 
-  // onMount(() => {
-  //   staggerAnimation('.services-item');
-  // });
+  onMount(() => {
+    staggerAnimation('.services-item');
+  });
 </script>
 
 <div class="services-wrap">

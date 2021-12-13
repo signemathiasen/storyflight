@@ -57,9 +57,10 @@ export function staggerAnimation(element) {
   ScrollTrigger.batch(element, {
     interval: 0.1,
     batchMax: 0,
+    start: 'top bottom-=150px',
     onEnter: (batch) => gsap.to(batch, { autoAlpha: 1, stagger: 0.15, overwrite: true }),
-    onLeave: (batch) => gsap.set(batch, { autoAlpha: 0, overwrite: true }),
-    onEnterBack: (batch) => gsap.to(batch, { autoAlpha: 1, stagger: 0.15, overwrite: true }),
-    onLeaveBack: (batch) => gsap.set(batch, { autoAlpha: 0, overwrite: true }),
+    // onLeave: (batch) => gsap.set(batch, { autoAlpha: 0, overwrite: true }),
+    // onEnterBack: (batch) => gsap.to(batch, { autoAlpha: 1, stagger: 0.15, overwrite: true }),
+    // onLeaveBack: (batch) => gsap.set(batch, { autoAlpha: 0, overwrite: true }),
   });
 }
