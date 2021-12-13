@@ -1,8 +1,8 @@
 <script>
   import Filter from './Filter.svelte';
   import Case from './Case.svelte';
-  import { staggerAnimation } from '../helpers/animation.js';
-  import { onMount } from 'svelte';
+  // import { staggerAnimation } from '../helpers/animation.js';
+  // import { onMount } from 'svelte';
 
   export let cases;
   export let videoTypes;
@@ -12,9 +12,9 @@
   let filter = 11; // 11 is the ID of "alle videoer" videotype from WP
   $: filteredCases = cases.filter((item) => item.videotypes.find((id) => id === filter));
 
-  onMount(() => {
-    staggerAnimation('.case');
-  });
+  // onMount(() => {
+  //   staggerAnimation('.case');
+  // });
 </script>
 
 <section>

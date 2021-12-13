@@ -1,12 +1,12 @@
 <script>
   export let servicesData;
 
-  import { staggerAnimation } from '../helpers/animation.js';
-  import { onMount } from 'svelte';
+  // import { staggerAnimation } from '../helpers/animation.js';
+  // import { onMount } from 'svelte';
 
-  onMount(() => {
-    staggerAnimation('.services-item');
-  });
+  // onMount(() => {
+  //   staggerAnimation('.services-item');
+  // });
 </script>
 
 <div class="services-wrap">
@@ -47,8 +47,8 @@
         top: -20px;
         text-transform: capitalize;
       }
-        @media (min-width: 1000px) {
-          margin-bottom: 0rem;
+      @media (min-width: 1000px) {
+        margin-bottom: 0rem;
       }
     }
     .services-line {
@@ -58,9 +58,9 @@
       top: 12px;
     }
   }
-  .services-wrap{
+  .services-wrap {
     padding-bottom: 3rem;
-      @media (min-width: 768px) {
+    @media (min-width: 768px) {
       padding-bottom: 6rem;
     }
   }

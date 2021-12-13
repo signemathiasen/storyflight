@@ -15,15 +15,15 @@ export default function animation() {
     },
   });
 
-  gsap.to('.text-block-wrap', {
-    y: 0,
-    opacity: 1,
-    duration: 0.5,
-    scrollTrigger: {
-      trigger: '#text-block',
-      start: 'top 70%',
-    },
-  });
+  // gsap.to('.text-block-wrap', {
+  //   y: 0,
+  //   opacity: 1,
+  //   duration: 0.5,
+  //   scrollTrigger: {
+  //     trigger: '#text-block',
+  //     start: 'top 70%',
+  //   },
+  // });
 }
 
 export function logoAnimation() {
