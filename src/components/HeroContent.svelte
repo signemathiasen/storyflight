@@ -32,12 +32,28 @@ const getCurrentSlideIndex = (e) => {
       activeSlideIndex = activeIndex;
     }
 
-    const setSwiper = (e) => {
-      const [swiper] = e.detail;
-      setTimeout(() => {
-        heroSwiper = swiper;
-      });
-    };
+const setSwiper = (e) => {
+    const [swiper] = e.detail;
+    setTimeout(() => {
+    heroSwiper = swiper;
+    });
+};
+
+const playNextVideo = () => {
+    const index = heroSwiper.realIndex;
+
+    // const slides = heroSwiper.slides;
+
+    // slides.forEach(slide => {
+    //     const video = slide.querySelector("video");
+    //     video.pause();
+    //     video.currentTime = 0;
+    // })
+
+    // const currentSlide = heroSwiper.slides[index];
+
+    // currentSlide.play();
+}
 
 </script>
 
@@ -51,7 +67,7 @@ const getCurrentSlideIndex = (e) => {
         </a>
     </div>
     <Swiper
-    loop="{false}"
+    loop="true"
     slidesPerView="{1}"
     effect="{'fade'}"
     speed="{300}"
@@ -66,14 +82,16 @@ const getCurrentSlideIndex = (e) => {
         nextEl: ".timer-button"
      }}'
       on:swiper={setSwiper}
-      on:snapIndexChange={getCurrentSlideIndex}>
+      on:snapIndexChange={getCurrentSlideIndex}
+      on:slideChange={playNextVideo}
+    >
     {#each cases as singleCase, index}
         {#if index <= 4}
         <SwiperSlide data-swiper-slide-index={index} class="swiper-no-swiping">
             <div class="video-overlay"></div>
                 <HeroVideo bind:activeSlideIndex={activeSlideIndex} videoIndex={index} previewVideoSource={singleCase.preview_video.guid}/>
             <div class="video-info-wrap container container--fluid">
-                <HeroVideoInfo bind:activeSlideIndex={activeSlideIndex} {singleCase} {videoTypes} bind:heroSwiper={heroSwiper}/>
+                <HeroVideoInfo {singleCase} {videoTypes}/>
             </div>
         </SwiperSlide>
         {/if}
