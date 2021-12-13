@@ -115,14 +115,18 @@ const getCurrentSlideIndex = (e) => {
             margin-bottom: 0.5rem;
         }
         .scroll-arrow {
-                // animation: bounce 0.5s linear 5s infinite alternate;
+                animation: bounce 2s ease-in 5.5s infinite alternate;
             }
             @keyframes bounce {
-                from {
+                20%, 100% {
                     transform: translateY(0px);
                 }
-                to {
-                    transform: translateY(-5px);
+                0% {
+                    transform: translateY(5px);
+
+                }
+                10% {
+                    transform: translateY(0px);
                 }
             }
         }
@@ -133,10 +137,11 @@ const getCurrentSlideIndex = (e) => {
         width: 100vw;
         position: absolute;
         top: 0;
-        background: rgba(0, 0, 0, 0.2);
-        @media (min-width: 992px) {
-            height: 100vh;
-        }
+        background: var(--clr-secondary);
+        opacity: 0.4;
+            @media (min-width: 992px) {
+                height: 100vh;
+            }
         }
 }
 </style>
