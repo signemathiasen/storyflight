@@ -1,13 +1,13 @@
 <script>
-  import LogoType from "../assets/LogoWithType.svelte";
-  import FooterLogo from "../assets/FooterLogo.svelte";
-  import SoMeIcons from "./SoMeIcons.svelte";
+  import LogoType from '../assets/LogoWithType.svelte';
+  import FooterLogo from '../assets/FooterLogo.svelte';
+  import SoMeIcons from './SoMeIcons.svelte';
   export let footerData;
 </script>
 
 <div class="">
   <div class="footer-logo ">
-    <svelte:component this={LogoType} />
+    <svelte:component this={LogoType} class="footer-svg" />
   </div>
   <SoMeIcons {footerData} />
   <div class="footer-bg-logo">
@@ -40,5 +40,8 @@
         display: block;
       }
     }
+  }
+  :global(.footer-svg) {
+    width: 100%;
   }
 </style>
