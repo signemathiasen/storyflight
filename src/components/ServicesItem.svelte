@@ -47,8 +47,8 @@
         top: -20px;
         text-transform: capitalize;
       }
-        @media (min-width: 1000px) {
-          margin-bottom: 0rem;
+      @media (min-width: 1000px) {
+        margin-bottom: 0rem;
       }
     }
     .services-line {
@@ -58,9 +58,9 @@
       top: 12px;
     }
   }
-  .services-wrap{
+  .services-wrap {
     padding-bottom: 3rem;
-      @media (min-width: 768px) {
+    @media (min-width: 768px) {
       padding-bottom: 6rem;
     }
   }
