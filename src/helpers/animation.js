@@ -1,8 +1,8 @@
 import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-export default function animation() {
-  // gsap.registerPlugin(ScrollTrigger);
+export function animation() {
+  gsap.registerPlugin(ScrollTrigger);
   // gsap.to('.chosen-cases .swiper-slide', {
   //   x: 0,
   //   scrollTrigger: {
@@ -13,15 +13,15 @@ export default function animation() {
   //     scrub: true,
   //   },
   // });
-  // gsap.to('.text-block-wrap', {
-  //   y: 0,
-  //   opacity: 1,
-  //   duration: 0.5,
-  //   scrollTrigger: {
-  //     trigger: '#text-block',
-  //     start: 'top 70%',
-  //   },
-  // });
+
+  gsap.to('.text-block-wrap', {
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: {
+      trigger: '.text-block-wrap',
+      start: '50% bottom',
+    },
+  });
 }
 
 export function logoAnimation() {
@@ -51,14 +51,19 @@ export function logoAnimation() {
 
 export function staggerAnimation(element) {
   gsap.registerPlugin(ScrollTrigger);
+  let top = '';
+
+  if (element == '.case') {
+    top = '90%';
+  } else {
+    top = 'bottom-=150px';
+  }
 
   ScrollTrigger.batch(element, {
     interval: 0.1,
-    batchMax: 0,
-    start: 'top bottom-=150px',
-    onEnter: (batch) => gsap.to(batch, { autoAlpha: 1, stagger: 0.15, overwrite: true }),
-    // onLeave: (batch) => gsap.set(batch, { autoAlpha: 0, overwrite: true }),
-    // onEnterBack: (batch) => gsap.to(batch, { autoAlpha: 1, stagger: 0.15, overwrite: true }),
-    // onLeaveBack: (batch) => gsap.set(batch, { autoAlpha: 0, overwrite: true }),
+    batchMax: 3,
+    duration: 1,
+    start: 'top ' + top,
+    onEnter: (batch) => gsap.to(batch, { stagger: 0.1, opacity: 1 }),
   });
 }
