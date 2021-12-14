@@ -29,7 +29,7 @@ export async function getData(endpoint, slug = '') {
   const isSlugValid = SETTINGS.menuSlugs[slug];
 
   if (isEndpointValid === undefined) return console.error('Endpoint does not exist');
-  if (endpoint === 'menus' && isSlugValid === undefined) return console.error('Slug does not exist');
+  if (endpoint === 'menus' && isSlugValid === undefined) return;
 
   const { baseUrl, menuPath, generalPath, menuSlugs, endpoints } = SETTINGS;
   const path = endpoint === 'menus' ? menuPath : generalPath;

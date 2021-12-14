@@ -19,7 +19,7 @@
 <div class="first-half logos-mobile">
   {#each logosFirstHalf as logo}
     <div class="first-half">
-      <img src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
+      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
     </div>
   {/each}
 </div>
@@ -27,7 +27,7 @@
 <div class="second-half logos-mobile">
   {#each logosSecondHalf as logo}
     <div>
-      <img src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
+      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
     </div>
   {/each}
 </div>
@@ -35,7 +35,7 @@
 <div class="logos-first-third logos-desktop">
   {#each logosFirstThird as logo}
     <div>
-      <img src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
+      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
     </div>
   {/each}
 </div>
@@ -43,7 +43,7 @@
 <div class="logos-second-third logos-desktop">
   {#each logosSecondThird as logo}
     <div>
-      <img src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
+      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
     </div>
   {/each}
 </div>
@@ -51,7 +51,7 @@
 <div class="logos-last-third logos-desktop">
   {#each logosLastThird as logo}
     <div>
-      <img src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
+      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
     </div>
   {/each}
 </div>
