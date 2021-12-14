@@ -1,7 +1,6 @@
 <script>
   export let Videos;
   export let pageData;
-console.log(Videos);
 let BGvideo;
   if(pageData.slug === 'vi-tilbyder'){
     BGvideo = Videos.find((element) => element.preview_video.post_title === 'Lamborghini_preview_compressed_cropped');
