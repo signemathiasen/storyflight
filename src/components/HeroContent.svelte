@@ -68,7 +68,7 @@ const getCurrentSlideIndex = (e) => {
       on:swiper={setSwiper}
       on:snapIndexChange={getCurrentSlideIndex}>
     {#each cases as singleCase, index}
-        {#if index <= 4}
+        {#if index <= 2}
         <SwiperSlide data-swiper-slide-index={index} class="swiper-no-swiping">
             <div class="video-overlay"></div>
                 <HeroVideo bind:activeSlideIndex={activeSlideIndex} videoIndex={index} previewVideoSource={singleCase.preview_video.guid}/>
