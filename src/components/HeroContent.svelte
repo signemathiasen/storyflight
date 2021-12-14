@@ -71,7 +71,7 @@ const getCurrentSlideIndex = (e) => {
         {#if index <= 2}
         <SwiperSlide data-swiper-slide-index={index} class="swiper-no-swiping">
             <div class="video-overlay"></div>
-                <HeroVideo bind:activeSlideIndex={activeSlideIndex} videoIndex={index} previewVideoSource={singleCase.preview_video.guid}/>
+                <HeroVideo bind:activeSlideIndex={activeSlideIndex} videoIndex={index} previewVideoSource={singleCase.preview_video.guid} caseImage={singleCase.case_image.guid}/>
             <div class="video-info-wrap container container--fluid">
                 <HeroVideoInfo bind:activeSlideIndex={activeSlideIndex} {singleCase} {videoTypes} bind:heroSwiper={heroSwiper}/>
             </div>
@@ -115,7 +115,7 @@ const getCurrentSlideIndex = (e) => {
             margin-bottom: 0.5rem;
         }
         .scroll-arrow {
-                animation: bounce 2s ease-in 5.5s infinite alternate;
+                animation: bounce 2s ease-in 4s infinite alternate;
             }
             @keyframes bounce {
                 20%, 100% {
