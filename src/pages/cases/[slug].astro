@@ -34,5 +34,6 @@ const videoType = videoTypesData.find(type => type.id === videoTypeIDs[0]);
     description={casePost['case_description']}
     videoType={videoType.name}
     videoSrc={casePost['case_video'].guid}
+    posterImage={casePost['case_image'].guid}
   />
 </BaseLayout>

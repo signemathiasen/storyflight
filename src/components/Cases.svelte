@@ -25,7 +25,7 @@
 
   <div class="case-grid container container--fluid">
     {#each filteredCases as { case_title: title, case_image: { guid: image }, videotypes: type, slug }}
-      <Case {title} imageSrc={image} type={type.find((id) => id !== 11)} {videoTypes} {slug} {canonicalURL} />
+      <Case {title} imageSrc={image} type={type.find((id) => id !== 11)} {videoTypes} {slug} {canonicalURL}/>
     {/each}
   </div>
 </section>
