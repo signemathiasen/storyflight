@@ -2,6 +2,7 @@
     export let previewVideoSource;
     export let videoIndex;
     export let activeSlideIndex;
+    export let caseImage;
     import { onMount } from 'svelte';
 
     let time = 0;
@@ -11,7 +12,7 @@
     // Play first video on mount
     onMount(() => {
         document.querySelector('[data-swiper-slide-index="0"] > video').play();
-	});
+    });
 
     // play video if video index is same as active index else pause and reload
 	$: isSlideActive(activeSlideIndex);
@@ -37,7 +38,9 @@ bind:currentTime={time}
 bind:paused={paused}
 bind:muted={muted}
 playsinline
-preload="auto">
+preload="auto"
+poster={caseImage}
+>
 <track kind="captions">
 </video>
 

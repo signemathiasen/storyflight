@@ -9,7 +9,7 @@ const videoTypeId = singleCase.videotypes.filter(id => id !== 11);
 const videoType = videoTypes.find(type => type.id === videoTypeId[0])["name"];
 
 function changeVideo(){
-    if (activeSlideIndex === 4){
+    if (activeSlideIndex === 2){
            setTimeout(function () {
                 heroSwiper.slideTo(0);
         }, 175);
