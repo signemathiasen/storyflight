@@ -17,7 +17,7 @@
 <div class="soMe-icons">
   {#each footerItems as footerItem}
     {#if footerItem.url !== '#'}
-      <a target="_blank links-hover" href={footerItem.url}>
+      <a target="_blank links-hover" rel="noopener" href={footerItem.url}>
         <span class="visually-hidden ">SoMe icon</span>
         <svelte:component this={icons[footerItem.title.toLowerCase()]} />
       </a>
