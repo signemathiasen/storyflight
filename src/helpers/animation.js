@@ -2,19 +2,17 @@ import { gsap } from 'gsap/dist/gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 export default function animation() {
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.to('.chosen-cases .swiper-slide', {
-    x: 0,
-    scrollTrigger: {
-      trigger: '.chosen-cases',
-      markers: false,
-      start: 'top 100%',
-      end: 'bottom top',
-      scrub: true,
-    },
-  });
-
+  // gsap.registerPlugin(ScrollTrigger);
+  // gsap.to('.chosen-cases .swiper-slide', {
+  //   x: 0,
+  //   scrollTrigger: {
+  //     trigger: '.chosen-cases',
+  //     markers: false,
+  //     start: 'top 100%',
+  //     end: 'bottom top',
+  //     scrub: true,
+  //   },
+  // });
   // gsap.to('.text-block-wrap', {
   //   y: 0,
   //   opacity: 1,

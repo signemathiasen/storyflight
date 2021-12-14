@@ -11,7 +11,7 @@
 
 <article class="case">
   <a class="case__link" href={canonicalURL.pathname + slug}>
-    <img class="case__image" src={imageSrc} alt="alt text"/>
+    <img class="case__image" src={imageSrc} alt="alt text" loading="lazy"/>
     <div class="case__overlay">
       <p class="case__subtitle [ subtitle ]">{caseVideoType.name}</p>
       <h2 class="case__title [ h3 ]">{title}</h2>

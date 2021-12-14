@@ -251,6 +251,7 @@ a:hover > #cursor {
   position: relative;
   overflow: hidden;
   transition: 0.3s;
+  color: var(--clr-white);
   &:after {
     position: absolute;
     transition: 0.3s;
@@ -286,6 +287,7 @@ a:hover > #cursor {
   position: relative;
   overflow: hidden;
   transition: 0.3s;
+  color: var(--clr-secondary);
   &:after {
     position: absolute;
     transition: 0.3s;
@@ -362,4 +364,8 @@ a:hover > #cursor {
       width: 120%;
     }
   }
+}
+
+html {
+  background: var(--clr-primary);
 }

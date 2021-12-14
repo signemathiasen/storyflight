@@ -10,7 +10,7 @@ const pageData = await getData("pages", pageType)
 ---
 
 
-<section> 
+<section class={`${pageData.slug}-contact-section`}> 
     <ContactSection client:load pageData={pageData} Videos={Videos}/>
 </section>
 

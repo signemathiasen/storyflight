@@ -1,8 +1,13 @@
 <script>
   export let Videos;
   export let pageData;
+let BGvideo;
+  if(pageData.slug === 'vi-tilbyder'){
+    BGvideo = Videos.find((element) => element.preview_video.post_title === 'Lamborghini_preview_compressed_cropped');
+  } else {
+    BGvideo = Videos.find((element) => element.preview_video.post_title === 'Wildrun_preview_compressed');
+  }
 
-  let BGvideo = Videos.find((element) => element.case_video.post_title === 'Wildrun');
 
   const {
     acf: { contact_us_heading: title, contact_us_button_text: button, contact_us_button_link: link },
@@ -16,7 +21,7 @@
   <div class="overlay">
     <h2 class="caption">{title}</h2>
     <a href="{link}/kontakt" class="link">
-      <button class="button-hover-white">{button}</button>
+      <button class="{pageData.slug === 'vi-tilbyder' ? 'button-hover-black' : 'button-hover-white'}">{button}</button>
     </a>
   </div>
 </div>
@@ -54,8 +59,8 @@
       align-items: center;
       button {
         background: transparent;
-        color: white;
-        border: 1px solid white;
+        // color: white;
+        // border: 1px solid white;
         width: 250px;
         margin-top: var(--gutter);
         cursor: none;
@@ -71,5 +76,12 @@
 
   .link {
     text-align: center;
+  }
+
+  :global(.vi-tilbyder-contact-section){
+    .overlay{
+      background: #f9f9f9ce;
+      color: var(--clr-secondary);
+    }
   }
 </style>
