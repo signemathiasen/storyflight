@@ -9,12 +9,12 @@
 
 <style lang="scss">
   a {
-      display: flex;
-      flex-direction: row;
-      justify-content: end;
-      align-items: center;
-      color: white;
-      padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    padding-bottom: 1.5rem;
     .arrow_icon {
       color: var(--clr-primary);
       height: 28px;
