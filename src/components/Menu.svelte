@@ -1,10 +1,10 @@
 <script>
-  import Line from "../assets/icons/Line.astro";
-  import Facebook from "../assets/icons/Facebook.svelte";
-  import Instagram from "../assets/icons/Instagram.svelte";
-  import LinkedIn from "../assets/icons/LinkedIn.svelte";
-  import Arrow from "../assets/icons/CircleWithArrow.svelte";
-  import Menu from "../assets/icons/Menu.svelte";
+  import Line from '../assets/icons/Line.astro';
+  import Facebook from '../assets/icons/Facebook.svelte';
+  import Instagram from '../assets/icons/Instagram.svelte';
+  import LinkedIn from '../assets/icons/LinkedIn.svelte';
+  import Arrow from '../assets/icons/CircleWithArrow.svelte';
+  import Menu from '../assets/icons/Menu.svelte';
 
   let menuActive = false;
   export let menuData;
@@ -19,7 +19,7 @@
   };
 
   function colorBlend() {
-    document.querySelector(".header").classList.toggle("color-blend");
+    document.querySelector('.header').classList.toggle('color-blend');
   }
 
   function setOpacity(e) {
@@ -27,25 +27,30 @@
     // menuItems.forEach(menuItem => menuItem.style.opacity = "0.1");
     //   event.target.style.opacity = "1";
   }
-  
-	function removeOpacity(e) {
+
+  function removeOpacity(e) {
     // const menuItems = document.querySelectorAll('.menu_item')
     // menuItems.forEach(menuItem => menuItem.style.opacity = "1");
   }
-  
-  function lockBodyScroll(){
-    if(menuActive) {
-        document.querySelector("body").style.overflow = "hidden";
+
+  function lockBodyScroll() {
+    if (menuActive) {
+      document.querySelector('body').style.overflow = 'hidden';
     } else {
-      document.querySelector("body").style.overflow = "visible";
+      document.querySelector('body').style.overflow = 'visible';
     }
   }
-  
 </script>
 
-<button class="burger-wrap" on:click={() => (menuActive = !menuActive)} on:click={colorBlend} on:click={lockBodyScroll}>
+<button
+  class="burger-wrap"
+  on:click={() => (menuActive = !menuActive)}
+  on:click={colorBlend}
+  on:click={lockBodyScroll}
+>
   {#if !menuActive}
     <Menu />
+    <span class="visually-hidden ">menu</span>
   {:else}
     <span class="a links-hover close_menu">
       <span class="a go_back">Tilbage</span>
@@ -59,17 +64,37 @@
     <nav>
       <ul>
         {#each primaryMenu as menuItem}
-          <li><a
-              on:mouseover={setOpacity} on:mouseout={removeOpacity}
-              class="h1 menu_item" href={`/${menuItem.slug}`}>{menuItem.title}
-            </a></li>
+          <li>
+            <a
+              on:mouseover={setOpacity}
+              on:mouseout={removeOpacity}
+              class="h1 menu_item"
+              href={`/${menuItem.slug}`}
+              >{menuItem.title}
+            </a>
+          </li>
           <!-- Change link in wordpress -->
         {/each}
       </ul>
     </nav>
 
-    <svg class="separation_line" width="210" height="456" viewBox="0 0 245 456" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line opacity="0.1" x1="240.479" y1="2.31822" x2="4.42951" y2="453.407" stroke="#F9F9F9" stroke-width="10" />
+    <svg
+      class="separation_line"
+      width="210"
+      height="456"
+      viewBox="0 0 245 456"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line
+        opacity="0.1"
+        x1="240.479"
+        y1="2.31822"
+        x2="4.42951"
+        y2="453.407"
+        stroke="#F9F9F9"
+        stroke-width="10"
+      />
     </svg>
 
     <div class="contact">
@@ -149,7 +174,7 @@
         li {
           margin-bottom: 0.2rem;
           transition: 0.3s;
-            &:hover{
+          &:hover {
             transform: translateX(5px);
             opacity: 0.2;
             transition: 0.3s;
