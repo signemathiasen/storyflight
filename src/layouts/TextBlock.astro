@@ -8,7 +8,7 @@ const pagesData = await getData("pages", "forside");
 
 <section id="text-block" class="section-padding">
     <div class="text-block-wrap container container--small">
-        <h2 class="caption">{pagesData["acf"].catch_phrase}</h2>
+        <h1 class="caption">{pagesData["acf"].catch_phrase}</h1>
         <p>{pagesData["acf"].text_block}</p>
     </div>
 </section>
@@ -26,7 +26,7 @@ section{
             flex-direction: row;
             gap: 4rem;
       }
-    h2, p {
+    h1, p {
         @media (min-width: 992px) {
             flex: 1;
             color: var(--clr-secondary);

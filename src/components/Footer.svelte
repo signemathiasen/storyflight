@@ -6,7 +6,7 @@
 </script>
 
 <div class="">
-  <div class="footer-logo ">
+  <div class="footer-logo" onclick="window.location.href='/'">
     <svelte:component this={LogoType} class="footer-svg" />
   </div>
   <SoMeIcons {footerData} />
