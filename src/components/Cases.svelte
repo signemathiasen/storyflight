@@ -14,6 +14,7 @@
 
   onMount(() => {
     staggerAnimation('.case');
+    console.log("hej");
   });
 </script>
 
