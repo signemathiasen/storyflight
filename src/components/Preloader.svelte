@@ -26,6 +26,7 @@ function getAnimationStatus(){
         animated.onanimationend = () => {
         animationEnd = true;
         console.log('Animation ended');
+        document.querySelector(".logo-color-change").classList.add("loading");
     }
 }
 
@@ -46,7 +47,7 @@ $: if (windowIsLoaded && animationEnd) {
 
 </script>
 
-<div class="preloader nocursor">
+<div class="preloader">
     <div class="underlay-container">
         <div class="underlay-wrap">
             <span class="logo-underlay"></span>
@@ -75,7 +76,7 @@ $: if (windowIsLoaded && animationEnd) {
     </div>
 </div>
 
-<style lang="scss">
+<!-- <style lang="scss">
 .preloader{
     position: fixed;
     top: 0;
@@ -145,10 +146,6 @@ $: if (windowIsLoaded && animationEnd) {
     }
 }
 
-.nocursor{
-    cursor: none;
-}
-
 @keyframes changeHeight {
   from {
     transform: scaleY(0);
@@ -165,4 +162,17 @@ $: if (windowIsLoaded && animationEnd) {
   transition: opacity .5s 600ms, visibility 0s 850ms;
 }
 
-</style>
+:global(.loading){
+    animation: loading 1.5s ease-in-out 2s infinite alternate;
+}
+
+@keyframes loading {
+  from {
+    background: var(--clr-primary);
+  }
+
+  to {
+    background: var(--clr-secondary);
+  }
+}
+</style> -->

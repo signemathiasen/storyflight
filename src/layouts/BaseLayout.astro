@@ -37,7 +37,90 @@ const SEO = pageContent.yoast_head || null;
     <meta name="theme-color" content="#ff5a44">
 
     <!-- SEO-->
-    <!-- {typeof SEO == 'string' ? SEO.replaceAll(SETTINGS.baseUrl, url) : <title>Storyflight</title>} -->
+    {typeof SEO == 'string' ? SEO.replaceAll(SETTINGS.baseUrl, url) : <title>Storyflight</title>}
+
+    <!-- PRELOADER STYLESHEET -->
+  <style lang="scss">
+   
+
+    :global(.preloader){
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: var(--clr-secondary);
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    }
+    :global(.underlay-container){
+        height: 70px;
+        width: 138px;   
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);     
+    }
+
+     @media (min-width: 768px) {
+        :global(.underlay-container){
+          width: 198px;
+          height: 100px;
+          }
+        }
+        :global(.underlay-wrap){
+          position: relative;
+          height: 100%;
+          width: 100%;
+        }
+        :global(.logo-underlay){
+        height: 100%;
+        width: 100%;
+        background: var(--clr-white);
+        opacity: 0.3;
+        position: absolute;
+        top: 0;
+        }
+        :global(.logo-color-change){
+        height: 100%;
+        width: 100%;
+        background: var(--clr-primary);
+        position: absolute;
+        bottom: 0;
+        transform-origin: bottom;
+        transform: scaleY(0);
+        animation: changeHeight 9s linear 1s 1 forwards, loading 1s ease-in 10s infinite alternate;
+        }
+        :global(.preloader .logo-wrap){
+            height: auto;
+            width: 140px;
+            position: relative;
+        }
+         @media (min-width: 768px) {
+           :global(.preloader .logo-wrap){
+                width: 200px;
+              }
+            }
+            
+            :global(.preloader .logo){
+            height: auto;
+            width: 140px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            clip-path: url("#my-clip");
+        }
+         @media (min-width: 768px) {
+           :global(.preloader .logo){
+                width: 200px;
+              }
+            }
+
+</style> 
 
   </head>
   <body>
