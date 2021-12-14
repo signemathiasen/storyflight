@@ -22,17 +22,6 @@
     document.querySelector('.header').classList.toggle('color-blend');
   }
 
-  function setOpacity(e) {
-    // const menuItems = document.querySelectorAll('.menu_item')
-    // menuItems.forEach(menuItem => menuItem.style.opacity = "0.1");
-    //   event.target.style.opacity = "1";
-  }
-
-  function removeOpacity(e) {
-    // const menuItems = document.querySelectorAll('.menu_item')
-    // menuItems.forEach(menuItem => menuItem.style.opacity = "1");
-  }
-
   function lockBodyScroll() {
     if (menuActive) {
       document.querySelector('body').style.overflow = 'hidden';
@@ -226,6 +215,7 @@
     mix-blend-mode: difference;
     color: white;
     transition: 0.3s;
+    padding: 0;
   }
 
   .contact {

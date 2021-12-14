@@ -142,7 +142,7 @@
     width: 100%;
     display: block;
     object-fit: cover;
-    position: fixed;
+    position: absolute;
   }
 
   &__header {
@@ -150,7 +150,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 36px;
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
   }

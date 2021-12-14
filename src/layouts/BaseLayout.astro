@@ -3,6 +3,7 @@ import { SETTINGS } from '../helpers/dataFetching.js';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
 import Cursor from '../components/Cursor.svelte';
+import Preloader from '../components/Preloader.svelte';
 
 const { 
   pageContent = undefined, 
@@ -40,7 +41,7 @@ const SEO = pageContent.yoast_head || null;
 
   </head>
   <body>
-
+    <Preloader client:load/>
     <Cursor client:load />
 
     {includeHeader && <Header/>}
