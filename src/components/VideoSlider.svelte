@@ -2,7 +2,7 @@
   import SliderSingleVideo from "./SliderSingleVideo.svelte";
   import ArrowLeft from "../assets/icons/ArrowLeft.svelte";
   import ArrowRight from "../assets/icons/ArrowRight.svelte";
-  import animation from "../helpers/animation";
+  // import animation from "../helpers/animation";
   import { onMount } from "svelte";
 
   // import Swiper core and required modules
@@ -20,9 +20,9 @@
 
   export let chosenCasesData;
 
-  onMount(() => {
-    animation();
-  });
+  // onMount(() => {
+  //   animation();
+  // });
 </script>
 
 <div class="swiper-wrap">
