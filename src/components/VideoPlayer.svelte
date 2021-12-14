@@ -6,6 +6,7 @@
   export let description;
   export let videoType;
   export let videoSrc;
+  export let posterImage;
 
   // Binds to video
   let paused = true;
@@ -59,6 +60,10 @@
     }
   }
 
+  function historyBack(){
+    window.history.back();
+  }
+
 </script>
 
 <svelte:window on:keydown={handleKeyDown}/>
@@ -81,6 +86,7 @@
       bind:currentTime={time}
       on:ended={handleVideoEnd}
       preload="auto"
+      poster={posterImage}
       >
     </video>
     <div 
@@ -91,10 +97,10 @@
         <a class="video-player__logo" href="/">
           <Logo />
         </a>
-        <a href="/cases" class="button">
-          <span class="button__content">Tilbage</span>
+        <button on:click={historyBack} class="button">
+          <span class="a button__content">Tilbage</span>
           <CircleWithArrow />
-        </a>
+        </button>
       </div>
       <div class="video-player__content">
         <p class="subtitle">{videoType}</p>
