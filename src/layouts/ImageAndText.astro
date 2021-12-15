@@ -9,6 +9,7 @@ const { acf: {
   text: body,
 }} = servicesTopData;
 
+console.log(servicesTopImage[0].services_image)
 ---
 
 <section class="container container--medium top-section-wrapper">
@@ -18,7 +19,7 @@ const { acf: {
     <p>{body}</p>
     </div>
     <div class="img-wrapper">
-        <img src={servicesTopImage[0].services_image.guid} loading="lazy"/> 
+        <img alt={servicesTopImage[0].services_image.post_title} src={servicesTopImage[0].services_image.guid}  loading="lazy"/> 
     </div>
     </div>
 </section>
