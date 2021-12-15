@@ -3,9 +3,9 @@
   export let pageData;
 let BGvideo;
   if(pageData.slug === 'vi-tilbyder'){
-    BGvideo = Videos.find((element) => element.preview_video.post_title === 'Lamborghini_preview_compressed_cropped');
+    BGvideo = Videos.find((element) => element.preview_video.post_title === 'Lamborghini_preview_compressed_v2');
   } else {
-    BGvideo = Videos.find((element) => element.preview_video.post_title === 'Wildrun_preview_compressed');
+    BGvideo = Videos.find((element) => element.preview_video.post_title === 'Wildrun_preview_compressed_v2');
   }
 
 
