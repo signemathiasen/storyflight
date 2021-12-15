@@ -43,6 +43,9 @@ function setWindowLoadState(){
 
 $: if (windowIsLoaded && animationEnd) {
     removePreloader();
+} else if (windowIsLoaded){
+    document.querySelector(".logo-color-change").style["-webkit-animation-duration"] = "1s";
+    
 }
 
 </script>

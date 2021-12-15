@@ -378,10 +378,6 @@ html {
   transition: opacity 0.5s 600ms, visibility 0s 850ms;
 }
 
-// .loading {
-//   animation: loading 1.5s ease-in-out 2s infinite alternate;
-// }
-
 @keyframes loading {
   from {
     background: var(--clr-primary);
