@@ -55,8 +55,6 @@
         {#each primaryMenu as menuItem}
           <li>
             <a
-              on:mouseover={setOpacity}
-              on:mouseout={removeOpacity}
               class="h1 menu_item"
               href={`/${menuItem.slug}`}
               rel="noopener"
