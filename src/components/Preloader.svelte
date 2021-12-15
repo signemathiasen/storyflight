@@ -57,6 +57,7 @@ $: if (windowIsLoaded && animationEnd) {
             <span class="logo-color-change"></span>
         </div>
     </div>
+    <span class="loading-text subtitle">Indlæser...</span>
         <div class="logo-wrap">
         <div>
         <div class="svg-wrapper">
