@@ -8,7 +8,8 @@ import Preloader from '../components/Preloader.svelte';
 const { 
   pageContent = undefined, 
   includeHeader = true, 
-  includeFooter = true 
+  includeFooter = true,
+  includeCursor = true,
 } = Astro.props;
 
 const url = Astro.site.hostname;
@@ -121,12 +122,13 @@ const SEO = pageContent.yoast_head || null;
     <meta name="theme-color" content="#ff5a44">
 
     <!-- SEO-->
-    {typeof SEO == 'string' ? SEO.replaceAll(SETTINGS.baseUrl, url) : <title>Storyflight</title>}
+    <!-- {typeof SEO == 'string' ? SEO.replaceAll(SETTINGS.baseUrl, url) : <title>Storyflight</title>} -->
 
   </head>
   <body>
     <Preloader client:load/>
-    <Cursor client:load />
+
+    {includeCursor && <Cursor client:load/>}
 
     {includeHeader && <Header/>}
 
