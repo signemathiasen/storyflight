@@ -1,10 +1,16 @@
 <script>
   export let KontaktForm;
 
-  const formElements = ["navn", "email", "nummer", "beskrivelse"];
+  const formElements = ['navn', 'email', 'nummer', 'beskrivelse'];
 </script>
 
-<form name="Contact" method="POST" data-netlify="true" subject="Nogen vil i kontakt med Storyflight">
+<form
+  name="Contact"
+  method="POST"
+  data-netlify="true"
+  action="/success"
+  subject="Nogen vil i kontakt med Storyflight"
+>
   {#each formElements as elm}
     <div class={elm}>
       <input type="text" id={elm} name={elm} required />
@@ -55,9 +61,9 @@
       width: 100%;
       margin: 3rem 0 0;
       background: var(--clr-white);
-      @media (max-width: 768px){
-                max-width: 300px;    
-        }
+      @media (max-width: 768px) {
+        max-width: 300px;
+      }
       @media (min-width: 992px) {
         background: var(--clr-secondary);
         color: var(--clr-white);

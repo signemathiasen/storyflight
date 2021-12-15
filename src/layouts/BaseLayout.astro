@@ -14,7 +14,7 @@ const {
 
 const url = Astro.site.hostname;
 
-const SEO = pageContent.yoast_head || null;
+const SEO = pageContent ? pageContent.yoast_head : undefined;
 
 ---
 
