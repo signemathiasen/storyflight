@@ -43,10 +43,7 @@ function setWindowLoadState(){
 
 $: if (windowIsLoaded && animationEnd) {
     removePreloader();
-} else if (windowIsLoaded){
-    document.querySelector(".logo-color-change").style["-webkit-animation-duration"] = "1s";
-    
-}
+} 
 
 </script>
 
@@ -54,9 +51,10 @@ $: if (windowIsLoaded && animationEnd) {
     <div class="underlay-container">
         <div class="underlay-wrap">
             <span class="logo-underlay"></span>
-            <span class="logo-color-change"></span>
+            <span class="logo-color-change .loading"></span>
         </div>
     </div>
+    <span class="loading-text subtitle">Indlæser...</span>
         <div class="logo-wrap">
         <div>
         <div class="svg-wrapper">

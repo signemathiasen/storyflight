@@ -73,7 +73,6 @@ const SEO = pageContent.yoast_head || null;
         position: absolute;
         bottom: 0;
         transform-origin: bottom;
-        transition: transform 1s;
         transform: scaleY(0);
         animation: changeHeight 5s linear 1s 1 forwards, loading 1s ease-in 6s infinite alternate;
         }
@@ -102,6 +101,18 @@ const SEO = pageContent.yoast_head || null;
                 width: 200px;
               }
             }
+
+          :global(.loading-text){
+            position: absolute;
+            top: 57%;
+            color: var(--clr-primary);
+          }
+           @media (min-width: 768px) {
+            :global(.loading-text){
+            top: 60%;
+              }
+            }
+
 
 </style> 
 
