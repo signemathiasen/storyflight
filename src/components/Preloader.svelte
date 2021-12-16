@@ -11,11 +11,12 @@ function checkLocalStorage(){
         if(!localStorage.getItem("visited")){
         runPreloader();
         localStorage.setItem("visited",true);
+    } else {
+        document.querySelector('.preloader').style.display = 'none';
     }
 }
 
 function runPreloader(){
-    document.querySelector('.preloader').style.display = 'flex';
     document.querySelector('body').style.overflow = 'hidden';
     getAnimationStatus();
     setWindowLoadState();
@@ -25,8 +26,6 @@ function getAnimationStatus(){
         const animated = document.querySelector('.logo-color-change');
         animated.onanimationend = () => {
         animationEnd = true;
-        console.log('Animation ended');
-        document.querySelector(".logo-color-change").classList.add("loading");
     }
 }
 
