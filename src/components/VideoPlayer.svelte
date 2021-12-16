@@ -1,4 +1,6 @@
 <script>
+
+  
   import Logo from '../assets/Logo.svelte';
   import CircleWithArrow from '../assets/icons/CircleWithArrow.svelte';
   import Cursor from './Cursor.svelte';
@@ -8,6 +10,8 @@
   export let videoType;
   export let videoSrc;
   export let posterImage;
+
+  /*
 
   // Binds to video
   let paused = true;
@@ -64,19 +68,26 @@
   function historyBack() {
     window.history.back();
   }
+  */
 </script>
 
-<svelte:window on:keydown={handleKeyDown} />
+<!-- <svelte:window on:keydown={handleKeyDown} />
 {#if showOverlay === false}
   <style>
     body {
       cursor: none !important;
     }
   </style>
-{/if}
+{/if} -->
 
-<div class="video-player" on:mousemove={handleMove} on:touchmove|preventDefault={handleMove}>
-  <!-- svelte-ignore a11y-media-has-caption -->
+<video
+  class="test"
+  poster={posterImage}
+>
+  <source src={videoSrc} type="video/mp4" />
+</video>
+
+<!-- <div class="video-player" on:mousemove={handleMove} on:touchmove|preventDefault={handleMove}>
   <video
     class="video-player__video"
     bind:this={video}
@@ -107,7 +118,6 @@
       {#if description}
         <p>{description}</p>
       {/if}
-      <!-- <p>{`${time} : ${duration}`}</p> -->
     </div>
     <button class="video-player__play-button" on:click={handlePlayPause} type="button">
       <span class="video-player__play-button-inner">
@@ -122,9 +132,15 @@
     </button>
     <Cursor />
   </div>
-</div>
+</div> -->
 
 <style lang="scss">
+  .test {
+    max-width: 100%;
+    height: auto;
+  }
+
+
   .video-player {
     position: relative;
     width: 100vw;
