@@ -11,7 +11,7 @@ const customerLogos = await getData("customerLogo");
     <div class="customer-container">
     <div class="gradient-container"></div>
     <div class="carousel">
-    <Logos client:load customerLogos={customerLogos}/>
+    <Logos client:visible customerLogos={customerLogos}/>
     </div>
     </div>
 </section>
