@@ -1,5 +1,10 @@
 <script>
   import { cursorHover } from '../helpers/cursorHover';
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+    cursorHover();
+  });
 
   function cursorMove(e) {
     let cursor = document.querySelector('#cursor');
@@ -22,12 +27,7 @@
   }
 </script>
 
-<svelte:window
-  on:mousemove={cursorMove}
-  on:mousemove={cursorHover}
-  on:mousedown={mouseDown}
-  on:mouseup={mouseUp}
-/>
+<svelte:window on:mousemove={cursorMove} on:mousedown={mouseDown} on:mouseup={mouseUp} />
 
 <div id="cursor" />
 
