@@ -79,8 +79,6 @@
   <!-- svelte-ignore a11y-media-has-caption -->
   <video
     class="video-player__video"
-    playsinline
-    src={videoSrc}
     bind:this={video}
     bind:muted
     bind:paused
@@ -89,7 +87,10 @@
     on:ended={handleVideoEnd}
     preload="auto"
     poster={posterImage}
-  />
+    playsinline
+  >
+    <source src={videoSrc} type="video/mp4" />
+  </video>
   <div class="video-player__overlay" class:is-hidden={showOverlay === false}>
     <div class="video-player__header">
       <a class="video-player__logo" href="/">
@@ -135,6 +136,7 @@
       display: block;
       object-fit: cover;
       position: absolute;
+      z-index: 1;
     }
 
     &__header {
