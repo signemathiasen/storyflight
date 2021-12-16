@@ -10,7 +10,7 @@ const sectionData = await getData("pages", "forside");
 
 <section class="chosen-cases">
 <h2 class="container container--large">{sectionData.acf["videoslider-heading"]}</h2>
-<VideoSlider client:visible {chosenCasesData}/>
+<VideoSlider client:load {chosenCasesData}/>
  <div class="link container container--fluid">
     <a class="links-hover" href="/cases">
       <span class="a">{sectionData.acf["videoslider_button_text"]}</span>
@@ -34,6 +34,9 @@ section {
     width: 400px !important;
     @media (min-width: 768px) {
           width: 700px !important;
+        }
+        @media (min-width: 1500px) {
+            width: 900px !important;
         }
     height: 100%;
     position: relative;

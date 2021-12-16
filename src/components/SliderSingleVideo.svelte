@@ -16,7 +16,7 @@
 <div class="case-wrap">
     <a href={`/cases/${singleVideoData.slug}`} class="video-wrap">
         <img bind:this={previewImage} class="preview-image" src={singleVideoData.case_image.guid} alt={singleVideoData.case_image.post_title} loading="lazy">
-        <video class="preview-video" loading="lazy" poster={singleVideoData.case_image.guid} src={singleVideoData.preview_video.guid} on:mouseenter={playVideo} on:mouseout={pauseVideo} muted={'true'} preload='auto' playsinline>
+        <video class="preview-video" loading="lazy" poster={singleVideoData.case_image.guid} src={singleVideoData.preview_video.guid} on:mouseenter={playVideo} on:mouseout={pauseVideo} muted={'true'} preload='metadata' playsinline>
           </video>
     </a>
     <h3>{singleVideoData.case_title}</h3>
@@ -35,6 +35,9 @@
         @media (min-width: 700px) {
             width: 700px !important;
         }
+        @media (min-width: 1500px) {
+            width: 900px !important;
+        }
     }
     .video-wrap {
     display: block;
@@ -45,6 +48,9 @@
     @media (min-width: 700px) {
     width: 700px !important;
   }
+    @media (min-width: 1500px) {
+                width: 900px !important;
+            }
         .preview-image{
             position: absolute;
             height: 50vh;
