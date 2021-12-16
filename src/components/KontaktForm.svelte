@@ -12,9 +12,9 @@
   {#each formElements as elm}
     <div class={elm}>
       {#if elm === 'email'}
-        <input type="email" id={elm} name={elm} required />
+        <input type="email" id={elm} name={elm} required placeholder=" " />
       {:else}
-        <input type="text" id={elm} name={elm} required />
+        <input type="text" id={elm} name={elm} required placeholder=" " />
       {/if}
       <label class="subtitle" for={elm}>{elm.charAt(0).toUpperCase()}{elm.slice(1)}</label>
     </div>
@@ -45,7 +45,8 @@
       }
 
       &:focus ~ label,
-      &:valid ~ label {
+      &:valid ~ label,
+      &:not(:placeholder-shown) ~ label {
         transform: translate(-12%, -100%) scale(0.75);
         opacity: 0.6;
       }
