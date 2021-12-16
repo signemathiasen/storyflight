@@ -87,7 +87,7 @@
   playsinline
   controls="true"
 >
-  <source src={videoSrc} type="video/mp4" />
+  <source src="https://sveltejs.github.io/assets/caminandes-llamigos.mp4" type="video/mp4" />
 </video>
 
 <!-- <div class="video-player" on:mousemove={handleMove} on:touchmove|preventDefault={handleMove}>
