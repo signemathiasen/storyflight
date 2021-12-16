@@ -14,7 +14,6 @@
 
   onMount(() => {
     staggerAnimation('.case');
-    console.log("hej");
   });
 </script>
 
@@ -41,6 +40,10 @@
     @media (min-width: 1112px) {
       grid-template-columns: repeat(3, 1fr);
     }
+  }
+
+  h1 {
+    color: var(--clr-secondary);
   }
 
   @media (min-width: 992px) {
