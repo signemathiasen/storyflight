@@ -6,41 +6,24 @@ export function cursorHover() {
   let arrowRight = document.querySelector('.swiper-button-next');
   let cursor = document.querySelector('#cursor');
 
-  let hoverElements = [menu, arrowLeft, arrowRight];
+  let hoverElements = [menu, arrowLeft, arrowRight, ...links, ...buttons];
 
   console.log(hoverElements);
+  console.log('hejhej cursor hover');
 
-  // hover på links
-  links.forEach((link) => {
-    link.addEventListener('mouseover', function () {
-      cursor.style.transform = 'scale(1.5)';
-    });
-  });
-  links.forEach((link) => {
-    link.addEventListener('mouseout', function () {
-      cursor.style.transform = 'scale(1)';
-    });
-  });
-
-  // hover på knapper
-  buttons.forEach((button) => {
-    button.addEventListener('mouseover', function () {
-      cursor.style.transform = 'scale(1.5)';
-    });
-  });
-  buttons.forEach((button) => {
-    button.addEventListener('mouseout', function () {
-      cursor.style.transform = 'scale(1)';
-    });
-  });
-
+  // hover på elementer
   hoverElements.forEach((elm) => {
+    if (elm === null) return;
     elm.addEventListener('mouseover', function () {
+      console.log('mouse on');
       cursor.style.transform = 'scale(1.5)';
     });
   });
+
   hoverElements.forEach((elm) => {
+    if (elm === null) return;
     elm.addEventListener('mouseout', function () {
+      console.log('mouse out');
       cursor.style.transform = 'scale(1)';
     });
   });
