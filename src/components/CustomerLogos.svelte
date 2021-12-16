@@ -19,7 +19,7 @@
 <div class="first-half logos-mobile">
   {#each logosFirstHalf as logo}
     <div class="first-half">
-      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} loading="lazy"/>
+      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title}/>
     </div>
   {/each}
 </div>
@@ -28,7 +28,7 @@
   {#each logosSecondHalf as logo}
     <div>
 
-      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} loading="lazy"/>
+      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title}/>
 
     </div>
   {/each}
@@ -37,7 +37,7 @@
 <div class="logos-first-third logos-desktop">
   {#each logosFirstThird as logo}
     <div>
-      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} loading="lazy" />
+      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
     </div>
   {/each}
 </div>
@@ -45,7 +45,7 @@
 <div class="logos-second-third logos-desktop">
   {#each logosSecondThird as logo}
     <div>
-      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} loading="lazy" />
+      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
     </div>
   {/each}
 </div>
@@ -54,7 +54,7 @@
   {#each logosLastThird as logo}
     <div>
 
-      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} loading="lazy"/>
+      <img width="100" height="100" src={logo.customer_logo.guid} alt={logo.customer_logo.post_title} />
     </div>
   {/each}
 </div>
