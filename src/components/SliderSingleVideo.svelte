@@ -16,7 +16,7 @@
 <div class="case-wrap">
     <a href={`/cases/${singleVideoData.slug}`} class="video-wrap">
         <img bind:this={previewImage} class="preview-image" src={singleVideoData.case_image.guid} alt={singleVideoData.case_image.post_title} loading="lazy">
-        <video class="preview-video" loading="lazy" poster={singleVideoData.case_image.guid} src={singleVideoData.preview_video.guid} on:mouseenter={playVideo} on:mouseout={pauseVideo} muted={'true'} preload='metadata' playsinline>
+        <video class="preview-video" loading="lazy" poster={singleVideoData.case_image.guid} src={singleVideoData.preview_video.guid} on:mouseenter={playVideo} on:mouseout={pauseVideo} muted={'true'} preload='metadata' playsinline loop>
           </video>
     </a>
     <h3>{singleVideoData.case_title}</h3>
