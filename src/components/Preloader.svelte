@@ -11,12 +11,11 @@ function checkLocalStorage(){
         if(!localStorage.getItem("visited")){
         runPreloader();
         localStorage.setItem("visited",true);
-    } else {
-        document.querySelector('.preloader').style.display = 'none';
     }
 }
 
 function runPreloader(){
+    document.querySelector('.preloader').style.display = 'flex';
     document.querySelector('body').style.overflow = 'hidden';
     getAnimationStatus();
     setWindowLoadState();
@@ -50,7 +49,7 @@ $: if (windowIsLoaded && animationEnd) {
     <div class="underlay-container">
         <div class="underlay-wrap">
             <span class="logo-underlay"></span>
-            <span class="logo-color-change"></span>
+            <span class="logo-color-change .loading"></span>
         </div>
     </div>
     <span class="loading-text subtitle">Indlæser...</span>
@@ -76,3 +75,103 @@ $: if (windowIsLoaded && animationEnd) {
     </div>
 </div>
 
+<!-- <style lang="scss">
+.preloader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: var(--clr-secondary);
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    .underlay-container{
+        height: 70px;
+        width: 138px;
+        @media (min-width: 768px) {
+        width: 198px;
+        height: 100px;
+        }
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .underlay-wrap{
+       position: relative;
+       height: 100%;
+       width: 100%;
+    }
+        .logo-underlay{
+        height: 100%;
+        width: 100%;
+        background: var(--clr-white);
+        opacity: 0.3;
+        position: absolute;
+        top: 0;
+        }
+        .logo-color-change{
+        height: 100%;
+        width: 100%;
+        background: var(--clr-primary);
+        position: absolute;
+        bottom: 0;
+        transform-origin: bottom;
+        transform: scaleY(0);
+        animation: changeHeight 9s linear 1s 1 forwards;
+        }
+        .logo-wrap{
+            height: auto;
+            width: 140px;
+            @media (min-width: 768px) {
+                width: 200px;
+            }
+            position: relative;
+            .logo{
+            height: auto;
+            width: 140px;
+            @media (min-width: 768px) {
+                width: 200px;
+            }
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            clip-path: url("#my-clip");
+        }
+    }
+}
+
+@keyframes changeHeight {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+:global(.remove-preloader) {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .5s 600ms, visibility 0s 850ms;
+}
+
+:global(.loading){
+    animation: loading 1.5s ease-in-out 2s infinite alternate;
+}
+
+@keyframes loading {
+  from {
+    background: var(--clr-primary);
+  }
+
+  to {
+    background: var(--clr-secondary);
+  }
+}
+</style> -->

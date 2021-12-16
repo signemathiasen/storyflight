@@ -33,7 +33,7 @@ const SEO = pageContent ? pageContent.yoast_head : undefined;
     width: 100vw;
     background: var(--clr-secondary);
     z-index: 11;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     }
@@ -121,6 +121,8 @@ const SEO = pageContent ? pageContent.yoast_head : undefined;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.scss')} />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin/>
+    <link rel="preload" href="https://use.typekit.net/qms3myj.css" as="style"/>
     <link rel="stylesheet" href="https://use.typekit.net/qms3myj.css" />
     
     <!-- Favicons -->
@@ -133,7 +135,7 @@ const SEO = pageContent ? pageContent.yoast_head : undefined;
     <meta name="theme-color" content="#ff5a44">
 
     <!-- SEO-->
-    <!-- {typeof SEO == 'string' ? SEO.replaceAll(SETTINGS.baseUrl, url) : <title>Storyflight</title>} -->
+    {typeof SEO == 'string' ? SEO.replaceAll(SETTINGS.baseUrl, url) : <title>Storyflight</title>}
 
   </head>
   <body>
