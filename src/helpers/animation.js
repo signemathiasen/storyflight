@@ -54,7 +54,7 @@ export function staggerAnimation(element) {
   let top = '';
 
   if (element == '.case') {
-    top = '90%';
+    top = '95%';
   } else {
     top = 'bottom-=150px';
   }
