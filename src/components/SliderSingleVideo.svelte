@@ -35,6 +35,9 @@
         @media (min-width: 700px) {
             width: 700px !important;
         }
+        @media (min-width: 1500px) {
+            width: 900px !important;
+        }
     }
     .video-wrap {
     display: block;
@@ -45,6 +48,9 @@
     @media (min-width: 700px) {
     width: 700px !important;
   }
+    @media (min-width: 1500px) {
+                width: 900px !important;
+            }
         .preview-image{
             position: absolute;
             height: 50vh;
