@@ -12,29 +12,28 @@ export const SETTINGS = {
     menus: 'menus',
     videoTypes: 'videotypes',
   },
-  // change object name
-  menuSlugs: {
+  parameters: {
+    // add all slugs
     primaryMenu: '/primary-menu',
     contactInformation: '/contact-information',
     forside: '/2',
     kontakt: '/111',
     cases: '/109',
     viTilbyder: '/107',
-    // add all slugs
   },
 };
 
 export async function getData(endpoint, slug = '') {
   const isEndpointValid = SETTINGS.endpoints[endpoint];
-  const isSlugValid = SETTINGS.menuSlugs[slug];
+  const isSlugValid = SETTINGS.parameters[slug];
 
   if (isEndpointValid === undefined) return console.error('Endpoint does not exist');
   if (endpoint === 'menus' && isSlugValid === undefined) return;
 
-  const { baseUrl, menuPath, generalPath, menuSlugs, endpoints } = SETTINGS;
+  const { baseUrl, menuPath, generalPath, parameters, endpoints } = SETTINGS;
   const path = endpoint === 'menus' ? menuPath : generalPath;
 
-  const response = await fetch(`${baseUrl}${path}${endpoints[endpoint]}${slug ? menuSlugs[slug] : ''}`);
+  const response = await fetch(`${baseUrl}${path}${endpoints[endpoint]}${slug ? parameters[slug] : ''}`);
   const data = await response.json();
 
   return data;

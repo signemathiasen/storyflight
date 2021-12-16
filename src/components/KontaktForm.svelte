@@ -1,6 +1,4 @@
 <script>
-  export let KontaktForm;
-
   const formElements = ['navn', 'email', 'nummer', 'beskrivelse'];
 </script>
 
@@ -13,7 +11,11 @@
 >
   {#each formElements as elm}
     <div class={elm}>
-      <input type="text" id={elm} name={elm} required />
+      {#if elm === 'email'}
+        <input type="email" id={elm} name={elm} required />
+      {:else}
+        <input type="text" id={elm} name={elm} required />
+      {/if}
       <label class="subtitle" for={elm}>{elm.charAt(0).toUpperCase()}{elm.slice(1)}</label>
     </div>
   {/each}
