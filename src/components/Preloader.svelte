@@ -49,7 +49,7 @@ $: if (windowIsLoaded && animationEnd) {
     <div class="underlay-container">
         <div class="underlay-wrap">
             <span class="logo-underlay"></span>
-            <span class="logo-color-change .loading"></span>
+            <span class="logo-color-change"></span>
         </div>
     </div>
     <span class="loading-text subtitle">Indlæser...</span>
