@@ -65,6 +65,7 @@
     background: none;
     opacity: 0.3;
     transition: .3s ease-in opacity;
+    color: var(--clr-secondary);
 
     &:hover {
       opacity: 0.6;

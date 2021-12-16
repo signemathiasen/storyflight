@@ -83,5 +83,8 @@ let BGvideo;
       background: #f9f9f9ce;
       color: var(--clr-secondary);
     }
+    .caption {
+      color: var(--clr-secondary);
+    }
   }
 </style>
