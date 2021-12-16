@@ -83,6 +83,9 @@
 <video
   class="test"
   poster={posterImage}
+  preload="auto"
+  playsinline
+  controls="true"
 >
   <source src={videoSrc} type="video/mp4" />
 </video>
