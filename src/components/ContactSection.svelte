@@ -65,10 +65,12 @@ let BGvideo;
         margin-top: var(--gutter);
         cursor: none;
       }
+      .caption {
+        text-align: center;
+      }
       @media (min-width: 992px) {
         .caption {
           margin-bottom: 1.5rem;
-          text-align: center;
         }
       }
     }
