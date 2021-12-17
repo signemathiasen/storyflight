@@ -2,7 +2,7 @@
   import Filter from './Filter.svelte';
   import Case from './Case.svelte';
   import { staggerAnimation } from '../helpers/animation.js';
-  import { onMount } from 'svelte';
+  import { onMount, afterUpdate } from 'svelte';
 
   export let cases;
   export let videoTypes;
@@ -15,6 +15,11 @@
   onMount(() => {
     staggerAnimation('.case');
   });
+
+  afterUpdate(() => {
+    staggerAnimation('.case');
+  });
+
 </script>
 
 <section>
@@ -24,7 +29,7 @@
   </div>
 
   <div class="case-grid container container--fluid">
-    {#each filteredCases as { case_title: title, case_image: { guid: image }, videotypes: type, slug }}
+    {#each filteredCases as { case_title: title, case_image: { guid: image }, videotypes: type, slug, id } (id)}
       <Case {title} imageSrc={image} type={type.find((id) => id !== 11)} {videoTypes} {slug} {canonicalURL}/>
     {/each}
   </div>
