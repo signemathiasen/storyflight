@@ -11,10 +11,7 @@
 
   let filter = 11; // 11 is the ID of "alle videoer" videotype from WP
   $: filteredCases = cases.filter((item) => item.videotypes.find((id) => id === filter));
-
-  onMount(() => {
-    staggerAnimation('.case');
-  });
+  
 </script>
 
 <section>
@@ -24,8 +21,8 @@
   </div>
 
   <div class="case-grid container container--fluid">
-    {#each filteredCases as { case_title: title, case_image: { guid: image }, videotypes: type, slug }}
-      <Case {title} imageSrc={image} type={type.find((id) => id !== 11)} {videoTypes} {slug} {canonicalURL}/>
+    {#each filteredCases as { case_title: title, case_image: { guid: image }, videotypes: type, slug, id } (id)}
+      <Case {title} imageSrc={image} type={type.find((id) => id !== 11)} {videoTypes} {slug} {canonicalURL} />
     {/each}
   </div>
 </section>
