@@ -24,6 +24,7 @@
     position: relative;
     height: 100%;
     overflow: hidden;
+    opacity: 0;
 
     @media (min-width: 800px) and (max-width: 1111px) {
       &:last-child:nth-child(2n - 1) {
