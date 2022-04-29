@@ -5,7 +5,7 @@ export default {
   // public: './public',   // A folder of static files Astro will copy to the root. Useful for favicons, images, and other files that don’t need processing.
   buildOptions: {
     // site: 'http://example.com',           // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.
-    site: 'https://fervent-wozniak-2f4122.netlify.app/',
+    site: 'https://sign4731.github.io/storyflight/',
     sitemap: true, // Generate sitemap (set to "false" to disable)
   },
   devOptions: {
