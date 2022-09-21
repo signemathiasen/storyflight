@@ -54,12 +54,7 @@
       <ul>
         {#each primaryMenu as menuItem}
           <li>
-            <a
-              class="h1 menu_item"
-              href={`/${menuItem.slug}`}
-              rel="noopener"
-              >{menuItem.title}
-            </a>
+            <a class="h1 menu_item" href={`${menuItem.slug}`} rel="noopener">{menuItem.title} </a>
           </li>
           <!-- Change link in wordpress -->
         {/each}
